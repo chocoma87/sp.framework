@@ -1,21 +1,6 @@
 
-
-/* iphone5 & older */
-@media screen and (max-width: 320px) {
-    .contentWidth {
-        width: 100%;
-    }
-}
-
-/* mobile */
-@media screen and (min-width: 321px) and (max-width: 767px) {
-    .contentWidth {
-        width: 100%;
-    }
-}
-
-/* tablet */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+/* layout for mobile phone */
+@media screen and (min-width: 768px) {
     body {
         font-size: 16px;
         line-height: 1.5em;
@@ -25,8 +10,31 @@
     .contentWidth {
         width: 100%;
     }
+}
+
+
+
+
+/* iphone5 & older */
+@media screen and (max-width: 320px) {
 
 }
+
+/* mobile */
+@media screen and (min-width: 321px) and (max-width: 767px) {
+
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+}
+
+
+
+
+
 
 /* pc */
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
