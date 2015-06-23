@@ -112,87 +112,99 @@ $(document).ready(function(){
 
 
 
-    /* accordion menu */
+    /* accordion plugin */
     /* dl > dt + dd 구조로 한다. */
     (function ($) {
-        $.fn.spaccordion = function (option) {
-
-            return this.each(function(){
-                var opt = $.extend({}, $.fn.spaccordion.defaultOptions, option);
-                $.fn.spaccordion.defaultOptions = opt;
-
-                $.fn.spaccordion._this = this;
-
-                $.fn.spaccordion.init();
-
-                $.fn.spaccordion.attachEvent(this, opt);
-            });
-
-        };
-
-
-        $.fn.spaccordion.defaultOptions = {
+        //private members
+        var defaultOptions = {
             parentClass       : '.accordion',
             accorionClass     : '.accordionContents',
             activeClass       : 'active',
             dataValue         : 'accordion',
             closeOtherContents: false,
-            openedItem : -1
+            openedItem        : -1
+        }
+
+        //public functions 
+
+        /**
+         * Constructor : 생성자
+         */
+        $.fn.spaccordion = function (option) {
+
+            return this.each(function(){
+
+                var custom_option = $.extend({}, defaultOptions, option);
+                $.fn.spaccordion.wrapper = this;
+
+                $.fn.spaccordion.init(custom_option);
+
+                //attach event
+                var cb_data = { option : custom_option, wrapper: this};
+                $(this).on('click', 'dt > a', cb_data, attachEvent );
+
+            });
+
         };
 
-        $.fn.spaccordion.init = function(){
-            var openedItem = this.defaultOptions.openedItem;
 
+        /**
+         * Initialize : 초기화
+         */
+        $.fn.spaccordion.init = function(option){
+            var openedItem = option.openedItem;
+
+            //열어둬야 할 항목이 있는 경우
             if(openedItem >= 0){
-                var wrapper = $($.fn.spaccordion._this),
+                var wrapper = $(this.wrapper),
                     strSelector = 'dt:eq(' + openedItem +'), dd:eq(' + openedItem + ')';
                 var elItem = $(wrapper).find(strSelector);
                 
-                $(elItem).addClass($.fn.spaccordion.defaultOptions.activeClass).css({display: 'block'});
+                $(elItem).addClass(option.activeClass).css({display: 'block'});
             }
         }
 
+        //private functions 
+
         /**
-         * 각 타이틀 태그에 이벤트를 추가한다.
+         * 해당 항목 외의 항목들은 항상 닫아두기를 할 때
          */
-        $.fn.spaccordion.attachEvent = function(wrapper, option){
-            var elTitle = $(wrapper).find('dt > a');
+        function closeOtherContents(currentAccodianContents){
+            $(currentAccodianContents).siblings('dd').slideUp(200);
+        }
 
-            $(elTitle).on('click', function (e) {
-                console.log($.fn.spaccordion._this);
-                e.preventDefault();
-                var dataVal = option.dataValue;
-                var dataAccordian = $(this).data(dataVal),
-                    elWrapper = $(this).parents('dl'),
-                    accordianContents = $(elWrapper).find('dd[data-' + dataVal + '="' + dataAccordian + '"]');
+        function attachEvent(e){
+            e.preventDefault();
+            var option = e.data.option,
+                wrapper = e.data.wrapper;
 
-                var activeClass = option.activeClass;
-                $(this).parent('dt').addClass(activeClass).siblings('dt').removeClass(activeClass);
-                
-                $(accordianContents).slideToggle(200).addClass(activeClass).siblings('dd').removeClass(activeClass);
+            var dataVal = option.dataValue;
+            var dataAccordian = $(this).data(dataVal),
+                accordianContents = $(wrapper).find('dd[data-' + dataVal + '="' + dataAccordian + '"]');
 
-                if(option.closeOtherContents == true){
-                    $.fn.spaccordion.closeOtherContents(accordianContents);
-                }
+            var activeClass = option.activeClass;
+            $(this).parent('dt').addClass(activeClass).siblings('dt').removeClass(activeClass);
 
-            })
+            $(accordianContents).slideToggle(200).addClass(activeClass).siblings('dd').removeClass(activeClass);
 
-        };
-        
-        $.fn.spaccordion.closeOtherContents = function(recentAccordian){
-            $(recentAccordian).siblings('dd').slideUp(200);
-        };
+            if(option.closeOtherContents == true){
+                closeOtherContents(accordianContents);
+            }
 
+        }
     })(jQuery);
 
 
+    /**
+     * example accordion plugin
+     */
     $('#open').spaccordion({
-        closeOtherContents: true,
+        closeOtherContents: false,
         openedItem: 1
     });
 
     $('dl.accordion.close').spaccordion({
-        closeOtherContents: false,
+        closeOtherContents: true,
         openedItem: 0
     });
 
