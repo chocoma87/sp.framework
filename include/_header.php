@@ -102,7 +102,7 @@
 								<li><a href="elements-embed.php">Responsive Embed</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Update Log</a>
+						<li class="last"><a href="#">Update Log</a>
 							<ul>
 								<li><a href="#">History</a></li>
 							</ul>

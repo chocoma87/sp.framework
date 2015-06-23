@@ -83,13 +83,16 @@ header nav.gnb > ul > li {
     float: left;
     position: relative;
 }
-header nav.gnb:hover ul {
+header nav.gnb > ul > li.last ul {
+    right: 0;
+}
+header nav.gnb > ul > li:hover ul {
     display: block;
 }
 header nav.gnb li ul {
     display: none;
     position: absolute;
-    width: 80px;
+    width: 140px;
     background: white;
     height: 300px;
 }
