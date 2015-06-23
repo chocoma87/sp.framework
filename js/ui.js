@@ -34,55 +34,19 @@ $(document).ready(function(){
 
     });*/
 
-   /* $.fn.sptab = function (option) {
-
-        var defaultOptions = {
-            parentClass: '.tabWrapper',
-            tabContents: '.tabContents',
-            activeClass: 'active',
-            dataValue: 'tab'
-        };
-
-        var opt = $.extend({}, defaultOptions, option);
-
-        $(this).find('.tabContentsTitle a').on('click', function(e){
-            e.preventDefault();
-
-            var recentTab = $(this).data(opt.dataValue),
-                tabContents = $(this).parents(opt.parentClass).find( opt.tabContents + '[data-' + opt.dataValue + '="' + recentTab + '"]');
-
-            $(this).parents(opt.parentClass).find(opt.tabContents).removeClass(opt.activeClass);
-            tabContents.addClass(opt.activeClass);
-
-        })
-    };
-
-    $('.tabWrapper').sptab({
-
-    });
-*/
 
     (function ($) {
 
         $.fn.sptab = function (option) {
+            var opt = $.extend({}, $.fn.sptab.defaultOptions, option);
+            $.fn.sptab.defaultOptions = opt;
 
+            $.fn.sptab._this = this;
 
-
-
-
-                var opt = $.extend({}, $.fn.sptab.defaultOptions, option);
-                $.fn.sptab.defaultOptions = opt;
-
-                $.fn.sptab._this = this;
-
-                $.fn.sptab.attachEvent(this, opt);
-
-
-
+            $.fn.sptab.attachEvent(this, opt);
         };
 
         $.fn.sptab.defaultOptions = {
-
             parentClass: '.tabWrapper',
             tabContents: '.tabContents',
             activeClass: 'active',
