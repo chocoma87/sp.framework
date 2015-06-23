@@ -7,7 +7,13 @@
 $(document).ready(function(){
 
 
-    /* tab menu */
+    // :focus border 없애기
+    $('a').on('click', function () {
+        this.blur();
+    })
+
+
+        /* tab menu */
     /* tabContents 안의 내용은 div로 싼다. */
 /*    $.fn.sptab = function (option) {
 
@@ -103,6 +109,7 @@ $(document).ready(function(){
             closeOtherContents: false,
             openedItem : -1
         };
+
 
         $.fn.spaccordion.init = function(){
             var openedItem = this.defaultOptions.openedItem;
