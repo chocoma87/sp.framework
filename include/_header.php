@@ -115,10 +115,10 @@
 
 				</nav>
 
-				<nav class="gnb col span_17">
+				<nav class="mobileGnb col span_17">
+					<p>메인메뉴</p>
 
 					<ul>
-						<li><a href="index.php">Home</a></li>
 						<li><a href="#">Main</a>
 							<ul>
 								<li><a href="main-type1.php">Type1</a></li>

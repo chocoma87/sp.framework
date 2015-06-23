@@ -63,6 +63,10 @@ a {
 
 
 /* header */
+.mobileGnb {
+    display: none;
+}
+
 header .contentWidth {
     padding: 10px 0;
 }
