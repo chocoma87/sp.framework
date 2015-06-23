@@ -1,0 +1,47 @@
+
+
+/* iphone5 & older */
+@media screen and (max-width: 320px) {
+    .contentWidth {
+        width: 100%;
+    }
+}
+
+/* mobile */
+@media screen and (min-width: 321px) and (max-width: 767px) {
+    .contentWidth {
+        width: 100%;
+    }
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 16px;
+        line-height: 1.5em;
+        -webkit-text-size-adjust: none; /* 헨드폰 가로로 눞혔을 때 글씨 커지지 않게 */
+    }
+
+    .contentWidth {
+        width: 100%;
+    }
+
+}
+
+/* pc */
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+    .contentWidth {
+        width: 960px;
+    }
+}
+
+/* pc wide */
+@media screen and (min-width: 1281px) {
+    .contentWidth {
+        width: 1200px;
+    }
+}
+
+
+
+
