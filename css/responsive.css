@@ -11,46 +11,107 @@
         width: 100%;
     }
 
-    .gnb {
-        display: none;
+    header #logo a {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
     }
-    .mobileGnb {
-        position: absolute;
-        right: 0;
-        top: 20px;
-        display: block;
+    #container {
+        position: relative;
+        background: #002144;
+        left: 0;
+    }
+
+    /* 서브메뉴 열렸을 때 바디 스크롤 방지 */
+    .sidemenu{
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        max-width: 350px;
     }
-    .mobileGnb .lnbBtn a {
+    .modalFull {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .6);
+        z-index: 5;
+    }
+    .topCover {
         display: block;
-        width: 50px;
-        height: 50px;
-        text-indent: -9999px;
-        background: white;
-        float: right;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -5;
+        background: #002144;
     }
-    .mobileGnb .lnbBtn a:after {
-        border-top: 5px solid white;
-        border-bottom: 5px solid white;
-    }
-    .mobileGnb > ul {
-        margin-top: 50px;
+
+
+
+    #header .gnb,
+    #header .shortMenu {
         display: none;
     }
-    .mobileGnb li a {
+    .gnbMobileBtn {
+        display: block;
+        position: absolute;
+        top: 28px;
+        left: 10px;
+    }
+    .gnbMobileBtn a {
+        display: block;
+        font-size: 1.5em;
+    }
+    #headerMobile {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 240px;
+        z-index: -10;
+        background: #f05f5f;
+        overflow-y: scroll;
+    }
+    #headerMobile nav li a {
         display: block;
         padding: 10px;
         text-align: center;
     }
-    .mobileGnb li li a {
+    #headerMobile nav > ul > li > a {
+        color: white;
+    }
+    #headerMobile nav li li a {
         background: white;
         color: #002144;
     }
-    .mobileGnb > ul > li > a {
-        background: #f05f5f;
-        color: white;
+    #headerMobile nav li ul {
+        display: none;
     }
+
+    #headerMobile nav .loginMenu {
+        width: 100%;
+    }
+    #headerMobile nav .loginMenu li {
+        float: left;
+        width: 25%;
+    }
+    #headerMobile nav .loginMenu li a {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    #headerMobile nav .loginMenu li.closeMobileGnb {
+        font-size: 1.2em;
+    }
+    #headerMobile .mobileMainmenu {
+        margin-bottom: 50px;
+    }
+
 
     h2 {
         font-size: 3em;

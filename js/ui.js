@@ -37,7 +37,7 @@
 
 
 
-/* tab menu */
+/* tab plugin */
 /* tabContents 안의 내용은 div로 싼다. */
 (function ($) {
 
@@ -157,6 +157,49 @@
         }
 
     }
+})(jQuery);
+
+
+
+
+
+/* mobile gnb plugin */
+(function ($) {
+    $(document).ready(function () {
+
+        $('.gnbMobileBtn a, .modalFull, .closeMobileGnb a').on('click', function(e){
+            e.preventDefault();
+
+            if($('#container').css('left') == '0px'){
+                $('#container').animate({left: '240px'}, 300, function(){
+                    $('#headerMobile').css('z-index', 10);
+                    $('.modalFull').show().css('left', '240px');
+                });
+                $('.topCover').hide();
+            }
+            else {
+                $('#container').animate({left: '0px'}, 300);
+                $('.modalFull').animate({left: '0px'}, 300, function(){
+                   $(this).hide();
+                    $('.topCover').show();
+                });
+                $('#headerMobile').css('z-index', -10);
+            }
+
+            $('body').toggleClass('sidemenu');
+
+        })
+
+        $('#headerMobile ul.mobileMainmenu > li > a').on('click', function(e){
+            e.preventDefault();
+
+            $(this).parents('li').siblings('li').find('ul').slideUp(200);
+            $(this).siblings('ul').slideToggle(200);
+        })
+
+
+
+    });
 })(jQuery);
 
 

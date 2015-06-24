@@ -40,9 +40,9 @@ textarea:active {
 body {
     font-size: 14px;
     margin: 0;
-    background: #002144;
     color: white;
     font-family: 'source-han-sans-korean', sans-serif;
+    background: #002144;
 }
 select, input, button, textarea {
     font-family: 'source-han-sans-korean', sans-serif;
@@ -59,14 +59,22 @@ a {
     margin-bottom: 100px;
 }
 
+.modalFull {
+    display: none;
+}
+.topCover {
+    display: none;
+}
 
 
 
 /* header */
-.mobileGnb {
+#headerMobile {
     display: none;
 }
-
+.gnbMobileBtn {
+    display: none;
+}
 header .contentWidth {
     padding: 10px 0;
 }
