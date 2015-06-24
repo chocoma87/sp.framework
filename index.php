@@ -10,24 +10,9 @@
 
 				</section>
 
-<!--
-				<section class="row span_24">
-
-					<article class="col span_12">
-
-
-					</article>
-
-					<article class="col span_12">
-
-
-					</article>
-
-				</section>-->
-			</div>
-		</div>
+			</div><!-- .contentWidth -->
+		</div><!-- .contentWrap -->
 		
-	 
-	</div><!-- container -->
+
 
 <?include('include/_footer.php');?>
