@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+<html lang="ko">
 
 <head>
 
@@ -115,8 +116,10 @@
 
 				</nav>
 
+
+				<!-- 모바일 메인 메뉴 -->
 				<nav class="mobileGnb col span_17">
-					<p>메인메뉴</p>
+					<p class="lnbBtn"><a href="#">메인메뉴</a></p>
 
 					<ul>
 						<li><a href="#">Main</a>
@@ -159,6 +162,7 @@
 					</ul>
 
 				</nav>
+				<!-- 모바일 메인 메뉴 끝 -->
 
 			</div>
 		</header>
