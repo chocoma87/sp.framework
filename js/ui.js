@@ -31,6 +31,9 @@
 
         });
 
+        //create tree menu
+        $('ul.treemenu_example').sptreemenu();
+
     });
 })(jQuery);
 
@@ -159,6 +162,47 @@
     }
 })(jQuery);
 
+/**
+ * Tree Menu plugin
+ */
+(function($){
+    
+    var defaultOptions = {
+        downIconClass: 'fa fa-chevron-down',
+        upIconClass  : 'fa fa-chevron-up',
+        slideDuration: 200
+    };
+
+    $.fn.sptreemenu = function(option){
+
+        return this.each(function(){
+            var custom_option = $.extend({}, defaultOptions, option);
+            $.fn.sptreemenu.wrapper = this;
+
+            var cb_data = {option: custom_option, wrapper: this};
+            $(this).on('click', '> li > a', cb_data, attachEvent);
+        })
+    };
+    
+    function attachEvent(e){
+        e.preventDefault();
+
+        var option = e.data.option;
+        
+        $(this).parents('li').siblings('li').find('ul').slideUp(option.duration);
+        $(this).parents('li').siblings('li').find('a i').attr('class', option.downIconClass);
+
+        $(this).siblings('ul').slideToggle(option.duration);
+
+        /* 버튼 모양 바꾸기 */
+        if ($(this).find('i').attr('class') == option.downIconClass){
+            $(this).find('i').attr('class', option.upIconClass);
+        }
+        else {
+            $(this).find('i').attr('class', option.downIconClass);
+        }
+    }
+})(jQuery);
 
 
 
