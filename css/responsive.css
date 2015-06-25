@@ -49,6 +49,9 @@
         z-index: -5;
         background: #002144;
     }
+    .mobile {
+        display: block;
+    }
 
 
 
@@ -110,6 +113,36 @@
     }
     #headerMobile .mobileMainmenu {
         margin-bottom: 50px;
+    }
+    #headerMobile .mobileMainmenu > li > a {
+        position: relative;
+    }
+    #headerMobile .mobileMainmenu > li > a i {
+        position: absolute;
+        right: 22px;
+        top: 50%;
+        margin-top: -9px;
+    }
+
+    .lnbWrap nav.lnb {
+        text-align: center;
+    }
+    .lnbWrap nav.lnb .lnbTitle {
+        background: #f05f5f;
+        color: white;
+    }
+    .lnbWrap nav.lnb .lnbTitle a {
+        display: block;
+        padding: 10px;
+    }
+    .lnbWrap nav.lnb ul {
+        position: absolute;
+        display: none;
+        width: 100%;
+    }
+    .lnbWrap nav.lnb ul li a {
+        background: white;
+        color: #002144;
     }
 
 

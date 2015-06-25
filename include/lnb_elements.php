@@ -1,4 +1,8 @@
 <nav class="lnb">
+	<div class="lnbTitle mobile">
+		<a href="#">Current Page Title</a>
+	</div>
+
 	<ul>
 		<li><a href="elements-typo.php">Typography</a></li>
 		<li><a href="elements-accordion.php">Accordion</a></li>

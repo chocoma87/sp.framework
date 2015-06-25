@@ -73,28 +73,28 @@
 			<!-- 로그인 메뉴 끝 -->
 
 			<ul class="mobileMainmenu">
-				<li><a href="#">Main</a>
+				<li><a href="#">Main <i class="fa fa-chevron-down"></i></a>
 					<ul>
 						<li><a href="main-type1.php">Type1</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Pages</a>
+				<li><a href="#">Pages <i class="fa fa-chevron-down"></i></a>
 					<ul>
 						<li><a href="pages-history.php">연혁</a></li>
 						<li><a href="pages-greeting.php">인사말</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Board</a>
+				<li><a href="#">Board <i class="fa fa-chevron-down"></i></a>
 					<ul>
 						<li><a href="board-list.php">List</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Shop</a>
+				<li><a href="#">Shop <i class="fa fa-chevron-down"></i></a>
 					<ul>
 						<li><a href="shop-type1.php">Type1</a></li>
 					</ul>
 				</li>
-				<li><a href="#">Elements</a>
+				<li><a href="#">Elements <i class="fa fa-chevron-down"></i></a>
 					<ul>
 						<li><a href="elements-typo.php">Typography</a></li>
 						<li><a href="elements-accordion.php">Accordion</a></li>
@@ -105,14 +105,14 @@
 						<li><a href="elements-embed.php">Responsive Embed</a></li>
 					</ul>
 				</li>
-				<li class="last"><a href="#">Update Log</a>
+				<li class="last"><a href="#">Update Log <i class="fa fa-chevron-down"></i></a>
 					<ul>
 						<li><a href="#">History</a></li>
 					</ul>
 				</li>
 			</ul>
 		</nav>
-		
+
 	</div>
 	<!-- 모바일 메인메뉴 끝 -->
 
@@ -149,7 +149,6 @@
 				<!-- pc 메인 메뉴 시작 -->
 				<nav class="gnb col span_17">
 					<ul>
-						<li><a href="index.php">Home</a></li>
 						<li><a href="#">Main</a>
 							<ul>
 								<li><a href="main-type1.php">Type1</a></li>

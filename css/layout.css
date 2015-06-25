@@ -65,6 +65,9 @@ a {
 .topCover {
     display: none;
 }
+.mobile {
+    display: none;
+}
 
 
 

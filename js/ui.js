@@ -193,7 +193,22 @@
             e.preventDefault();
 
             $(this).parents('li').siblings('li').find('ul').slideUp(200);
+            $(this).parents('li').siblings('li').find('a i').attr('class', 'fa fa-chevron-down');
+
             $(this).siblings('ul').slideToggle(200);
+
+            /* 버튼 모양 바꾸기 */
+            if ($(this).find('i').attr('class') == 'fa fa-chevron-down'){
+                $(this).find('i').attr('class', 'fa fa-chevron-up')
+            }
+            else {
+                $(this).find('i').attr('class', 'fa fa-chevron-down')
+            }
+        })
+
+        $('.lnb .lnbTitle').on('click', function(){
+            $(this).parents()
+
         })
 
 
