@@ -179,6 +179,7 @@
 								<li><a href="elements-modal.php">Modal</a></li>
 								<li><a href="elements-input.php">Input</a></li>
 								<li><a href="elements-embed.php">Responsive Embed</a></li>
+								<li><a href="elements-treemenu.php">Tree Menu</a></li>
 							</ul>
 						</li>
 						<li class="last"><a href="#">Update Log</a>
