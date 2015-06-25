@@ -21,7 +21,7 @@ input[type="radio"]:focus,
 input[type="checkbox"]:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
-button,
+button:hover,
 textarea:focus {
     outline: #ccc dashed 1px;
 }
@@ -40,9 +40,12 @@ textarea:active {
 body {
     font-size: 14px;
     margin: 0;
-    background: #002144;
     color: white;
-    font-family: 'NanumGothic', '나눔고딕', '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Helvetica, AppleGothic, arial, sans-serif;
+    font-family: 'source-han-sans-korean', sans-serif;
+    background: #002144;
+}
+select, input, button, textarea {
+    font-family: 'source-han-sans-korean', sans-serif;
 }
 a {
     text-decoration: none;
@@ -56,10 +59,25 @@ a {
     margin-bottom: 100px;
 }
 
+.modalFull {
+    display: none;
+}
+.topCover {
+    display: none;
+}
+.mobile {
+    display: none;
+}
 
 
 
 /* header */
+#headerMobile {
+    display: none;
+}
+.gnbMobileBtn {
+    display: none;
+}
 header .contentWidth {
     padding: 10px 0;
 }
@@ -83,13 +101,16 @@ header nav.gnb > ul > li {
     float: left;
     position: relative;
 }
-header nav.gnb:hover ul {
+header nav.gnb > ul > li.last ul {
+    right: 0;
+}
+header nav.gnb > ul > li:hover ul {
     display: block;
 }
 header nav.gnb li ul {
     display: none;
     position: absolute;
-    width: 80px;
+    width: 140px;
     background: white;
     height: 300px;
 }

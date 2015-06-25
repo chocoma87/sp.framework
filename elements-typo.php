@@ -12,10 +12,8 @@
 
 				 </div>
 				 
-			</div>
-		</div>
-		
-	 
-	</div><!-- container -->
+			</div><!-- .contentWidth -->
+		</div><!-- .contentWrap -->
+
 
 <?include('include/_footer.php');?>

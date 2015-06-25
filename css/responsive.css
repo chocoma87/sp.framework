@@ -1,21 +1,6 @@
 
-
-/* iphone5 & older */
-@media screen and (max-width: 320px) {
-    .contentWidth {
-        width: 100%;
-    }
-}
-
-/* mobile */
-@media screen and (min-width: 321px) and (max-width: 767px) {
-    .contentWidth {
-        width: 100%;
-    }
-}
-
-/* tablet */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+/* layout for mobile phone */
+@media screen and (max-width: 768px) {
     body {
         font-size: 16px;
         line-height: 1.5em;
@@ -26,7 +11,172 @@
         width: 100%;
     }
 
+    header #logo a {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    #container {
+        position: relative;
+        background: #002144;
+        left: 0;
+    }
+
+    /* 서브메뉴 열렸을 때 바디 스크롤 방지 */
+    .sidemenu{
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .modalFull {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .6);
+        z-index: 5;
+    }
+    .topCover {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -5;
+        background: #002144;
+    }
+    .mobile {
+        display: block;
+    }
+
+
+
+    #header .gnb,
+    #header .shortMenu {
+        display: none;
+    }
+    .gnbMobileBtn {
+        display: block;
+        position: absolute;
+        top: 28px;
+        left: 10px;
+    }
+    .gnbMobileBtn a {
+        display: block;
+        font-size: 1.5em;
+    }
+    #headerMobile {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 240px;
+        z-index: -10;
+        background: #f05f5f;
+        overflow-y: scroll;
+    }
+    #headerMobile nav li a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+    }
+    #headerMobile nav > ul > li > a {
+        color: white;
+    }
+    #headerMobile nav li li a {
+        background: white;
+        color: #002144;
+    }
+    #headerMobile nav li ul {
+        display: none;
+    }
+
+    #headerMobile nav .loginMenu {
+        width: 100%;
+    }
+    #headerMobile nav .loginMenu li {
+        float: left;
+        width: 25%;
+    }
+    #headerMobile nav .loginMenu li a {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    #headerMobile nav .loginMenu li.closeMobileGnb {
+        font-size: 1.2em;
+    }
+    #headerMobile .mobileMainmenu {
+        margin-bottom: 50px;
+    }
+    #headerMobile .mobileMainmenu > li > a {
+        position: relative;
+    }
+    #headerMobile .mobileMainmenu > li > a i {
+        position: absolute;
+        right: 22px;
+        top: 50%;
+        margin-top: -9px;
+    }
+
+    .lnbWrap nav.lnb {
+        text-align: center;
+    }
+    .lnbWrap nav.lnb .lnbTitle {
+        background: #f05f5f;
+        color: white;
+    }
+    .lnbWrap nav.lnb .lnbTitle a {
+        display: block;
+        padding: 10px;
+    }
+    .lnbWrap nav.lnb ul {
+        position: absolute;
+        display: none;
+        width: 100%;
+    }
+    .lnbWrap nav.lnb ul li a {
+        background: white;
+        color: #002144;
+    }
+
+
+    h2 {
+        font-size: 3em;
+        line-height: 1.2em;
+    }
+
+
 }
+
+
+
+
+/* iphone5 & older */
+@media screen and (max-width: 320px) {
+
+}
+
+/* mobile */
+@media screen and (min-width: 321px) and (max-width: 767px) {
+
+}
+
+/* tablet */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+
+}
+
+
+
+
+
 
 /* pc */
 @media screen and (min-width: 1024px) and (max-width: 1280px) {

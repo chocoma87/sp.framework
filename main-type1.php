@@ -12,10 +12,10 @@
 			<h2>Main Page 1</h2>
 		</section>
 
-	</div>
+	</div><!-- .contentWidth -->
 
 
-</div>
+</div><!-- .contentWrap -->
 
 
 <?php include('include/_footer.php'); ?>

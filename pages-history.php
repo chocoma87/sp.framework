@@ -24,10 +24,11 @@
 					</article>
 
 				</section>
-			</div>
-		</div>
+			</div><!-- .contentWidth -->
+
+		</div><!-- .contentWrap -->
 		
 	 
-	</div><!-- container -->
+
 
 <?include('include/_footer.php');?>

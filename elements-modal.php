@@ -15,10 +15,10 @@
 			<h2>Modal</h2>
 		</section>
 
-	</div>
+	</div><!-- .contentWidth -->
 
 
-</div>
+</div><!-- .contentWrap -->
 
 
 <?php include('include/_footer.php'); ?>
