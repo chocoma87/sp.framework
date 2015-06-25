@@ -12,11 +12,10 @@
 			<h2>Shop 1</h2>
 		</section>
 
-	</div><!-- .contentWidth -->
+	</div>
 
 
-</div><!-- .contentWrap -->
+</div>
 
 
 <?php include('include/_footer.php'); ?>
-

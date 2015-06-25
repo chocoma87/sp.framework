@@ -177,10 +177,10 @@
 
 		</section>
 
-	</div>
+	</div><!-- .contentWidth -->
 
 
-</div>
+</div><!-- .contentWrap -->
 
 
 

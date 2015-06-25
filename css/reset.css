@@ -25,6 +25,10 @@ dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, fig
 	letter-spacing: -0.05em;
 }
 
+input, button, select {
+	vertical-align: middle;
+}
+
 article, aside, details, figcaption, figure, footer, header, menu, nav, section {
 	display: block;
 }
