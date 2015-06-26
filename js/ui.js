@@ -6,11 +6,6 @@
 (function ($) {
     $(document).ready(function () {
 
-        // :focus border 없애기
-        $('a').on('click', function () {
-            this.blur();
-        })
-
 
 
         /**
@@ -159,6 +154,9 @@
     }
 })(jQuery);
 
+
+
+
 /**
  * Tree Menu plugin
  */
@@ -255,29 +253,12 @@
 
         })
 
-        $('#headerMobile ul.mobileMainmenu > li > a').on('click', function(e){
+        /* lnb 토글 */
+        $('.lnb .lnbTitle a').on('click', function(e){
             e.preventDefault();
-
-            $(this).parents('li').siblings('li').find('ul').slideUp(200);
-            $(this).parents('li').siblings('li').find('a i').attr('class', 'fa fa-chevron-down');
-
-            $(this).siblings('ul').slideToggle(200);
-
-            /* 버튼 모양 바꾸기 */
-            if ($(this).find('i').attr('class') == 'fa fa-chevron-down'){
-                $(this).find('i').attr('class', 'fa fa-chevron-up')
-            }
-            else {
-                $(this).find('i').attr('class', 'fa fa-chevron-down')
-            }
+            $(this).parents('.lnbTitle').siblings('ul').slideToggle(200);
+            console.log($(this).parents('.lnbTitle'));
         })
-
-        $('.lnb .lnbTitle').on('click', function(){
-            $(this).parents()
-
-        })
-
-
 
     });
 })(jQuery);
