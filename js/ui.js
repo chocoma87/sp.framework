@@ -184,7 +184,9 @@
     };
 
     $.fn.sptreemenu.init = function (option, wrapper) {
+        //아이콘 설정이 있을 때에만 실행
         if(option.hasIcon == true && (option.downIconClass && option.upIconClass)){
+            //모든 메뉴의 아이콘을 아래로 초기화
             $(wrapper).find(' > li > a').each(function(i, el){
                 var elIcon = $('<i>');
                 $(elIcon).addClass(option.downIconClass);
@@ -203,16 +205,22 @@
         $(this).siblings('ul').slideToggle(option.duration);
 
         /* 버튼 모양 바꾸기 */
+        //아이콘 설정이 없다면 중지
         if(option.hasIcon == false || (!option.downIconClass || !option.upIconClass)) return ;
 
+        //현재 메뉴를 제외한 형제 메뉴들은 아래 아이콘으로 일괄 변경
         $(this).parents('li').siblings('li').find('a i').attr('class', option.downIconClass);
         var elIcon = $(this).find('i');
 
         var arrClass = [option.downIconClass, option.upIconClass],
+            //아이콘 클래스명을 배열로 정의
             isDown = $(elIcon).hasClass(option.downIconClass);
+            //아래 아이콘 클래스를 가지고 있는지 여부 boolean
 
         $(elIcon).toggleClass(function(){
+            //먼저 아이콘 관련 클래스는 모두 제거 한다.
             $(this).removeClass(arrClass.join(' '));
+            //true 면 1, false 이면 0 으로 배열의 인덱스 값을 구한다.
             return arrClass[+isDown];
         })
     }
