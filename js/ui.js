@@ -31,9 +31,6 @@
 
         });
 
-        //create tree menu
-        $('ul.treemenu_example').sptreemenu();
-
     });
 })(jQuery);
 
@@ -106,7 +103,7 @@
             $.fn.spaccordion.init(custom_option);
 
             //attach event
-            var cb_data = { option : custom_option, wrapper: this};
+            var cb_data = {option : custom_option, wrapper: this};
             $(this).on('click', 'dt > a', cb_data, attachEvent );
 
         });
@@ -166,11 +163,12 @@
  * Tree Menu plugin
  */
 (function($){
-    
+
     var defaultOptions = {
         downIconClass: 'fa fa-chevron-down',
         upIconClass  : 'fa fa-chevron-up',
-        slideDuration: 200
+        slideDuration: 200,
+        hasIcon: false
     };
 
     $.fn.sptreemenu = function(option){
@@ -178,29 +176,45 @@
         return this.each(function(){
             var custom_option = $.extend({}, defaultOptions, option);
             $.fn.sptreemenu.wrapper = this;
+            $.fn.sptreemenu.init(custom_option, this);
 
             var cb_data = {option: custom_option, wrapper: this};
             $(this).on('click', '> li > a', cb_data, attachEvent);
         })
     };
-    
+
+    $.fn.sptreemenu.init = function (option, wrapper) {
+        if(option.hasIcon == true && (option.downIconClass && option.upIconClass)){
+            $(wrapper).find(' > li > a').each(function(i, el){
+                var elIcon = $('<i>');
+                $(elIcon).addClass(option.downIconClass);
+                $(this).append(elIcon);
+            });
+        }
+    }
+
     function attachEvent(e){
         e.preventDefault();
 
         var option = e.data.option;
         
         $(this).parents('li').siblings('li').find('ul').slideUp(option.duration);
-        $(this).parents('li').siblings('li').find('a i').attr('class', option.downIconClass);
 
         $(this).siblings('ul').slideToggle(option.duration);
 
         /* 버튼 모양 바꾸기 */
-        if ($(this).find('i').attr('class') == option.downIconClass){
-            $(this).find('i').attr('class', option.upIconClass);
-        }
-        else {
-            $(this).find('i').attr('class', option.downIconClass);
-        }
+        if(option.hasIcon == false || (!option.downIconClass || !option.upIconClass)) return ;
+
+        $(this).parents('li').siblings('li').find('a i').attr('class', option.downIconClass);
+        var elIcon = $(this).find('i');
+
+        var arrClass = [option.downIconClass, option.upIconClass],
+            isDown = $(elIcon).hasClass(option.downIconClass);
+
+        $(elIcon).toggleClass(function(){
+            $(this).removeClass(arrClass.join(' '));
+            return arrClass[+isDown];
+        })
     }
 })(jQuery);
 

@@ -81,28 +81,28 @@ include('include/_header.php');
 			<div class="tree_menu">
 				<nav>
 					<ul class="treemenu_example">
-						<li><a href="#">Main <i class="fa fa-chevron-down"></i></a>
+						<li><a href="#">Main </a>
 							<ul>
 								<li><a href="main-type1.php">Type1</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Pages <i class="fa fa-chevron-down"></i></a>
+						<li><a href="#">Pages </a>
 							<ul>
 								<li><a href="pages-history.php">연혁</a></li>
 								<li><a href="pages-greeting.php">인사말</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Board <i class="fa fa-chevron-down"></i></a>
+						<li><a href="#">Board </a>
 							<ul>
 								<li><a href="board-list.php">List</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Shop <i class="fa fa-chevron-down"></i></a>
+						<li><a href="#">Shop </a>
 							<ul>
 								<li><a href="shop-type1.php">Type1</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Elements <i class="fa fa-chevron-down"></i></a>
+						<li><a href="#">Elements </a>
 							<ul>
 								<li><a href="elements-typo.php">Typography</a></li>
 								<li><a href="elements-accordion.php">Accordion</a></li>
@@ -113,7 +113,7 @@ include('include/_header.php');
 								<li><a href="elements-embed.php">Responsive Embed</a></li>
 							</ul>
 						</li>
-						<li class="last"><a href="#">Update Log <i class="fa fa-chevron-down"></i></a>
+						<li class="last"><a href="#">Update Log </a>
 							<ul>
 								<li><a href="#">History</a></li>
 							</ul>
@@ -130,5 +130,13 @@ include('include/_header.php');
 </div><!-- .contentWrap -->
 
 
-
+<script type="text/javascript">
+	(function ($) {
+		$(document).ready(function () {
+			$('ul.treemenu_example').sptreemenu({
+				hasIcon: true
+			});
+		});
+	})(jQuery);
+</script>
 <?php include('include/_footer.php'); ?>
