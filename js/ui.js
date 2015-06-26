@@ -6,11 +6,6 @@
 (function ($) {
     $(document).ready(function () {
 
-        // :focus border 없애기
-        $('a').on('click', function () {
-            this.blur();
-        })
-
 
 
         /**
@@ -151,12 +146,7 @@
             elContent = option.elContent,
             elTitle = option.elTitle,
             accordianContents = $(wrapper).find(elContent + '[data-' + dataVal + '="' + dataAccordian + '"]');
-
-        if(option.elTitle == 'div'){
-            console.log(dataVal);
-        }
-
-
+        
         var activeClass = option.activeClass;
         $(this).parent(elTitle).addClass(activeClass).siblings(elTitle).removeClass(activeClass);
 
@@ -168,6 +158,9 @@
 
     }
 })(jQuery);
+
+
+
 
 /**
  * Tree Menu plugin
@@ -264,29 +257,6 @@
             $('body').toggleClass('sidemenu');
 
         })
-
-        $('#headerMobile ul.mobileMainmenu > li > a').on('click', function(e){
-            e.preventDefault();
-
-            $(this).parents('li').siblings('li').find('ul').slideUp(200);
-            $(this).parents('li').siblings('li').find('a i').attr('class', 'fa fa-chevron-down');
-
-            $(this).siblings('ul').slideToggle(200);
-
-            /* 버튼 모양 바꾸기 */
-            if ($(this).find('i').attr('class') == 'fa fa-chevron-down'){
-                $(this).find('i').attr('class', 'fa fa-chevron-up')
-            }
-            else {
-                $(this).find('i').attr('class', 'fa fa-chevron-down')
-            }
-        })
-
-        $('.lnb .lnbTitle').on('click', function(){
-            $(this).parents()
-
-        })
-
 
 
     });
