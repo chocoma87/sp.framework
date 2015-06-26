@@ -85,7 +85,9 @@
         activeClass       : 'active',
         dataValue         : 'accordion',
         closeOtherContents: false,
-        openedItem        : -1
+        openedItem        : -1,
+        elTitle           : 'dt',
+        elContent         : 'dd'
     }
 
     //public functions
@@ -104,7 +106,7 @@
 
             //attach event
             var cb_data = {option : custom_option, wrapper: this};
-            $(this).on('click', 'dt > a', cb_data, attachEvent );
+            $(this).on('click', custom_option.elTitle + ' > a', cb_data, attachEvent );
 
         });
 
@@ -142,15 +144,23 @@
         e.preventDefault();
         var option = e.data.option,
             wrapper = e.data.wrapper;
+        
 
         var dataVal = option.dataValue;
         var dataAccordian = $(this).data(dataVal),
-            accordianContents = $(wrapper).find('dd[data-' + dataVal + '="' + dataAccordian + '"]');
+            elContent = option.elContent,
+            elTitle = option.elTitle,
+            accordianContents = $(wrapper).find(elContent + '[data-' + dataVal + '="' + dataAccordian + '"]');
+
+        if(option.elTitle == 'div'){
+            console.log(dataVal);
+        }
+
 
         var activeClass = option.activeClass;
-        $(this).parent('dt').addClass(activeClass).siblings('dt').removeClass(activeClass);
+        $(this).parent(elTitle).addClass(activeClass).siblings(elTitle).removeClass(activeClass);
 
-        $(accordianContents).slideToggle(200).addClass(activeClass).siblings('dd').removeClass(activeClass);
+        $(accordianContents).slideToggle(200).addClass(activeClass).siblings(elContent).removeClass(activeClass);
 
         if(option.closeOtherContents == true){
             closeOtherContents(accordianContents);
@@ -199,10 +209,10 @@
         e.preventDefault();
 
         var option = e.data.option;
-        
-        $(this).parents('li').siblings('li').find('ul').slideUp(option.duration);
 
-        $(this).siblings('ul').slideToggle(option.duration);
+        $(this).parents('li').siblings('li').find('ul').slideUp(option.slideDuration);
+
+        $(this).siblings('ul').slideToggle(option.slideDuration);
 
         /* 버튼 모양 바꾸기 */
         //아이콘 설정이 없다면 중지
