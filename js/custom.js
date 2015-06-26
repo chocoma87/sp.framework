@@ -13,6 +13,12 @@ $(document).ready(function () {
         hasIcon: true
     });
 
+    // lnb 토글
+    $('.lnb').spaccordion({
+        elTitle           : 'div',
+        elContent         : 'ul'
+    });
+
 
 
 

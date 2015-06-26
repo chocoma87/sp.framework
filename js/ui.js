@@ -146,12 +146,7 @@
             elContent = option.elContent,
             elTitle = option.elTitle,
             accordianContents = $(wrapper).find(elContent + '[data-' + dataVal + '="' + dataAccordian + '"]');
-
-        if(option.elTitle == 'div'){
-            console.log(dataVal);
-        }
-
-
+        
         var activeClass = option.activeClass;
         $(this).parent(elTitle).addClass(activeClass).siblings(elTitle).removeClass(activeClass);
 
@@ -263,12 +258,6 @@
 
         })
 
-        /* lnb 토글 */
-        $('.lnb .lnbTitle a').on('click', function(e){
-            e.preventDefault();
-            $(this).parents('.lnbTitle').siblings('ul').slideToggle(200);
-            console.log($(this).parents('.lnbTitle'));
-        })
 
     });
 })(jQuery);
