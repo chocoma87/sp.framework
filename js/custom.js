@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 
     // :focus border 없애기
-    $('a').on('click', function () {
+    $('a, button').on('click', function () {
         this.blur();
     })
 
@@ -43,7 +43,6 @@ $(document).ready(function () {
     })
 
 })
-
 
 
 //preload image
