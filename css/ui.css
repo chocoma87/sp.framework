@@ -8,58 +8,18 @@
 
 
 
-/* tab contents */
-.tabWrapper {
-    position: relative;
-    margin-bottom: 100px;
-}
-
-.tabContents .tabContentsDiv {
-    display: none;
-    padding-top: 36px;
-}
-.tabContents.active .tabContentsDiv {
-    display: block;
-}
-.tabContents.active .tabContentsTitle a {
-    background: #f05f5f;
-}
-
-.tabContents .tabContentsDiv p{
-    padding: 10px;
-    border: 1px solid #f05f5f;
-}
-.tabContents h3 {
-    position: absolute;
-    top: 0;
-}
-.tabContents h3 a {
-    display: block;
-    height: 36px;
-    line-height: 36px;
-    padding: 0 10px;
-}
-.tabContents[data-tab="contents2"] .tabContentsTitle {
-    left: 70px;
-}
-.tabContents[data-tab="contents3"] .tabContentsTitle {
-    left: 140px;
-}
-
-
-
 /* accordion contents */
 .accordion {
     margin-bottom: 70px;
 }
-.accordion .accordionTitle a {
+.accordion dt a {
     display: block;
     padding: 10px;
     background: white;
     color: #002144;
     margin-top: 20px;
 }
-.accordion .accordionTitle a:after {
+.accordion dt a:after {
     content: '';
     width: 13px;
     height: 13px;
@@ -67,30 +27,30 @@
     border: 1px solid #f05f5f;
     float: right;
 }
-.accordion .accordionTitle:first-child a {
+.accordion dt:first-child a {
     margin-top: 0;
 }
 
-.accordion .accordionTitle.active a {
+.accordion dt.active a {
     background: #f05f5f;
     color: white;
 }
-.accordion .accordionTitle.active a:after {
+.accordion dt.active a:after {
     border-color: white;
 }
-.accordion .accordionTitle a:hover {
+.accordion dt a:hover {
     background: #f05f5f;
     color: white;
 }
-.accordion .accordionTitle a:hover:after {
+.accordion dt a:hover:after {
     border-color: white;
 }
 
-.accordion .accordionContents {
+.accordion dd {
     display: none;
     padding: 10px;
 }
-.accordion .accordionContents.active {
+.accordion dd.active {
     border: 1px solid #f05f5f;
     display: block;
 }
