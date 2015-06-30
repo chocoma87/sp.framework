@@ -58,6 +58,25 @@ include('include/_header.php');
 			<h2>Tree Menu</h2>
 
 
+			<div class="pluginGuide">
+				<div class="unit">
+					<h3>Options</h3>
+					<ul>
+						<li><span class="red">downIconClass</span> : class name</li>
+						<li><span class="red">upIconClass</span> : class name</li>
+						<li><span class="red">slideDuration</span> : milliseconds</li>
+						<li><span class="red">hasIcon</span> : boolen</li>
+					</ul>
+				</div>
+
+				<div class="unit">
+					<h3>Structure</h3>
+					<p>
+						ul > li > ( a + ul )
+					</p>
+				</div>
+			</div>
+
 			<div class="tree_menu">
 				<nav>
 					<ul class="treemenu_example">
