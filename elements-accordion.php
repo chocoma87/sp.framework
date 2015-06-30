@@ -2,6 +2,19 @@
 
 <?php include('include/_header.php'); ?>
 
+<style type="text/css">
+	dl#open a:after{
+		border: none;
+	}
+
+	dl#open a {
+		position: relative;
+	}
+	dl#open a > i {
+		position: absolute;
+		right: 22px;
+	}
+</style>
 
 <div id="contentWrap">
 
@@ -97,7 +110,8 @@
 		$(document).ready(function () {
 			$('#open').spaccordion({
 				closeOtherContents: false,
-				openedItem: 0
+				hasIcon: true,
+				openedItem: 1
 			});
 
 			$('dl.accordion.close').spaccordion({
