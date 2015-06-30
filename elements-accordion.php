@@ -38,13 +38,16 @@
 						<li><span class="red">openedItem</span> : -1 or 0</li>
 						<li><span class="red">elTitle</span> : html element ( for title )</li>
 						<li><span class="red">elContent</span> : html element ( for contents )</li>
+						<li><span class="red">hasIcon</span> : boolen</li>
+						<li><span class="red">downIconClass</span> : class name</li>
+						<li><span class="red">upIconClass</span> : class name</li>
 					</ul>
 				</div>
 
 				<div class="unit">
 					<h3>Structure</h3>
 					<p>
-						dl > ( dt > a ) + dd <span style="margin-left: 10px">and more</span>
+						dl > ( dt > a ) + dd <span style="margin-left: 10px" class="red">and more</span>
 					</p>
 				</div>
 			</div>

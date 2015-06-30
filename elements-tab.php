@@ -54,6 +54,27 @@
 		<section class="col span_18">
 			<h2>Tab</h2>
 
+
+			<div class="pluginGuide">
+				<div class="unit">
+					<h3>Options</h3>
+					<ul>
+						<li><span class="red">parentClass</span> : class name</li>
+						<li><span class="red">tabContents</span> : class name</li>
+						<li><span class="red">activeClass</span> : class name</li>
+						<li><span class="red">dataValue</span> : [data] attribute value on markup</li>
+					</ul>
+				</div>
+
+				<div class="unit">
+					<h3>Structure</h3>
+					<p>
+						 nav + div 
+					</p>
+				</div>
+			</div>
+
+
 			<div class="tabWrapper">
 				<nav class="clearFix">
 					<ul>
