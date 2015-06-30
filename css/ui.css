@@ -12,14 +12,14 @@
 .accordion {
     margin-bottom: 70px;
 }
-.accordion .accordionTitle a {
+.accordion dt a {
     display: block;
     padding: 10px;
     background: white;
     color: #002144;
     margin-top: 20px;
 }
-.accordion .accordionTitle a:after {
+.accordion dt a:after {
     content: '';
     width: 13px;
     height: 13px;
@@ -27,30 +27,30 @@
     border: 1px solid #f05f5f;
     float: right;
 }
-.accordion .accordionTitle:first-child a {
+.accordion dt:first-child a {
     margin-top: 0;
 }
 
-.accordion .accordionTitle.active a {
+.accordion dt.active a {
     background: #f05f5f;
     color: white;
 }
-.accordion .accordionTitle.active a:after {
+.accordion dt.active a:after {
     border-color: white;
 }
-.accordion .accordionTitle a:hover {
+.accordion dt a:hover {
     background: #f05f5f;
     color: white;
 }
-.accordion .accordionTitle a:hover:after {
+.accordion dt a:hover:after {
     border-color: white;
 }
 
-.accordion .accordionContents {
+.accordion dd {
     display: none;
     padding: 10px;
 }
-.accordion .accordionContents.active {
+.accordion dd.active {
     border: 1px solid #f05f5f;
     display: block;
 }
