@@ -7,6 +7,7 @@
  */
 include('include/_header.php');
 ?>
+
 <style type="text/css">
 
 	/*style for only tree menu element*/
@@ -20,6 +21,9 @@ include('include/_header.php');
 		background: #f05f5f;
 		overflow-y: scroll;
 	}
+	div.tree_menu nav li ul {
+		display: none;
+	}
 	div.tree_menu nav li a {
 		display: block;
 		padding: 10px;
@@ -27,37 +31,13 @@ include('include/_header.php');
 	}
 	div.tree_menu nav > ul > li > a {
 		color: white;
+		position: relative;
 	}
 	div.tree_menu nav li li a {
 		background: white;
 		color: #002144;
 	}
-	div.tree_menu nav li ul {
-		display: none;
-	}
-
-	div.tree_menu nav .loginMenu {
-		width: 100%;
-	}
-	div.tree_menu nav .loginMenu li {
-		float: left;
-		width: 25%;
-	}
-	div.tree_menu nav .loginMenu li a {
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-	div.tree_menu nav .loginMenu li.closeMobileGnb {
-		font-size: 1.2em;
-	}
-	div.tree_menu .mobileMainmenu {
-		margin-bottom: 50px;
-	}
-	div.tree_menu .mobileMainmenu > li > a {
-		position: relative;
-	}
-	div.tree_menu .mobileMainmenu > li > a i {
+	div.tree_menu nav > ul > li > a i {
 		position: absolute;
 		right: 22px;
 		top: 50%;
