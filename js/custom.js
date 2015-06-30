@@ -20,6 +20,17 @@ $(document).ready(function () {
     });
 
 
-
-
 })
+
+
+
+//preload image
+$(window).load(function () {
+    //$("#status").fadeOut();
+    $("#preloader").delay(500).fadeOut("1200");
+});
+
+
+
+
+

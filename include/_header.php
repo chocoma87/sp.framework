@@ -59,6 +59,11 @@
 	<div class="topCover"></div>
 	<div class="modalFull"></div>
 
+	<div id="preloader">
+		<div id="status">
+		</div>
+	</div>
+
 	<!-- 모바일 메인메뉴 시작 -->
 	<div id="headerMobile">
 
