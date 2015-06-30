@@ -14,9 +14,33 @@
 		<section class="col span_18">
 			<h2>Accordion</h2>
 
+
+			<div class="pluginGuide">
+				<div class="unit">
+					<h3>Options</h3>
+					<ul>
+						<li><span class="red">activeClass</span> : class name</li>
+						<li><span class="red">dataValue</span> : [data] attribute value on markup</li>
+						<li><span class="red">closeOtherContents</span> : boolen</li>
+						<li><span class="red">openedItem</span> : -1 or 0</li>
+						<li><span class="red">elTitle</span> : html element ( for title )</li>
+						<li><span class="red">elContent</span> : html element ( for contents )</li>
+					</ul>
+				</div>
+
+				<div class="unit">
+					<h3>Structure</h3>
+					<p>
+						dl > ( dt > a ) + dd <span style="margin-left: 10px">and more</span>
+					</p>
+				</div>
+			</div>
+
+
+
 			<dl class="accordion" id="open">
-				<dt class="accordionTitle"><a href="#" data-accordion="contents1">Quastion1</a></dt>
-				<dd class="accordionContents" data-accordion="contents1">
+				<dt><a href="#" data-accordion="contents1">Quastion1</a></dt>
+				<dd data-accordion="contents1">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Duis at orci odio. Praesent et rhoncus magna.
 					Nam non elit non ipsum tincidunt dapibus.
@@ -26,23 +50,23 @@
 					Maecenas ultrices ante at egestas vulputate.
 				</dd>
 
-				<dt class="accordionTitle"><a href="#" data-accordion="contents2">Quastion2</a></dt>
-				<dd class="accordionContents" data-accordion="contents2">
+				<dt><a href="#" data-accordion="contents2">Quastion2</a></dt>
+				<dd data-accordion="contents2">
 					Phasellus porta, neque quis gravida dapibus, turpis justo vehicula ex, eget tincidunt ligula tellus sed sapien.
 					Nulla viverra cursus justo nec efficitur. Cras cursus id elit in commodo.
 					In congue nunc quis risus auctor, vel accumsan elit finibus. Curabitur id commodo eros.
 					Maecenas augue velit, fermentum at suscipit mattis, sollicitudin a risus.
 				</dd>
 
-				<dt class="accordionTitle"><a href="#" data-accordion="contents3">Quastion3</a></dt>
-				<dd class="accordionContents" data-accordion="contents3">
+				<dt><a href="#" data-accordion="contents3">Quastion3</a></dt>
+				<dd data-accordion="contents3">
 					Donec at arcu quis nulla molestie dapibus eu vel ex.
 					Suspendisse ullamcorper placerat tortor, vel consequat justo consectetur eget.
 					Nam aliquet ullamcorper sodales.
 				</dd>
 
-				<dt class="accordionTitle"><a href="#" data-accordion="contents4">Quastion4</a></dt>
-				<dd class="accordionContents" data-accordion="contents4">
+				<dt><a href="#" data-accordion="contents4">Quastion4</a></dt>
+				<dd data-accordion="contents4">
 					Etiam ex risus, varius non ligula ac, fringilla semper dolor.
 					Quisque eleifend vehicula diam, ac maximus diam tristique id.
 					Phasellus sit amet elementum leo. Maecenas ullamcorper venenatis scelerisque.
@@ -51,8 +75,8 @@
 
 
 			<dl class="accordion close closeOtherContents">
-				<dt class="accordionTitle"><a href="#" data-accordion="contents1">Quastion1</a></dt>
-				<dd class="accordionContents" data-accordion="contents1">
+				<dt><a href="#" data-accordion="contents1">Quastion1</a></dt>
+				<dd data-accordion="contents1">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 					Duis at orci odio. Praesent et rhoncus magna.
 					Nam non elit non ipsum tincidunt dapibus.
@@ -62,23 +86,23 @@
 					Maecenas ultrices ante at egestas vulputate.
 				</dd>
 
-				<dt class="accordionTitle"><a href="#" data-accordion="contents2">Quastion2</a></dt>
-				<dd class="accordionContents" data-accordion="contents2">
+				<dt><a href="#" data-accordion="contents2">Quastion2</a></dt>
+				<dd data-accordion="contents2">
 					Phasellus porta, neque quis gravida dapibus, turpis justo vehicula ex, eget tincidunt ligula tellus sed sapien.
 					Nulla viverra cursus justo nec efficitur. Cras cursus id elit in commodo.
 					In congue nunc quis risus auctor, vel accumsan elit finibus. Curabitur id commodo eros.
 					Maecenas augue velit, fermentum at suscipit mattis, sollicitudin a risus.
 				</dd>
 
-				<dt class="accordionTitle"><a href="#" data-accordion="contents3">Quastion3</a></dt>
-				<dd class="accordionContents" data-accordion="contents3">
+				<dt><a href="#" data-accordion="contents3">Quastion3</a></dt>
+				<dd data-accordion="contents3">
 					Donec at arcu quis nulla molestie dapibus eu vel ex.
 					Suspendisse ullamcorper placerat tortor, vel consequat justo consectetur eget.
 					Nam aliquet ullamcorper sodales.
 				</dd>
 
-				<dt class="accordionTitle"><a href="#" data-accordion="contents4">Quastion4</a></dt>
-				<dd class="accordionContents" data-accordion="contents4">
+				<dt><a href="#" data-accordion="contents4">Quastion4</a></dt>
+				<dd data-accordion="contents4">
 					Etiam ex risus, varius non ligula ac, fringilla semper dolor.
 					Quisque eleifend vehicula diam, ac maximus diam tristique id.
 					Phasellus sit amet elementum leo. Maecenas ullamcorper venenatis scelerisque.

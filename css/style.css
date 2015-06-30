@@ -1,12 +1,25 @@
 
 
-header {
-
-}
-
 h2 {
     font-size: 10em;
     text-align: center;
     font-weight: bold;
     padding: 130px 0;
 }
+.red {
+    color: #f05f5f;
+}
+
+
+.pluginGuide {
+    margin-bottom: 50px;
+}
+.pluginGuide h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+.pluginGuide .unit {
+    margin-bottom: 20px;
+}
+
+
