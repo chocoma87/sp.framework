@@ -8,7 +8,7 @@
 						<ul>
 							<li><a href="#">About</a></li>
 							<li><a href="#">Contact</a></li>
-							<li><a href="#">Lcation</a></li>
+							<li><a href="#">Location</a></li>
 							<li><a href="#">Terms</a></li>
 						</ul>
 					</nav>
