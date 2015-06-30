@@ -160,7 +160,6 @@
             var isDown = true
             if($(this).is(':hidden')) isDown = false;
 
-            console.log(isDown + "\n");
             var ddData = $(this).data(dataVal);
 
             var elIcon = $(wrapper).find('a[data-' + dataVal + '="' + ddData + '"]').find('i');
