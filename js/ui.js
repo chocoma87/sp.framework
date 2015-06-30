@@ -2,36 +2,6 @@
  * Created by DevelopKim [kim@spaaaade.com] on 15. 6. 22..
  */
 
-
-(function ($) {
-    $(document).ready(function () {
-
-
-
-        /**
-         * example accordion plugin
-         */
-        $('#open').spaccordion({
-            closeOtherContents: false,
-            openedItem: 1
-        });
-
-        $('dl.accordion.close').spaccordion({
-            closeOtherContents: true,
-            openedItem: 0
-        });
-
-
-        $('.tabWrapper').sptab({
-
-        });
-
-    });
-})(jQuery);
-
-
-
-
 /* tab plugin */
 /* tabContents 안의 내용은 div로 싼다. */
 (function ($) {
@@ -64,11 +34,6 @@
     }
 
 })(jQuery);
-
-
-
-
-
 
 /* accordion plugin */
 /* dl > dt + dd 구조로 한다. */

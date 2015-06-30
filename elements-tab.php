@@ -181,7 +181,13 @@
 
 
 </div><!-- .contentWrap -->
-
+<script type="text/javascript">
+	(function ($) {
+		$(document).ready(function () {
+			$('.tabWrapper').sptab();
+		});
+	})(jQuery);
+</script>
 
 
 <?php include('include/_footer.php'); ?>

@@ -92,6 +92,22 @@
 
 </div><!-- .contentWrap -->
 
+<script type="text/javascript">
+	(function ($) {
+		$(document).ready(function () {
+			$('#open').spaccordion({
+				closeOtherContents: false,
+				openedItem: 0
+			});
+
+			$('dl.accordion.close').spaccordion({
+				closeOtherContents: true,
+				openedItem: 0
+			});
+		});
+	})(jQuery);
+</script>
+
 
 <?php include('include/_footer.php'); ?>
 
