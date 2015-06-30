@@ -69,7 +69,7 @@
 				<div class="unit">
 					<h3>Structure</h3>
 					<p>
-						 nav + div 
+						 nav + div
 					</p>
 				</div>
 			</div>
