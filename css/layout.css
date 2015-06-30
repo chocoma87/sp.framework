@@ -21,7 +21,7 @@ input[type="radio"]:focus,
 input[type="checkbox"]:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
-button:hover,
+button:focus,
 textarea:focus {
     outline: #ccc dashed 1px;
 }
