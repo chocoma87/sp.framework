@@ -16,7 +16,10 @@
     };
 
     $.fn.sptab.defaultOptions = {
-        parentClass: '.tabWrapper', tabContents: '.tabContents', activeClass: 'active', dataValue: 'tab'
+        parentClass: '.tabWrapper',
+        tabContents: '.tabContents',
+        activeClass: 'active',
+        dataValue: 'tab'
     };
 
     $.fn.sptab.attachEvent = function (wrapper, option) {
