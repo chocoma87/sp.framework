@@ -8,46 +8,6 @@
 
 
 
-/* tab contents */
-.tabWrapper {
-    position: relative;
-    margin-bottom: 100px;
-}
-
-.tabContents .tabContentsDiv {
-    display: none;
-    padding-top: 36px;
-}
-.tabContents.active .tabContentsDiv {
-    display: block;
-}
-.tabContents.active .tabContentsTitle a {
-    background: #f05f5f;
-}
-
-.tabContents .tabContentsDiv p{
-    padding: 10px;
-    border: 1px solid #f05f5f;
-}
-.tabContents h3 {
-    position: absolute;
-    top: 0;
-}
-.tabContents h3 a {
-    display: block;
-    height: 36px;
-    line-height: 36px;
-    padding: 0 10px;
-}
-.tabContents[data-tab="contents2"] .tabContentsTitle {
-    left: 70px;
-}
-.tabContents[data-tab="contents3"] .tabContentsTitle {
-    left: 140px;
-}
-
-
-
 /* accordion contents */
 .accordion {
     margin-bottom: 70px;
