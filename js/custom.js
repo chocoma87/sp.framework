@@ -8,6 +8,9 @@ $(document).ready(function () {
     })
 
 
+    // gnb 토글
+    $('header nav.gnb ul').sptreemenu();
+
     // gnb 서브메뉴 토글
     $('#headerMobile ul.mobileMainmenu').sptreemenu({
         hasIcon: true
@@ -16,7 +19,10 @@ $(document).ready(function () {
     // lnb 토글
     $('.lnb').spaccordion({
         elTitle           : 'div',
-        elContent         : 'ul'
+        elContent         : 'ul',
+        hasIcon: true,
+        downIconClass: 'fa fa-chevron-down',
+        upIconClass: 'fa fa-chevron-up'
     });
 
 
