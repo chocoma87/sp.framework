@@ -1,22 +1,23 @@
 
 $(document).ready(function () {
 
-
     // :focus border 없애기
     $('a, button').on('click', function () {
         this.blur();
     })
 
-
     // gnb 토글
-    $('header nav.gnb ul').sptreemenu();
+    $('header nav.gnb > ul').sptreemenu();
 
-    // gnb 서브메뉴 토글
+
+
+
+    // 모바일 gnb 서브메뉴 토글
     $('#headerMobile ul.mobileMainmenu').sptreemenu({
         hasIcon: true
     });
 
-    // lnb 토글
+    // 모바일 lnb 토글
     $('.lnb').spaccordion({
         elTitle           : 'div',
         elContent         : 'ul',
@@ -25,7 +26,7 @@ $(document).ready(function () {
         upIconClass: 'fa fa-chevron-up'
     });
 
-
+    //모바일 gnb 토글
     $('.gnbMobileBtn a, .modalFull, .closeMobileGnb a').on('click', function(e){
         e.preventDefault();
 
