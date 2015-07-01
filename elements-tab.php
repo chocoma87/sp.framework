@@ -54,6 +54,23 @@
 		<section class="col span_18">
 			<h2>Tab</h2>
 
+			<div class="pluginGuide">
+				<div class="unit">
+					<h3>Options</h3>
+					<ul>
+						<li><span class="red">activeClass</span> : class name</li>
+						<li><span class="red">initActiveIndex</span> : [integer] initialize active index element ( default : 0 )</li>
+					</ul>
+				</div>
+
+				<div class="unit">
+					<h3>Structure</h3>
+					<p>
+						div>((nav>ul>li*)+(div>p)*) <span style="margin-left: 10px">and more</span>
+					</p>
+				</div>
+			</div>
+
 			<div class="tabWrapper" id="defaultOptionTab">
 				<nav class="clearFix">
 					<ul>

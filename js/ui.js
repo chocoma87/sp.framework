@@ -8,7 +8,7 @@
     
     var defaultOptions = {
         initActiveIndex: 0,
-        activeClassName: 'active'
+        activeClass: 'active'
     };
 
     $.fn.sptab = function (option) {
@@ -26,7 +26,7 @@
     };
 
     var init = function(option, wrapper){
-        initActiveItems(option.initActiveIndex, option.activeClassName, wrapper);
+        initActiveItems(option.initActiveIndex, option.activeClass, wrapper);
 
         var str_classes = $(wrapper).attr('class').split(' ').join('.');
         $(wrapper).find('.' + str_classes + ' > div:not(\'.active\')').css({
@@ -49,7 +49,7 @@
     var attachEvent = function(e){
         e.preventDefault();
         var option  = e.data.option, 
-            activeClassName = option.activeClassName,
+            activeClassName = option.activeClass,
             strhref = $(this).attr('href'),
             detectContent = $('div' + strhref);
         
