@@ -30,6 +30,11 @@
 
 			<div class="pluginGuide">
 				<div class="unit">
+					<h3>Method Name</h3>
+					<p>spaccordion</p>
+					<p>ex) <span class="red">element.spaccordion( )</span></p>
+				</div>
+				<div class="unit">
 					<h3>Options</h3>
 					<ul>
 						<li><span class="red">activeClass</span> : class name</li>

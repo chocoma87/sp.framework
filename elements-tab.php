@@ -57,6 +57,11 @@
 
 			<div class="pluginGuide">
 				<div class="unit">
+					<h3>Method Name</h3>
+					<p>sptab</p>
+					<p>ex) <span class="red">element.sptab( )</span></p>
+				</div>
+				<div class="unit">
 					<h3>Options</h3>
 					<ul>
 						<li><span class="red">parentClass</span> : class name</li>
