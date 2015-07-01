@@ -54,7 +54,7 @@
 		<section class="col span_18">
 			<h2>Tab</h2>
 
-			<div class="tabWrapper">
+			<div class="tabWrapper" id="defaultOptionTab">
 				<nav class="clearFix">
 					<ul>
 						<li><a href="#contents1" class="active">Menu1</a></li>
@@ -105,7 +105,7 @@
 			</div>
 
 
-			<div class="tabWrapper">
+			<div class="tabWrapper" id="setActiveOption">
 				<nav class="clearFix">
 					<ul>
 						<li><a href="#contents4" class="active">Menu1</a></li>
@@ -216,7 +216,11 @@
 <script type="text/javascript">
 	(function ($) {
 		$(document).ready(function () {
-			$('.tabWrapper').sptab();
+			$('#defaultOptionTab').sptab();
+
+			$('#setActiveOption').sptab({
+				initActiveIndex: 2
+			})
 		});
 	})(jQuery);
 </script>
