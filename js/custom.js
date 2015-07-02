@@ -49,6 +49,10 @@ $(document).ready(function () {
 
     })
 
+    $('input').iCheck('check', function(){
+        //alert('Well done, Sir');
+    });
+
 })
 
 
