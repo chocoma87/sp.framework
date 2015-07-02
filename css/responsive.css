@@ -151,6 +151,19 @@
         line-height: 1.2em;
     }
 
+    /* signup table */
+    .signUpTable > tbody > tr > th,
+    .signUpTable > tbody > tr > td {
+        width: 100%;
+        display: block;
+    }
+    .signUpTable > tbody > tr > td {
+        padding-top: 10px;
+    }
+    .signUpTable > tbody > tr:first-child > td {
+        padding-top: 10px;
+    }
+
 
 }
 

@@ -21,7 +21,7 @@ input[type="radio"]:focus,
 input[type="checkbox"]:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
-button:hover,
+button:focus,
 textarea:focus {
     outline: #ccc dashed 1px;
 }
@@ -41,8 +41,8 @@ body {
     font-size: 14px;
     margin: 0;
     color: white;
-    font-family: 'source-han-sans-korean', sans-serif;
     background: #002144;
+
 }
 select, input, button, textarea {
     font-family: 'source-han-sans-korean', sans-serif;
@@ -114,9 +114,6 @@ header nav.gnb > ul > li {
 }
 header nav.gnb > ul > li.last ul {
     right: 0;
-}
-header nav.gnb > ul > li:hover ul {
-    display: block;
 }
 header nav.gnb li ul {
     display: none;

@@ -56,4 +56,41 @@
 }
 
 
+/* input contents */
+.inputStructure td {
+    text-align: center;
+}
+.inputStructure select {
+    width: 100%;
+}
+
+.textInput {
+    border: 1px solid white;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: transparent;
+    color: white;
+    text-indent: 10px;
+}
+
+
+
+/* Bbutton */
+.button {
+    width: 100%;
+}
+.button span {
+    display: block;
+    padding: 0 20px;
+    background: #f05f5f;
+    color: white;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+
+
+
+
 

@@ -27,6 +27,8 @@
 	<link rel="stylesheet" 		type="text/css" 	href="css/ui.css">
 	<link rel="stylesheet" 		type="text/css" 	href="css/style.css">
 	<link rel="stylesheet" 		type="text/css" 	href="css/responsive.css">
+	<link rel="stylesheet" 		type="text/css" 	href="css/selectric.css">
+	<link rel="stylesheet" 		type="text/css" 	href="css/all.css">
 	<link rel="stylesheet" 		type="text/css" 	href="css/prism.css">
 
 	<!-- fontawesome -->
@@ -41,9 +43,12 @@
 	
 	<!-- JS -->
 	<script type="text/javascript" 	src="js/jquery.js"></script>
+	<script type="text/javascript" 	src="js/jquery.selectric.min.js"></script>
+	<script type="text/javascript" 	src="js/icheck.min.js"></script>
 	<script	type="text/javascript" 	src="js/ui.js"></script>
 	<script	type="text/javascript" 	src="js/custom.js"></script>
 	<script	type="text/javascript" 	src="js/prism.js"></script>
+
 
 	<!-- Favicon & iOS icon -->
 	<link rel="shortcut icon" 		href="images/favicon.ico">

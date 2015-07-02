@@ -23,3 +23,50 @@ h2 {
 }
 
 
+/* signup table */
+.signUpTable {
+    color: white;
+}
+.inputStructure {
+    color: white;
+}
+.signUpTable > tbody > tr > th,
+.signUpTable > tbody > tr > td {
+    padding-top: 30px;
+}
+.signUpTable > tbody > tr:first-child > th,
+.signUpTable > tbody > tr:first-child > td {
+     padding-top: 0;
+}
+.signUpTable .address .inputStructure td {
+    padding-top: 20px;
+}
+.signUpTable .address .inputStructure td input[readonly] {
+    background: #999;
+}
+.signUpTable .address .inputStructure tr:first-child td {
+    padding-top: 0;
+}
+.signUpTable .agreementCheck a {
+    color: #f05f5f;
+    vertical-align: text-bottom;
+}
+.signUpTable .extra {
+    margin-top: 5px;
+}
+.signUpTable .extra p {
+    font-size: 0.9em;
+    margin-top: 3px;
+}
+.signUpTable .extra p em {
+    vertical-align: text-bottom;
+}
+
+
+
+
+label {
+    font-family: "source-han-sans-korean-n4", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}

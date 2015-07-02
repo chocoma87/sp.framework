@@ -21,7 +21,6 @@
             init(custom_option, this);
             var cb_data = {option: custom_option, wrapper: this};
             $(this).on('click', ' nav ul li a', cb_data, attachEvent);
-
         })
     };
 
@@ -287,38 +286,3 @@
         })
     }
 })(jQuery);
-
-/* mobile gnb plugin */
-(function ($) {
-    $(document).ready(function () {
-
-        $('.gnbMobileBtn a, .modalFull, .closeMobileGnb a').on('click', function(e){
-            e.preventDefault();
-
-            if ($('#container').css('left') == '0px') {
-                $('#container').animate({left: '240px'}, 300, function () {
-                    $('#headerMobile').css('z-index', 10);
-                    $('.modalFull').show().css('left', '240px');
-                });
-                $('.topCover').hide();
-            } else {
-                $('#container').animate({left: '0px'}, 300);
-                $('.modalFull').animate({left: '0px'}, 300, function () {
-                    $(this).hide();
-                    $('.topCover').show();
-                });
-                $('#headerMobile').css('z-index', -10);
-            }
-
-            $('body').toggleClass('sidemenu');
-
-        })
-
-
-    });
-})(jQuery);
-
-
-
-
-

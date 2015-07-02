@@ -60,6 +60,11 @@ include('include/_header.php');
 
 			<div class="pluginGuide">
 				<div class="unit">
+					<h3>Method Name</h3>
+					<p>sptreemenu</p>
+					<p>ex) <span class="red">element.sptreemenu( )</span></p>
+				</div>
+				<div class="unit">
 					<h3>Options</h3>
 					<ul>
 						<li><span class="red">downIconClass</span> : class name</li>

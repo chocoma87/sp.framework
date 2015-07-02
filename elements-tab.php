@@ -56,9 +56,15 @@
 
 			<div class="pluginGuide">
 				<div class="unit">
+					<h3>Method Name</h3>
+					<p>sptab</p>
+					<p>ex) <span class="red">element.sptab( )</span></p>
+				</div>
+				<div class="unit">
 					<h3>Options</h3>
 					<ul>
 						<li><span class="red">activeClass</span> : class name</li>
+						<li><span class="red">dataValue</span> : [data] attribute value on markup</li>
 						<li><span class="red">initActiveIndex</span> : [integer] initialize active index element ( default : 0 )</li>
 					</ul>
 				</div>
