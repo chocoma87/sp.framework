@@ -114,13 +114,13 @@
         //열어둬야 할 항목이 있는 경우
         if(openedItem >= 0){
             var wrapper = $(this.wrapper),
-                strSelector = 'dt:eq(' + openedItem +'), dd:eq(' + openedItem + ')';
+                strSelector = option.elTitle + ':eq(' + openedItem +'), ' + option.elContent + ':eq(' + openedItem + ')';
             var elItem = $(wrapper).find(strSelector);
 
             $(elItem).addClass(option.activeClass).css({display: 'block'});
             //아이콘 옵션이 활성화 되었다면 미리 열어두는 항목에 위 아이콘을 적용한다.
             if(option.hasIcon == true && option.upIconClass){
-                var targetEl = $('dt:eq(' + openedItem + ') > a ');
+                var targetEl = $(option.elTitle + ':eq(' + openedItem + ') > a ');
 
                 appendIconElement(targetEl, option.upIconClass);
             }
@@ -129,8 +129,8 @@
         //아이콘 추가하는 경우
         if(hasIcon == true){
             var wrapper = $(this.wrapper);
-            $(wrapper).find('dt > a').each(function(i, el){
-                if($(this).parent('dt').hasClass('active')) return true;
+            $(wrapper).find(option.elTitle + ' > a').each(function(i, el){
+                if($(this).parent(option.elTitle).hasClass('active')) return true;
                 appendIconElement(this, option.downIconClass);
             });
         }
@@ -179,12 +179,14 @@
     function callbackSlideToggle(elAnchor, option, wrapper){
         if(option.hasIcon == false || (!option.downIconClass || !option.upIconClass)) return ;
 
-        var dataVal = option.dataValue;
+        var dataVal = option.dataValue,
+            elTitleTag = option.elTitle,
+            elContentTag = option.elContent;
 
         //현재 메뉴를 제외한 형제 메뉴들은 아래 아이콘으로 일괄 변경
-        $(elAnchor).parents('dt').siblings('dt').find('a i').attr('class', option.downIconClass);
+        $(elAnchor).parents(elTitleTag).siblings(elTitleTag).find('a i').attr('class', option.downIconClass);
 
-        $(elAnchor).parent().siblings('dd').each(function(i, e){
+        $(elAnchor).parent().siblings(elContentTag).each(function(i, e){
             var isDown = true
             if($(this).is(':hidden')) isDown = false;
 
