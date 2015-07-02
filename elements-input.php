@@ -433,6 +433,22 @@
 
 
 
+			<div class="pluginUse">
+				<h3>Plugin Use</h3>
+				<ul>
+					<li>
+						<a href="http://fronteed.com/iCheck/#features">icheck</a>
+						<p>- http://fronteed.com/iCheck/</p>
+					</li>
+					<li>
+						<a href="http://lcdsantos.github.io/jQuery-Selectric/index.html">selectric</a>
+						<p>- http://lcdsantos.github.io/jQuery-Selectric/</p>
+					</li>
+				</ul>
+			</div>
+
+
+
 
 		</section>
 

@@ -70,3 +70,19 @@ label {
     font-style: normal;
     font-weight: 400;
 }
+
+.pluginUse {
+    margin-top: 80px;
+    background: #000000;
+    padding: 20px;
+}
+.pluginUse h3 {
+    font-size: 2em;
+}
+.pluginUse li {
+    margin-top: 10px;
+}
+.pluginUse li a {
+    display: block;
+    font-size: 1.6em;
+}
