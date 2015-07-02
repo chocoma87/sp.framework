@@ -54,7 +54,6 @@
 		<section class="col span_18">
 			<h2>Tab</h2>
 
-
 			<div class="pluginGuide">
 				<div class="unit">
 					<h3>Method Name</h3>
@@ -64,23 +63,21 @@
 				<div class="unit">
 					<h3>Options</h3>
 					<ul>
-						<li><span class="red">parentClass</span> : class name</li>
-						<li><span class="red">tabContents</span> : class name</li>
 						<li><span class="red">activeClass</span> : class name</li>
 						<li><span class="red">dataValue</span> : [data] attribute value on markup</li>
+						<li><span class="red">initActiveIndex</span> : [integer] initialize active index element ( default : 0 )</li>
 					</ul>
 				</div>
 
 				<div class="unit">
 					<h3>Structure</h3>
 					<p>
-						 nav + div
+						div>((nav>ul>li*)+(div>p)*) <span style="margin-left: 10px">and more</span>
 					</p>
 				</div>
 			</div>
 
-
-			<div class="tabWrapper">
+			<div class="tabWrapper" id="defaultOptionTab">
 				<nav class="clearFix">
 					<ul>
 						<li><a href="#contents1" class="active">Menu1</a></li>
@@ -131,7 +128,7 @@
 			</div>
 
 
-			<div class="tabWrapper">
+			<div class="tabWrapper" id="setActiveOption">
 				<nav class="clearFix">
 					<ul>
 						<li><a href="#contents4" class="active">Menu1</a></li>
@@ -242,7 +239,11 @@
 <script type="text/javascript">
 	(function ($) {
 		$(document).ready(function () {
-			$('.tabWrapper').sptab();
+			$('#defaultOptionTab').sptab();
+
+			$('#setActiveOption').sptab({
+				initActiveIndex: 2
+			})
 		});
 	})(jQuery);
 </script>

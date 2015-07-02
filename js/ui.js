@@ -5,35 +5,59 @@
 /* tab plugin */
 /* tabContents 안의 내용은 div로 싼다. */
 (function ($) {
+    
+    var defaultOptions = {
+        initActiveIndex: 0,
+        activeClass: 'active'
+    };
 
     $.fn.sptab = function (option) {
-        var opt = $.extend({}, $.fn.sptab.defaultOptions, option);
-        $.fn.sptab.defaultOptions = opt;
 
-        $.fn.sptab._this = this;
+        return $(this).each(function(){
+            var custom_option = $.extend({}, defaultOptions, option);
 
-        $.fn.sptab.attachEvent(this, opt);
-    };
+            $.fn.sptab._this = this;
 
-    $.fn.sptab.defaultOptions = {
-        parentClass: '.tabWrapper',
-        tabContents: '.tabContents',
-        activeClass: 'active',
-        dataValue: 'tab'
-    };
-
-    $.fn.sptab.attachEvent = function (wrapper, option) {
-
-        wrapper.find('.tabContentsTitle a').on('click', function (e) {
-            e.preventDefault();
-
-            var recentTab = $(this).data(option.dataValue),
-                tabContents = $(this).parents(option.parentClass).find(option.tabContents + '[data-' + option.dataValue + '="' + recentTab + '"]');
-
-            $(this).parents(option.parentClass).find(option.tabContents).removeClass(option.activeClass);
-            tabContents.addClass(option.activeClass);
-
+            init(custom_option, this);
+            var cb_data = {option: custom_option, wrapper: this};
+            $(this).on('click', ' nav ul li a', cb_data, attachEvent);
         })
+    };
+
+    var init = function(option, wrapper){
+        initActiveItems(option.initActiveIndex, option.activeClass, wrapper);
+
+        var str_classes = $(wrapper).attr('class').split(' ').join('.');
+        $(wrapper).find('.' + str_classes + ' > div:not(\'.active\')').css({
+            display: 'none'
+        });
+        
+    }
+
+    var initActiveItems = function(index, classname, wrapper){
+        //nav init active li element
+        var elActiveNav = $(wrapper).find(' nav ul li > a:eq(' + index + ')'),
+            strhref = $(elActiveNav).attr('href'),
+            detectContent = $('div' + strhref);
+        $(elActiveNav).addClass(classname).parent('li').siblings().children('a').removeClass('active');
+
+        $(detectContent).addClass(classname).show();
+        $(detectContent).siblings('div').removeClass(classname).hide();
+    }
+    
+    var attachEvent = function(e){
+        e.preventDefault();
+        var option  = e.data.option, 
+            activeClassName = option.activeClass,
+            strhref = $(this).attr('href'),
+            detectContent = $('div' + strhref);
+        
+        $(detectContent).addClass(activeClassName).show();
+        $(detectContent).siblings('div').removeClass(activeClassName).hide();
+
+        //active class nav
+
+        $(this).addClass(activeClassName).parent('li').siblings().children('a').removeClass(activeClassName);
     }
 
 })(jQuery);
@@ -89,13 +113,13 @@
         //열어둬야 할 항목이 있는 경우
         if(openedItem >= 0){
             var wrapper = $(this.wrapper),
-                strSelector = 'dt:eq(' + openedItem +'), dd:eq(' + openedItem + ')';
+                strSelector = option.elTitle + ':eq(' + openedItem +'), ' + option.elContent + ':eq(' + openedItem + ')';
             var elItem = $(wrapper).find(strSelector);
 
             $(elItem).addClass(option.activeClass).css({display: 'block'});
             //아이콘 옵션이 활성화 되었다면 미리 열어두는 항목에 위 아이콘을 적용한다.
             if(option.hasIcon == true && option.upIconClass){
-                var targetEl = $('dt:eq(' + openedItem + ') > a ');
+                var targetEl = $(option.elTitle + ':eq(' + openedItem + ') > a ');
 
                 appendIconElement(targetEl, option.upIconClass);
             }
@@ -104,8 +128,8 @@
         //아이콘 추가하는 경우
         if(hasIcon == true){
             var wrapper = $(this.wrapper);
-            $(wrapper).find('dt > a').each(function(i, el){
-                if($(this).parent('dt').hasClass('active')) return true;
+            $(wrapper).find(option.elTitle + ' > a').each(function(i, el){
+                if($(this).parent(option.elTitle).hasClass('active')) return true;
                 appendIconElement(this, option.downIconClass);
             });
         }
@@ -154,12 +178,14 @@
     function callbackSlideToggle(elAnchor, option, wrapper){
         if(option.hasIcon == false || (!option.downIconClass || !option.upIconClass)) return ;
 
-        var dataVal = option.dataValue;
+        var dataVal = option.dataValue,
+            elTitleTag = option.elTitle,
+            elContentTag = option.elContent;
 
         //현재 메뉴를 제외한 형제 메뉴들은 아래 아이콘으로 일괄 변경
-        $(elAnchor).parents('dt').siblings('dt').find('a i').attr('class', option.downIconClass);
+        $(elAnchor).parents(elTitleTag).siblings(elTitleTag).find('a i').attr('class', option.downIconClass);
 
-        $(elAnchor).parent().siblings('dd').each(function(i, e){
+        $(elAnchor).parent().siblings(elContentTag).each(function(i, e){
             var isDown = true
             if($(this).is(':hidden')) isDown = false;
 
@@ -260,11 +286,3 @@
         })
     }
 })(jQuery);
-
-
-
-
-
-
-
-

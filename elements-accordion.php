@@ -54,6 +54,34 @@
 					<p>
 						dl > ( dt > a ) + dd <span style="margin-left: 10px" class="red">and more</span>
 					</p>
+
+					<h3>HTML</h3>
+					<pre>
+						<code class="language-markup"><?php $strMarkup = file_get_contents('./markup/accordion.html');
+echo htmlspecialchars($strMarkup);?>
+						</code>
+					</pre>
+
+					<h3>JS</h3>
+					<pre>
+						<code class="language-javascript">
+(function ($) {
+	$(document).ready(function () {
+		$('#open').spaccordion({
+				closeOtherContents: false,
+				hasIcon           : true,
+				openedItem        : 1
+		});
+
+		$('dl.accordion.close').spaccordion({
+			closeOtherContents: true,
+			openedItem        : 0
+		});
+	});
+})(jQuery);
+						</code>
+					</pre>
+
 				</div>
 			</div>
 
