@@ -4,6 +4,7 @@ input[type="submit"],
 input[type="text"],
 input[type="password"],
 input[type="submit"],
+input[type="tel"],
 button[type="button"],
 button[type="submit"],
 textarea {
@@ -11,6 +12,9 @@ textarea {
     -moz-appearance: none;
     -o-appearance: none;
     border-radius: 0 !important;
+}
+input[type="text"] {
+    padding: 0;
 }
 
 
@@ -20,6 +24,7 @@ select:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus,
 input[type="text"]:focus,
+input[type="tel"]:focus,
 input[type="password"]:focus,
 button:focus,
 textarea:focus {
@@ -31,6 +36,7 @@ select:active,
 input[type="radio"]:active,
 input[type="checkbox"]:active,
 input[type="text"]:active,
+input[type="tel"]:active,
 input[type="password"]:active,
 textarea:active {
     outline: 0;

@@ -195,19 +195,19 @@
 								<tbody>
 									<tr>
 										<td>
-											<input class="textInput" type="text" name="mobileNum1" maxlength="4" label="핸드폰" id="userPhoneNo">
+											<input class="textInput" type="tel" name="mobileNum1" maxlength="4" label="핸드폰" id="userPhoneNo">
 										</td>
 										<td>
 											-
 										</td>
 										<td>
-											<input class="textInput" type="text" name="mobileNum2" maxlength="4" label="핸드폰">
+											<input class="textInput" type="tel" name="mobileNum2" maxlength="4" label="핸드폰">
 										</td>
 										<td>
 											-
 										</td>
 										<td>
-											<input class="textInput" type="text" name="mobileNum3" maxlength="4" label="핸드폰">
+											<input class="textInput" type="tel" name="mobileNum3" maxlength="4" label="핸드폰">
 										</td>
 									</tr>
 								</tbody>
@@ -247,7 +247,7 @@
 								<tbody>
 								<tr>
 									<td>
-										<select name="phoneSelect" id="phoneSelect">
+										<select name="phoneSelect">
 											<option value="010">010</option>
 											<option value="016">016</option>
 											<option value="019">019</option>
@@ -257,13 +257,13 @@
 										-
 									</td>
 									<td>
-										<input class="textInput" type="text" name="mobileNum2" maxlength="4" label="핸드폰">
+										<input class="textInput" type="tel" name="mobileNum2" maxlength="4" label="핸드폰" id="userPhoneNo2">
 									</td>
 									<td>
 										-
 									</td>
 									<td>
-										<input class="textInput" type="text" name="mobileNum3" maxlength="4" label="핸드폰">
+										<input class="textInput" type="tel" name="mobileNum3" maxlength="4" label="핸드폰">
 									</td>
 								</tr>
 								</tbody>
@@ -344,65 +344,83 @@
 					</tr>
 
 
-
 					<tr>
 						<th>
-							<label for="birthDate">생년월일</label>
-						</th>
-						<td>
-							<input type="date" id="birthDate" min="1950-01-01" />
-						</td>
-					</tr>
-
-
-					<tr>
-						<th>
-							<label for="birthY">생년월일 2</label>
+							<label for="birthY">생년월일</label>
 						</th>
 						<td>
 							<table class="inputStructure">
 								<colgroup>
-									<col widht="28%" />
-									<col widht="5%" />
-									<col widht="28%" />
-									<col widht="5%" />
-									<col widht="28%" />
-									<col widht="5%" />
+									<col width="32%">
+									<col width="2%">
+									<col width="32%">
+									<col width="2%">
+									<col width="32%">
 								</colgroup>
 								<tbody>
 									<tr>
 										<td>
-											<select name="birthY" id="birthY">
-												<option value="2010">2010</option>
-												<option value="2011">2011</option>
-												<option value="2012">2012</option>
-											</select>
+											<input type="text" maxlength="4" placeholder="생년" class="textInput" id="birthY" name="birthY" />
 										</td>
 										<td>
-											년
 										</td>
 										<td>
 											<select name="birthM" id="birthM">
+												<option value>월</option>
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3</option>
+												<option value="3">4</option>
+												<option value="3">5</option>
+												<option value="3">6</option>
+												<option value="3">7</option>
+												<option value="3">8</option>
+												<option value="3">9</option>
+												<option value="3">10</option>
+												<option value="3">11</option>
+												<option value="3">12</option>
 											</select>
 										</td>
 										<td>
-											월
 										</td>
 										<td>
 											<select name="birthD" id="birthD">
+												<option value>일</option>
 												<option value="1">1</option>
 												<option value="2">2</option>
 												<option value="3">3</option>
+												<option value="3">4</option>
+												<option value="3">5</option>
+												<option value="3">6</option>
+												<option value="3">7</option>
+												<option value="3">8</option>
+												<option value="3">9</option>
+												<option value="3">10</option>
+												<option value="3">11</option>
+												<option value="3">12</option>
+												<option value="3">13</option>
+												<option value="3">14</option>
+												<option value="3">15</option>
+												<option value="3">16</option>
+												<option value="3">17</option>
+												<option value="3">18</option>
+												<option value="3">19</option>
+												<option value="3">20</option>
+												<option value="3">21</option>
+												<option value="3">22</option>
+												<option value="3">23</option>
+												<option value="3">24</option>
+												<option value="3">25</option>
+												<option value="3">26</option>
+												<option value="3">27</option>
+												<option value="3">28</option>
+												<option value="3">29</option>
+												<option value="3">30</option>
 											</select>
 										</td>
-										<td>
-											일
-										</td>
+
 									</tr>
-									</tbody>
+								</tbody>
 							</table>
 						</td>
 
@@ -461,7 +479,8 @@
 <script type="text/javascript">
 	$(function(){
 		$('select').selectric({
-			disableOnMobile: false
+			disableOnMobile: false,
+			maxHeight: 150
 		});
 
 		$('input').iCheck({
