@@ -78,7 +78,8 @@
 
 /* Bbutton */
 .button {
-    width: 100%;
+    /*width: 100%;*/
+    overflow: hidden;
 }
 .button span {
     display: block;
@@ -89,6 +90,10 @@
     height: 40px;
     line-height: 40px;
 }
+
+
+/* modal */
+
 
 
 
