@@ -82,7 +82,7 @@
     overflow: hidden;
 }
 .button span {
-    display: block;
+    display: inline-block;
     padding: 0 20px;
     background: #f05f5f;
     color: white;
@@ -96,6 +96,49 @@
 
 
 
+
+/* board */
+.boardList li {
+    margin-top: 10px;
+    overflow: hidden;
+}
+.boardList li:first-child {
+    margin-top: 0;
+}
+.boardList a {
+    display: block;
+}
+.boardList .thumb {
+    float: left;
+    width: 20%;
+}
+.boardList .thumb img {
+    width: 100%;
+}
+.boardList .text {
+    float: left;
+    width: 80%;
+    padding-left: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.pagination {
+    overflow: hidden;
+    text-align: center;
+}
+.pagination li {
+    display: inline-block;
+}
+.pagination li a {
+    display: block;
+    padding: 0 3px;
+}
+.pagination li.current a {
+    color: #f05f5f;
+    font-weight: bold;
+}
 
 
 
