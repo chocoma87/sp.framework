@@ -70,3 +70,52 @@ label {
     font-style: normal;
     font-weight: 400;
 }
+
+.pluginUse {
+    margin-top: 80px;
+    background: #000000;
+    padding: 20px;
+}
+.pluginUse h3 {
+    font-size: 2em;
+}
+.pluginUse li {
+    margin-top: 10px;
+}
+.pluginUse li a {
+    display: block;
+    font-size: 1.6em;
+}
+
+.category {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.category li {
+    font-size: 1.5em;
+    float: left;
+    margin-right: 15px;
+}
+.category li .button span {
+    height: 50px;
+    line-height: 50px;
+}
+
+
+.modal.login {
+    padding: 20px;
+    border: 2px solid black;
+    clear: both;
+}
+.modal.login td,
+.modal.login th {
+    padding-top: 20px;
+}
+.modal.login tr:first-child td,
+.modal.login tr:first-child th {
+    padding-top: 0;
+}
+.modal.login .loginBtn span {
+    line-height: 100px;
+    height: 100px;
+}

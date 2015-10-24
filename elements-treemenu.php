@@ -45,6 +45,8 @@ include('include/_header.php');
 	}
 </style>
 
+
+
 <div id="contentWrap">
 
 	<div class="contentWidth clearFix">
@@ -86,9 +88,7 @@ include('include/_header.php');
 				<nav>
 					<ul class="treemenu_example">
 						<li><a href="#">Main </a>
-							<ul>
-								<li><a href="main-type1.php">Type1</a></li>
-							</ul>
+
 						</li>
 						<li><a href="#">Pages </a>
 							<ul>
