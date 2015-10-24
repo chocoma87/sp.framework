@@ -87,9 +87,7 @@ include('include/_header.php');
 			<div class="tree_menu">
 				<nav>
 					<ul class="treemenu_example">
-						<li><a href="#">Main </a>
-
-						</li>
+						<li><a href="index.php">Main</a></li>
 						<li><a href="#">Pages </a>
 							<ul>
 								<li><a href="pages-history.php">연혁</a></li>
