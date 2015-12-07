@@ -6,6 +6,16 @@ h2 {
     font-weight: bold;
     padding: 130px 0;
 }
+.subpage h2 {
+    font-size: 3em;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+.subpage:after {
+    content: '';
+    display: block;
+    clear: both;
+}
 .red {
     color: #f05f5f;
 }

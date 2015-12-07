@@ -5,7 +5,7 @@
 
 <div id="contentWrap">
 
-	<div class="contentWidth">
+	<div class="contentWidth subpage">
 
 		<div class="lnbWrap col span_6">
 			<?include('include/lnb_board.php');?>
