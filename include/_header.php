@@ -175,6 +175,8 @@
 						<li><a href="#">Board</a>
 							<ul>
 								<li><a href="board-list.php">List</a></li>
+								<li><a href="board-table.php">table</a></li>
+								<li><a href="board-market.php">market</a></li>
 							</ul>
 						</li>
 						<li><a href="#">Shop</a>
