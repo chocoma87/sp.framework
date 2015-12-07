@@ -7,7 +7,7 @@
 
 <div id="contentWrap">
 
-	<div class="contentWidth clearFix row">
+	<div class="contentWidth subpage clearFix row">
 
 		<div class="lnbWrap col span_6">
 			<?include('include/lnb_elements.php');?>
@@ -480,7 +480,7 @@
 
 <script type="text/javascript">
 	$(function(){
-		$('select').selectric({
+	/*	$('select').selectric({
 			disableOnMobile: false,
 			maxHeight: 150
 		});
@@ -489,7 +489,7 @@
 			checkboxClass: 'icheckbox_square-red',
 			radioClass: 'iradio_square-red'
 		});
-		$('input').iCheck('uncheck');
+		$('input').iCheck('uncheck');*/
 	});
 </script>
 
