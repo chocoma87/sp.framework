@@ -84,13 +84,13 @@
 
 										<tr>
 											<td>
-												<a href="#" class="button left half">
+												<a href="#" class="button left">
 													<span>비밀번호 찾기</span>
 												</a>
 											</td>
 											<td></td>
 											<td>
-												<a href="#" class="button left half">
+												<a href="#" class="button left">
 													<span>아이디 찾기</span>
 												</a>
 											</td>

@@ -5,6 +5,12 @@
     height: 0;
     clear: both;
 }
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
 
 
 
@@ -75,20 +81,36 @@
 }
 
 
-
 /* Bbutton */
 .button {
-    /*width: 100%;*/
-    overflow: hidden;
+    display: block;
 }
 .button span {
-    display: inline-block;
+    display: block;
     padding: 0 20px;
     background: #f05f5f;
     color: white;
     text-align: center;
     height: 40px;
     line-height: 40px;
+}
+
+
+/* pagination */
+.pagination ul {
+    overflow: hidden;
+    text-align: center;
+}
+.pagination li {
+    display: inline-block;
+}
+.pagination li a {
+    display: block;
+    padding: 0 3px;
+}
+.pagination li.current a {
+    color: #f05f5f;
+    font-weight: bold;
 }
 
 
@@ -110,35 +132,40 @@
 }
 .boardList .thumb {
     float: left;
-    width: 20%;
+    width: 30%;
 }
 .boardList .thumb img {
     width: 100%;
 }
 .boardList .text {
     float: left;
-    width: 80%;
+    width: 70%;
     padding-left: 10px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
-.pagination {
-    overflow: hidden;
-    text-align: center;
+
+
+.buttonWrapper {
+    text-align: right;
 }
-.pagination li {
+.buttonWrapper > a:first-child {
+    margin-left: 0;
+}
+.buttonWrapper > a {
     display: inline-block;
-}
-.pagination li a {
-    display: block;
-    padding: 0 3px;
-}
-.pagination li.current a {
-    color: #f05f5f;
-    font-weight: bold;
+    margin-left: 10px;
 }
 
 
+.search {
+    padding: 20px 0;
+}
+.search input {
+    width: 10em;
+    float: left;
+    margin-right: 10px;
+}
 
