@@ -5,6 +5,12 @@
     height: 0;
     clear: both;
 }
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
 
 
 
@@ -75,10 +81,9 @@
 }
 
 
-
 /* Bbutton */
 .button {
-    width: 100%;
+    display: block;
 }
 .button span {
     display: block;
@@ -91,6 +96,76 @@
 }
 
 
+/* pagination */
+.pagination ul {
+    overflow: hidden;
+    text-align: center;
+}
+.pagination li {
+    display: inline-block;
+}
+.pagination li a {
+    display: block;
+    padding: 0 3px;
+}
+.pagination li.current a {
+    color: #f05f5f;
+    font-weight: bold;
+}
 
 
+/* modal */
+
+
+
+
+/* board */
+.boardList li {
+    margin-top: 10px;
+    overflow: hidden;
+}
+.boardList li:first-child {
+    margin-top: 0;
+}
+.boardList a {
+    display: block;
+}
+.boardList .thumb {
+    float: left;
+    width: 30%;
+}
+.boardList .thumb img {
+    width: 100%;
+}
+.boardList .text {
+    float: left;
+    width: 70%;
+    padding-left: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+.buttonWrapper {
+    text-align: right;
+}
+.buttonWrapper > a:first-child {
+    margin-left: 0;
+}
+.buttonWrapper > a {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+.search {
+    padding: 20px 0;
+}
+.search input {
+    width: 10em;
+    float: left;
+    margin-right: 10px;
+}
 
