@@ -108,7 +108,7 @@
     display: block;
     padding: 0 3px;
 }
-.pagination li.current a {
+.pagination li.active a {
     color: #f05f5f;
     font-weight: bold;
 }

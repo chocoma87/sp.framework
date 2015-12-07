@@ -109,7 +109,7 @@
 					<ul>
 						<li class="prev"><a href="#">이전</a></li>
 						<li><a href="#">1</a></li>
-						<li class="current"><a href="#">2</a></li>
+						<li class="active"><a href="#">2</a></li>
 						<li><a href="#">3</a></li>
 						<li><a href="#">4</a></li>
 						<li class="next"><a href="#">다음</a></li>
