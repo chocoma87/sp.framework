@@ -257,6 +257,12 @@
     }
 
     function attachEvent(e){
+
+        //서브메뉴가 있을 때만 실행
+        if($(this).siblings('ul').length == 0){
+            return;
+        }
+
         e.preventDefault();
 
         var option = e.data.option;
