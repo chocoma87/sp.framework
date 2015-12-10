@@ -146,7 +146,7 @@ body {
 
 
 
-
+/* 레이아웃 */
 .left {
     float: left;
 }
@@ -154,8 +154,12 @@ body {
     float: right;
 }
 
-
-
+.clearFix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+							
 
 .listFloat li {
     float: left;
