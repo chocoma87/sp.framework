@@ -146,8 +146,8 @@ body {
 
 
 
-							
-.lelft {
+
+.left {
     float: left;
 }
 .right {
