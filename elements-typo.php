@@ -146,6 +146,17 @@ body {
 
 
 
+							
+.lelft {
+    float: left;
+}
+.right {
+    float: right;
+}
+
+
+
+
 .listFloat li {
     float: left;
 }
