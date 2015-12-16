@@ -173,6 +173,17 @@ body {
     clear: both;
 }
 
+.listTable {
+    display: table;
+    width: 100%;
+}
+.listTable li {
+    display: table-cell;
+}
+.listTable li a {
+    display: block;
+}
+
 
 
 
