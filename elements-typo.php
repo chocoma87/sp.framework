@@ -210,8 +210,7 @@ body {
     box-sizing: border-box;
     border: 1px solid #000000;
 }
-
-
+                            
 
 /*인풋 스타일 */
 .inputText {
