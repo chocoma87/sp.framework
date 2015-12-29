@@ -39,7 +39,6 @@ dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, fig
     border: 0;
     outline: 0;
     background: transparent;
-    letter-spacing: -0.05em;
 }
 
 article, aside, details, figcaption, figure, footer, header, menu, nav, section {
