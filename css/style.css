@@ -89,6 +89,7 @@ label {
     margin-top: 80px;
     background: #000000;
     padding: 20px;
+    margin-bottom: 50px;
 }
 .pluginUse h3 {
     font-size: 2em;
@@ -132,4 +133,9 @@ label {
 .modal.login .loginBtn span {
     line-height: 100px;
     height: 100px;
+}
+
+
+.tableBoard {
+    margin-bottom: 40px;
 }

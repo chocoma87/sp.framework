@@ -57,8 +57,8 @@
 
 					<h3>HTML</h3>
 					<pre>
-						<code class="language-markup"><?php $strMarkup = file_get_contents('./markup/accordion.html');
-echo htmlspecialchars($strMarkup);?>
+						<code class="language-markup">
+							<?php $strMarkup = file_get_contents('./markup/accordion.html');echo htmlspecialchars($strMarkup);?>
 						</code>
 					</pre>
 
