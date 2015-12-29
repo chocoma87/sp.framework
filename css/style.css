@@ -20,6 +20,10 @@ h2 {
     color: #f05f5f;
 }
 
+pre {
+    max-height: none !important;
+}
+
 
 .pluginGuide {
     margin-bottom: 50px;
