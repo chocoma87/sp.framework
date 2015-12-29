@@ -13,7 +13,7 @@
 					 <div class="pluginGuide">
 
 
-
+<div class="unit">
 
 					 <h3>reset.css</h3>
 
@@ -27,7 +27,7 @@
 /* RESET
 ----------------------------------------------------------------------------------------------------*/
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, caption, canvas, center, cite, code,
-dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, form, footer, header, h1, h2, h3, h4, h5, h6, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, sub, summary, sup, tt, table, tbody, textarea, tfoot, thead, time, tr, th, td, u, ul, var, video {
+dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, form, footer, header, h1, h2, h3, h4, h5, h6, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, summary, tt, table, tbody, textarea, tfoot, thead, time, tr, th, td, u, ul, var, video {
     font-size: 100%;
     font-weight: inherit;
     font-style: inherit;
@@ -90,9 +90,6 @@ textarea:active {
 body {
     padding: 0;
     margin: 0;
-    font-size: 15px;
-    line-height: 1.5;
-    font-family: 'noto-sans', sans-serif;
 }
 
 input, select, button, textarea {
@@ -128,7 +125,7 @@ img {
 						 </pre>
 
 
-
+</div>
 
 
 					 <h3>layout.css</h3>
@@ -137,6 +134,9 @@ img {
 body {
     max-width: 640px;
     margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.5;
+    font-family: 'noto-sans', sans-serif;
 }
 .wrap:after {
     content: '';
@@ -202,6 +202,7 @@ body {
     display: inline-block;
     line-height: 50px;
     height: 50px;
+    padding: 0 20px;
     overflow: hidden;
     border-radius: 2px;
     vertical-align: middle;
@@ -210,7 +211,7 @@ body {
     box-sizing: border-box;
     border: 1px solid #000000;
 }
-                            
+
 
 /*인풋 스타일 */
 .inputText {
@@ -223,6 +224,7 @@ body {
     height:34px;
     box-sizing: border-box;
     color: #8b8b8b;
+    vertical-align: middle;
 }
 						</code>
 					</pre>
