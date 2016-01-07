@@ -133,7 +133,7 @@
 	<div id="container">
 
 		<header id="header" class="row span_24">
-			<div class="contentWidth clearFix">
+			<div class="setWidth clearFix">
 
 				<!-- 로고 -->
 				<h1 id="logo" class="col span_7">
@@ -205,6 +205,6 @@
 				</nav>
 				<!-- pc 메인 메뉴 끝 -->
 
-			</div><!-- .contentWidth -->
+			</div><!-- .setWidth -->
 		</header>
 

@@ -7,7 +7,7 @@
         -webkit-text-size-adjust: none; /* 헨드폰 가로로 눞혔을 때 글씨 커지지 않게 */
     }
 
-    .contentWidth {
+    .setWidth {
         width: 100%;
     }
 
@@ -193,14 +193,14 @@
 
 /* pc */
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
-    .contentWidth {
+    .setWidth {
         width: 960px;
     }
 }
 
 /* pc wide */
 @media screen and (min-width: 1281px) {
-    .contentWidth {
+    .setWidth {
         width: 1200px;
     }
 }

@@ -1,7 +1,7 @@
 <?include('include/_header.php');?>
 
 		<div id="contentWrap">
-			<div class="contentWidth">
+			<div class="setWidth">
 				<section class="row span_24">
 
 					<article class="row">
@@ -11,7 +11,7 @@
 				</section>
 
 
-			</div><!-- .contentWidth -->
+			</div><!-- .setWidth -->
 
 		</div><!-- .contentWrap -->
 

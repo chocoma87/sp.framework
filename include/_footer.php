@@ -2,16 +2,7 @@
 
 			<footer>
 
-				<div class="contentWidth">
-
-					<nav class="footerMenu col span_20">
-						<ul>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
-							<li><a href="#">Location</a></li>
-							<li><a href="#">Terms</a></li>
-						</ul>
-					</nav>
+				<div class="setWidth">
 
 					<div class="familySite col span_4">
 						<ul>
