@@ -212,6 +212,7 @@ body {
 					 <h3>custom.js (모바일)</h3>
 						 <pre>
 							 <code class="language-javascript">
+
 $(document).ready(function () {
 
 	//a 클릭 시 :focus 스타일 적용되는 현상 막기 위해서,
@@ -220,48 +221,62 @@ $(document).ready(function () {
 		this.blur();
 	})
 
-
-	//엘리먼트 토글한다.
-	if ($('a[data-show]')) {
-		$('a[data-show]').on('click', function (e) {
-			attatchEvent.showEl(e)
-		})
-		$('a[data-hide]').on('click', function (e) {
-			attatchEvent.hideEl(e);
-		})
-	}
-
-	//필터 토글한다.
-	if($('a[data-toggle]')){
-		$('a[data-toggle]').on('click', function(e){
-			attatchEvent.toggle(e);
-		})
-	}
+	attatchEvent.init();
+});
 
 
-	//메인메뉴 토글 시킨다.
-	$('#header .all a, .bottomBarAll header a.all').on('click', function(e){
-		attatchEvent.menuOpen(e);
-	})
-	$('.modalFull, .backButton').on('click', function(e){
-		attatchEvent.menuClose(e)
-	})
- });
+
 
 var attatchEvent = {
-	//메인메뉴 function 에 필요한 dom 엘레먼트
+//function에 사용 할 dom 엘레먼트
 	option: {
 		gnb: '#gnb',
 		wrap: '.wrap',
 		modalFull: '.modalFull',
-		body: 'body',
+		body: 'body'
 	},
 
-	//메인 메뉴 연다.
-	menuOpen: function(e){
+	init: function(){
+		var container = this,
+			option = container.option,
+			menuOpenBtn = ['#header .all a', '.bottomBarAll header a.all'],
+			menuCloseBtn = ['.modalFull', '.backButton'],
+			toggleShowBtn = 'a[data-show]',
+			toggleCloseBtn = 'a[data-hide]',
+			toggleBtn = 'a[data-toggle]';
+
+		//메인메뉴 열기
+		$(menuOpenBtn).each(function(index, value){
+			$(value).on('click', option, container.menuOpen);
+		});
+
+		//메인메뉴 닫기
+		$(menuCloseBtn).each(function(index, value){
+			$(value).on('click', option, container.menuClose);
+		})
+
+		//엘레먼트 show
+		$(toggleShowBtn).each(function(index, value){
+			$(value).on('click', option, container.showEl);
+		})
+
+		//엘레먼트 close
+		$(toggleCloseBtn).each(function(index, value){
+			$(value).on('click', container.hideEl);
+		})
+
+		//엘레먼트 toggle
+		$(toggleBtn).each(function(index, value){
+			$(value).on('click', container.toggle)
+		})
+	},
+
+
+//메인 메뉴 연다.
+	menuOpen: function (e) {
 		e.preventDefault();
 
-		var el = this.option,
+		var el = e.data,
 			gnb = el.gnb,
 			modalFull = el.modalFull,
 			body = el.body;
@@ -275,16 +290,16 @@ var attatchEvent = {
 		$(body).addClass('sidemenu');
 	},
 
-	//메인 메뉴 닫는다.
-	menuClose: function(e){
+//메인 메뉴 닫는다.
+	menuClose: function (e) {
 		e.preventDefault();
 
-		var el = this.option,
+		var el = e.data,
 			gnb = el.gnb,
 			modalFull = el.modalFull,
 			body = el.body;
 
-		$(gnb).animate({left: '-320px'}, 500, function(){
+		$(gnb).animate({left: '-320px'}, 500, function () {
 			$(gnb).removeClass('show');
 			$(modalFull).hide();
 			$(body).removeClass('sidemenu');
@@ -293,49 +308,47 @@ var attatchEvent = {
 		$(modalFull).animate({left: '0px'}, 500);
 	},
 
-	//버튼 클릭 시 엘리먼트 토글한다.
-	toggle: function(e){
+//버튼 클릭 시 엘리먼트 토글한다.
+	toggle: function (e) {
 		e.preventDefault();
 
-		//dom 엘리먼트의 data-toggle 속성 값을 가져온 후,
-		//해당 값을 가젼 div를 토글한다.
 		var el = $(e.currentTarget).data().toggle,
 			obj = $('div.' + el),
 			thigObj = $(e.currentTarget);
 
 		obj.toggle();
 		thigObj.toggleClass('active');
+
+		console.log(el);
 	},
 
-	//버튼 클릭 시 엘리먼트 보여준다.
-	showEl: function(e){
+//버튼 클릭 시 엘리먼트 보여준다.
+	showEl: function (e) {
 		e.preventDefault();
 
-		//dom 엘리먼트의 data-show 속성 값을 가져온 후,
-		//해당 값을 가젼 div를 보여준다.
 		var obj = $(e.currentTarget).data().show,
 			objEl = $('div.' + obj);
 
 		objEl.show();
 	},
 
-	//버튼 클릭 시 엘리먼트 숨긴다.
-	hideEl: function(e){
+//버튼 클릭 시 엘리먼트 숨긴다.
+	hideEl: function (e) {
 		e.preventDefault();
 
-		//dom 엘리먼트의 data-hide 속성 값을 가져온 후,
-		//해당 값을 가젼 div를 숨긴다.
 		var obj = $(e.currentTarget).data().hide,
 			objEl = $('div.' + obj);
 
 		objEl.hide();
 	}
 }
-
 							 </code>
 						 </pre>
 
 						 </div>
+
+
+
 
 
 					 <div class="unit">
@@ -345,32 +358,54 @@ var attatchEvent = {
 
 						  <pre>
 							 <code class="language-javascript">
-  //엘레먼트 윈도우에 항상 따라다닌다.
-    var elPosTop = $('.quickMenu').offset().top;
-    $(window).scroll(function(){
-        var currentPos = $(this).scrollTop(),
-            elPosBottom = $('.quickMenu').offset().top + $('.quickMenu').outerHeight(),
-            footerPos = $('.footer').offset().top,
+//엘레먼트 윈도우에 항상 따라다닌다. (sticky)
+var elPosTop = $('.quickMenu').offset().top;
+$(window).scroll(function(){
+    var currentPos = $(this).scrollTop(),
+        elPosBottom = $('.quickMenu').offset().top + $('.quickMenu').outerHeight(),
+        footerPos = $('.footer').offset().top,
 
-            //엘레먼트 top 위치에서 마진 주고 싶은 만큼 뺀다.
-            stickStartPos = elPosTop - 30,
-            //스크롤 bottom 위치 구한다.
-            scrollPos = $(window).innerHeight() + $(this).scrollTop(),
-            //footer 를 뺀 body 높이 구한다.
-            contentHiehgt = $('body').height() - 146;
+        //엘레먼트 top 위치에서 마진 주고 싶은 만큼 뺀다.
+        stickStartPos = elPosTop - 30,
+        //스크롤 bottom 위치 구한다.
+        scrollPos = $(window).innerHeight() + $(this).scrollTop(),
+        //footer 를 뺀 body 높이 구한다.
+        contentHiehgt = $('body').height() - 146;
 
-        if(currentPos < stickStartPos){
-            $('.quickMenu').removeClass('fixed');
+    if(currentPos < stickStartPos){
+        $('.quickMenu').removeClass('fixed');
+    }
+    if((currentPos > stickStartPos) && (scrollPos < contentHiehgt)){
+        $('.quickMenu').removeClass('fixedBottom').addClass('fixed');
+    }
+    //엘레먼트 footer 보다 내려가지 않도록 한다.
+    //스크롤이 footer 보다 내려오지만, 엘레먼트가 footer 보다 높이 있는 경우는 예외.
+    if((scrollPos > contentHiehgt) && (elPosBottom > footerPos)){
+        $('.quickMenu').removeClass('fixed').addClass('fixedBottom');
+    }
+})
+
+
+//장바구니 아이템 수량 변경
+if($('.increase').length > 0){
+    $('.increase').on('click',function(e){
+        e.preventDefault();
+
+        var $qty = $(this).closest('.itemCount').find('input.inputText'),
+            currentVal = parseInt($qty.val());
+
+        if($(this).hasClass('plus')){
+            if (!isNaN(currentVal)) {
+                $qty.val(currentVal + 1);
+            }
         }
-        if((currentPos > stickStartPos) && (scrollPos < contentHiehgt)){
-            $('.quickMenu').removeClass('fixedBottom').addClass('fixed');
+        else {
+            if (!isNaN(currentVal) && currentVal > 0) {
+                $qty.val(currentVal - 1);
+            }
         }
-        //엘레먼트 footer 보다 내려가지 않도록 한다.
-        //스크롤이 footer 보다 내려오지만, 엘레먼트가 footer 보다 높이 있는 경우는 예외.
-        if((scrollPos > contentHiehgt) && (elPosBottom > footerPos)){
-            $('.quickMenu').removeClass('fixed').addClass('fixedBottom');
-        }
-    })
+    });
+}
 
 							 </code>
 						  </pre>
@@ -388,3 +423,6 @@ var attatchEvent = {
 
 
 <?include('include/_footer.php');?>
+
+
+
