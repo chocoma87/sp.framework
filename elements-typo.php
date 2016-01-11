@@ -226,121 +226,144 @@ $(document).ready(function () {
 
 
 
-
+//메인 메뉴가 토글일 경우, menuCloseBtn 은 빈 배열로 하고, menuControllerOpen 함수 추가해서 사용한다.
+//필요에 따라 controller 함수 추가해서 사용한다.
 var attatchEvent = {
-//function에 사용 할 dom 엘레먼트
-	option: {
-		gnb: '#gnb',
-		wrap: '.wrap',
-		modalFull: '.modalFull',
-		body: 'body'
-	},
+    //함수에 사용 할 dom 엘레먼트
+    option: {
+        gnb: '.gnb',
+        wrap: '.wrap',
+        modalFull: '.modalFull',
+        body: 'body'
+    },
 
-	init: function(){
-		var container = this,
-			option = container.option,
-			menuOpenBtn = ['#header .all a', '.bottomBarAll header a.all'],
-			menuCloseBtn = ['.modalFull', '.backButton'],
-			toggleShowBtn = 'a[data-show]',
-			toggleCloseBtn = 'a[data-hide]',
-			toggleBtn = 'a[data-toggle]';
-
-		//메인메뉴 열기
-		$(menuOpenBtn).each(function(index, value){
-			$(value).on('click', option, container.menuOpen);
-		});
-
-		//메인메뉴 닫기
-		$(menuCloseBtn).each(function(index, value){
-			$(value).on('click', option, container.menuClose);
-		})
-
-		//엘레먼트 show
-		$(toggleShowBtn).each(function(index, value){
-			$(value).on('click', option, container.showEl);
-		})
-
-		//엘레먼트 close
-		$(toggleCloseBtn).each(function(index, value){
-			$(value).on('click', container.hideEl);
-		})
-
-		//엘레먼트 toggle
-		$(toggleBtn).each(function(index, value){
-			$(value).on('click', container.toggle)
-		})
-	},
+    init: function(){
+        var container = this,
+            option = $.extend(this.option, container),
+            menuOpenBtn = ['.header-gnbOpen'],
+            menuCloseBtn = [],
+            toggleShowBtn = 'a[data-show]',
+            toggleCloseBtn = 'a[data-hide]',
+            toggleBtn = 'a[data-toggle]';
 
 
-//메인 메뉴 연다.
-	menuOpen: function (e) {
-		e.preventDefault();
+        //메인메뉴 열기
+        $(menuOpenBtn).each(function(index, value){
+            //여기서 this 는 each 가 돌고 있는 dom 엘레먼트이다.
+            $(value).on('click', option, option.menuOpen);
+        });
 
-		var el = e.data,
-			gnb = el.gnb,
-			modalFull = el.modalFull,
-			body = el.body;
+        //메인메뉴 닫기
+        $(menuCloseBtn).each(function(index, value){
+            $(value).on('click', option, option.menuClose);
+        })
 
-		$(gnb).addClass('show');
+        //엘레먼트 show
+        $(toggleShowBtn).each(function(index, value){
+            $(value).on('click', option, option.showEl);
+        })
 
-		$(gnb).animate({left: '0px'}, 500)
+        //엘레먼트 close
+        $(toggleCloseBtn).each(function(index, value){
+            $(value).on('click', option.hideEl);
+        })
 
-		$(modalFull).show();
-		$(modalFull).animate({left: '320px'}, 500)
-		$(body).addClass('sidemenu');
-	},
+        //엘레먼트 toggle
+        $(toggleBtn).each(function(index, value){
+            $(value).on('click', option.toggle)
+        })
+    },
 
-//메인 메뉴 닫는다.
-	menuClose: function (e) {
-		e.preventDefault();
 
-		var el = e.data,
-			gnb = el.gnb,
-			modalFull = el.modalFull,
-			body = el.body;
+    //메인 메뉴 연다.
+    menuOpen: function (e) {
+        e.preventDefault();
 
-		$(gnb).animate({left: '-320px'}, 500, function () {
-			$(gnb).removeClass('show');
-			$(modalFull).hide();
-			$(body).removeClass('sidemenu');
-		});
+        var el = e.data,
+            gnb = el.gnb,
+            modalFull = el.modalFull,
+            body = el.body;
 
-		$(modalFull).animate({left: '0px'}, 500);
-	},
+        //메인메뉴 함수 실행하는 조건문
+        var gnbOpen = el.menuControllerOpen(this, e);
+        if( gnbOpen === true){
+            return
+        }
 
-//버튼 클릭 시 엘리먼트 토글한다.
-	toggle: function (e) {
-		e.preventDefault();
+        //this 가 attatchEvent 를 가르키는 경우를 대비해서 e.currentTarget 을 사용한다.
+        //ex)controller 에서 함수를 실행할 때.
+        $(e.currentTarget).addClass('active');
+        $(gnb).show();
 
-		var el = $(e.currentTarget).data().toggle,
-			obj = $('div.' + el),
-			thigObj = $(e.currentTarget);
+        $(gnb).animate({right: '0px'}, 500);
+        $(modalFull).show();
+        $(modalFull).animate({right: '250'}, 500);
+        $(body).addClass('sidemenu');
+    },
 
-		obj.toggle();
-		thigObj.toggleClass('active');
+    //메인 메뉴 닫는다.
+    menuClose: function (e) {
+        e.preventDefault();
 
-		console.log(el);
-	},
+        var el = e.data,
+            gnb = el.gnb,
+            modalFull = el.modalFull,
+            body = el.body;
 
-//버튼 클릭 시 엘리먼트 보여준다.
-	showEl: function (e) {
-		e.preventDefault();
+        $(e.currentTarget).removeClass('active');
 
-		var obj = $(e.currentTarget).data().show,
-			objEl = $('div.' + obj);
+        $(gnb).animate({right: '-250px'}, 500, function () {
+            $(gnb).hide();
+            $(modalFull).hide();
+            $(body).removeClass('sidemenu');
+            $(gnb).hide();
+        });
 
-		objEl.show();
-	},
+        $(modalFull).animate({right: '0px'}, 500);
+    },
 
-//버튼 클릭 시 엘리먼트 숨긴다.
-	hideEl: function (e) {
-		e.preventDefault();
+    menuControllerOpen: function(menuBtn, e){
+        if($(menuBtn).hasClass('active')){
+            this.menuClose(e);
 
-		var obj = $(e.currentTarget).data().hide,
-			objEl = $('div.' + obj);
+            return true;
+        } else {
+            return false;
+        }
+    },
 
-		objEl.hide();
-	}
+
+    //버튼 클릭 시 엘리먼트 토글한다.
+    toggle: function (e) {
+        e.preventDefault();
+
+        var el = $(e.currentTarget).data().toggle,
+            obj = $('div.' + el),
+            thigObj = $(e.currentTarget);
+
+        obj.toggle();
+        thigObj.toggleClass('active');
+    },
+
+    //버튼 클릭 시 엘리먼트 보여준다.
+    showEl: function (e) {
+        e.preventDefault();
+
+        var obj = $(e.currentTarget).data().show,
+            objEl = $('div.' + obj);
+
+        objEl.show();
+    },
+
+    //버튼 클릭 시 엘리먼트 숨긴다.
+    hideEl: function (e) {
+        e.preventDefault();
+
+        var obj = $(e.currentTarget).data().hide,
+            objEl = $('div.' + obj);
+
+        objEl.hide();
+    }
 }
 							 </code>
 						 </pre>
@@ -407,10 +430,32 @@ if($('.increase').length > 0){
     });
 }
 
+
+
+//텝컨텐츠
+var attatchEventTab = {
+    init : function(){
+        $('ul[data-tab]').find('li:first-child > a').addClass('active');
+        $('ul[data-tab] > li > a').on('click', function(e){
+            e.preventDefault();
+
+            $(this).closest('ul').find(' > li > a').removeClass('active');
+            $(this).addClass('active');
+
+            var href = $(this).attr('href');
+
+            $(this).closest('div').find('> .tabContent').removeClass('active');
+            $(this).closest('div').find('> .tabContent' + href).addClass('active');
+        })
+
+    }
+}
 							 </code>
 						  </pre>
 
 					 </div>
+
+
 
 
 					 </div>
