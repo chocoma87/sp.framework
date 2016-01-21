@@ -226,145 +226,181 @@ $(document).ready(function () {
 
 
 
-//메인 메뉴가 토글일 경우, menuCloseBtn 은 빈 배열로 하고, menuControllerOpen 함수 추가해서 사용한다.
-//필요에 따라 controller 함수 추가해서 사용한다.
-var attatchEvent = {
-    //함수에 사용 할 dom 엘레먼트
-    option: {
-        gnb: '.gnb',
-        wrap: '.wrap',
-        modalFull: '.modalFull',
-        body: 'body'
-    },
 
-    init: function(){
-        var container = this,
-            option = $.extend(this.option, container),
-            menuOpenBtn = ['.header-gnbOpen'],
-            menuCloseBtn = [],
-            toggleShowBtn = 'a[data-show]',
-            toggleCloseBtn = 'a[data-hide]',
-            toggleBtn = 'a[data-toggle]';
+    //메인 메뉴가 토글일 경우, menuCloseBtn 은 빈 배열로 하고, menuControllerOpen 함수 추가해서 사용한다.
+    //필요에 따라 controller 함수 추가해서 사용한다.
+    var attatchEvent = {
+        //함수에 사용 할 dom 엘레먼트
+        option: {
+            gnb: '.gnb',
+            wrap: '.wrap',
+            modalFull: '.modalFull',
+            body: 'body'
+        },
 
-
-        //메인메뉴 열기
-        $(menuOpenBtn).each(function(index, value){
-            //여기서 this 는 each 가 돌고 있는 dom 엘레먼트이다.
-            $(value).on('click', option, option.menuOpen);
-        });
-
-        //메인메뉴 닫기
-        $(menuCloseBtn).each(function(index, value){
-            $(value).on('click', option, option.menuClose);
-        })
-
-        //엘레먼트 show
-        $(toggleShowBtn).each(function(index, value){
-            $(value).on('click', option, option.showEl);
-        })
-
-        //엘레먼트 close
-        $(toggleCloseBtn).each(function(index, value){
-            $(value).on('click', option.hideEl);
-        })
-
-        //엘레먼트 toggle
-        $(toggleBtn).each(function(index, value){
-            $(value).on('click', option.toggle)
-        })
-    },
+        init: function(){
+            var container = this,
+                option = $.extend(this.option, container),
+                menuOpenBtn = ['.header-gnbOpen'],
+                menuCloseBtn = [],
+                toggleShowBtn = 'a[data-show]',
+                toggleCloseBtn = 'a[data-hide]',
+                toggleBtn = 'a[data-toggle]';
 
 
-    //메인 메뉴 연다.
-    menuOpen: function (e) {
-        e.preventDefault();
+            //메인메뉴 열기
+            var menuBtn = document.querySelectorAll(menuOpenBtn),
+                menuBtnLenght = document.querySelectorAll(menuOpenBtn).length;
 
-        var el = e.data,
-            gnb = el.gnb,
-            modalFull = el.modalFull,
-            body = el.body;
+            for(i = 0; i < menuBtnLenght; i++){
+                //addeventlistner ie8 에서 지원하지 않는다
+                menuBtn[i].addEventListener('click', function(){
+                    container.menuOpen(event, option)
+                })
+            }
 
-        //메인메뉴 함수 실행하는 조건문
-        var gnbOpen = el.menuControllerOpen(this, e);
-        if( gnbOpen === true){
-            return
+            //메인메뉴 닫기
+            $(menuCloseBtn).each(function(index, value){
+                $(value).on('click', option, option.menuClose);
+            })
+
+            //엘레먼트 show
+            $(toggleShowBtn).each(function(index, value){
+                $(value).on('click', option, option.showEl);
+            })
+
+            //엘레먼트 close
+            $(toggleCloseBtn).each(function(index, value){
+                $(value).on('click', option.hideEl);
+            })
+
+            //엘레먼트 toggle
+            $(toggleBtn).each(function(index, value){
+                $(value).on('click', option.toggle)
+            })
+        },
+
+
+        //메인 메뉴 연다.
+        menuOpen: function (event, option) {
+            event.preventDefault();
+
+            var gnb = document.querySelectorAll(option.gnb)[0],
+                body = document.querySelectorAll(option.body)[0],
+
+                //this 가 attatchEvent 를 가르키는 경우를 대비해서 event.srcElement 을 사용한다.
+                //ex)controller 에서 함수를 실행할 때.
+                target = event.srcElement;
+
+
+            //메인메뉴 함수 실행하는 조건문
+            var gnbOpen = option.menuControllerOpen(target, event, option);
+            if( gnbOpen === true){
+                return
+            }
+
+            //gnb 에니메이션
+            gnb.style.display = 'block';
+            gnb.classList.remove('close');
+            gnb.classList.add('open');
+
+            //에니메이션 callback
+            gnb.addEventListener('webkitAnimationEnd',function(event){
+                event.srcElement.classList.add('active');
+                body.classList.add('sidemenu');
+                target.classList.add('active');
+
+                //에니메이션 끝난 상태로 유지
+                gnb.style.webkitTransform = 'translateX(250px)';
+                gnb.style.MozTransform = 'translateX(250px)';
+                gnb.style.msTransform = 'translateX(250px)';
+                gnb.style.webkitTransform = 'translateX(250px)';
+
+            },false);
+        },
+
+        //메인 메뉴 닫는다.
+        menuClose: function (event, option) {
+
+            event.preventDefault();
+
+            var gnb = document.querySelectorAll(option.gnb)[0],
+                body = document.querySelectorAll(option.body)[0],
+                target = event.srcElement;;
+
+            //gnb 에니메이션
+            gnb.classList.remove('open');
+            gnb.classList.add('close');
+
+
+            //에니메이션 callback
+            gnb.addEventListener('webkitAnimationEnd',function(event){
+                target.classList.remove('active');
+                body.classList.remove('sidemenu');
+
+                //에니메이션 끝난 상태로 유지
+                gnb.style.webkitTransform = 'translateX(0px)';
+                gnb.style.MozTransform = 'translateX(0px)';
+                gnb.style.msTransform = 'translateX(0px)';
+                gnb.style.webkitTransform = 'translateX(0px)';
+
+                //gnb.style.display = 'none';
+
+            },false);
+        },
+
+
+        menuControllerOpen: function(menuBtn, event, option){
+
+            // hasClass, takes two params: element and classname
+            function hasClass(elem, className) {
+                return elem.className && RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+            }
+
+            if(hasClass(menuBtn, 'active')){
+                this.menuClose(event, option);
+
+                return true;
+            } else {
+                return false;
+            }
+        },
+
+
+        //버튼 클릭 시 엘리먼트 토글한다.
+        toggle: function (e) {
+            e.preventDefault();
+
+            var el = $(e.currentTarget).data().toggle,
+                obj = $('div.' + el),
+                thigObj = $(e.currentTarget);
+
+            obj.toggle();
+            thigObj.toggleClass('active');
+        },
+
+        //버튼 클릭 시 엘리먼트 보여준다.
+        showEl: function (e) {
+            e.preventDefault();
+
+            var obj = $(e.currentTarget).data().show,
+                objEl = $('div.' + obj);
+
+            objEl.show();
+        },
+
+        //버튼 클릭 시 엘리먼트 숨긴다.
+        hideEl: function (e) {
+            e.preventDefault();
+
+            var obj = $(e.currentTarget).data().hide,
+                objEl = $('div.' + obj);
+
+            objEl.hide();
         }
-
-        //this 가 attatchEvent 를 가르키는 경우를 대비해서 e.currentTarget 을 사용한다.
-        //ex)controller 에서 함수를 실행할 때.
-        $(e.currentTarget).addClass('active');
-        $(gnb).show();
-
-        $(gnb).animate({right: '0px'}, 500);
-        $(modalFull).show();
-        $(modalFull).animate({right: '250'}, 500);
-        $(body).addClass('sidemenu');
-    },
-
-    //메인 메뉴 닫는다.
-    menuClose: function (e) {
-        e.preventDefault();
-
-        var el = e.data,
-            gnb = el.gnb,
-            modalFull = el.modalFull,
-            body = el.body;
-
-        $(e.currentTarget).removeClass('active');
-
-        $(gnb).animate({right: '-250px'}, 500, function () {
-            $(gnb).hide();
-            $(modalFull).hide();
-            $(body).removeClass('sidemenu');
-            $(gnb).hide();
-        });
-
-        $(modalFull).animate({right: '0px'}, 500);
-    },
-
-    menuControllerOpen: function(menuBtn, e){
-        if($(menuBtn).hasClass('active')){
-            this.menuClose(e);
-
-            return true;
-        } else {
-            return false;
-        }
-    },
-
-
-    //버튼 클릭 시 엘리먼트 토글한다.
-    toggle: function (e) {
-        e.preventDefault();
-
-        var el = $(e.currentTarget).data().toggle,
-            obj = $('div.' + el),
-            thigObj = $(e.currentTarget);
-
-        obj.toggle();
-        thigObj.toggleClass('active');
-    },
-
-    //버튼 클릭 시 엘리먼트 보여준다.
-    showEl: function (e) {
-        e.preventDefault();
-
-        var obj = $(e.currentTarget).data().show,
-            objEl = $('div.' + obj);
-
-        objEl.show();
-    },
-
-    //버튼 클릭 시 엘리먼트 숨긴다.
-    hideEl: function (e) {
-        e.preventDefault();
-
-        var obj = $(e.currentTarget).data().hide,
-            objEl = $('div.' + obj);
-
-        objEl.hide();
     }
-}
+
+})(jQuery);
 							 </code>
 						 </pre>
 
