@@ -20,6 +20,10 @@ h2 {
     color: #f05f5f;
 }
 
+pre {
+    max-height: none !important;
+}
+
 
 .pluginGuide {
     margin-bottom: 50px;
@@ -29,7 +33,7 @@ h2 {
     margin-bottom: 10px;
 }
 .pluginGuide .unit {
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 
@@ -85,6 +89,7 @@ label {
     margin-top: 80px;
     background: #000000;
     padding: 20px;
+    margin-bottom: 50px;
 }
 .pluginUse h3 {
     font-size: 2em;
@@ -128,4 +133,9 @@ label {
 .modal.login .loginBtn span {
     line-height: 100px;
     height: 100px;
+}
+
+
+.tableBoard {
+    margin-bottom: 40px;
 }

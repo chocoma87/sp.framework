@@ -58,7 +58,7 @@ a {
     color: inherit;
 }
 
-.contentWidth {
+.setWidth {
     margin: 0 auto;
 }
 #contentWrap {
@@ -95,7 +95,7 @@ a {
 .gnbMobileBtn {
     display: none;
 }
-header .contentWidth {
+header .setWidth {
     padding: 10px 0;
 }
 header #logo {

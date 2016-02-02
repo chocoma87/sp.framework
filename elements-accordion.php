@@ -18,7 +18,7 @@
 
 <div id="contentWrap">
 
-	<div class="contentWidth clearFix row">
+	<div class="setWidth clearFix row">
 
 		<div class="lnbWrap col span_6">
 			<?include('include/lnb_elements.php');?>
@@ -57,8 +57,8 @@
 
 					<h3>HTML</h3>
 					<pre>
-						<code class="language-markup"><?php $strMarkup = file_get_contents('./markup/accordion.html');
-echo htmlspecialchars($strMarkup);?>
+						<code class="language-markup">
+							<?php $strMarkup = file_get_contents('./markup/accordion.html');echo htmlspecialchars($strMarkup);?>
 						</code>
 					</pre>
 
@@ -160,7 +160,7 @@ echo htmlspecialchars($strMarkup);?>
 			
 		</section>
 
-	</div><!-- .contentWidth -->
+	</div><!-- .setWidth -->
 
 
 </div><!-- .contentWrap -->

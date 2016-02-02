@@ -5,7 +5,7 @@
 
 <div id="contentWrap">
 
-	<div class="contentWidth clearFix">
+	<div class="setWidth clearFix">
 
 		<div class="lnbWrap col span_6">
 			<?include('include/lnb_elements.php');?>
@@ -16,7 +16,7 @@
 			<h2>Button</h2>
 		</section>
 
-	</div><!-- .contentWidth -->
+	</div><!-- .setWidth -->
 
 
 </div><!-- .contentWrap -->

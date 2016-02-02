@@ -1,11 +1,12 @@
 
 
+
 <?php include('include/_header.php'); ?>
 
 
 <div id="contentWrap">
 
-	<div class="contentWidth subpage">
+	<div class="setWidth subpage">
 
 		<div class="lnbWrap col span_6">
 			<?include('include/lnb_board.php');?>
@@ -17,15 +18,13 @@
 
 			<div class="tableWrapper">
 				<table class="tableBoard">
-					<thead>
 					<tr>
 						<th>번호</th>
 						<th>제목</th>
 						<th>작성자</th>
 						<th>작성일</th>
 					</tr>
-					</thead>
-					<tbody><tr>
+					<tr>
 						<td class="num">200</td>
 						<td class="title"><a href="board-detail.php">2015 K-water 사장배 전국마스터즈 수영대회</a></td>
 						<td class="name">송준홍</td>
@@ -91,7 +90,18 @@
 						<td class="name">송준홍</td>
 						<td class="date">2015.09.02</td>
 					</tr>
-					</tbody></table>
+				</table>
+			</div>
+
+			<div class="pluginGuide">
+				<h3>HTML</h3>
+
+				<pre>
+					<code class="language-markup">
+						<?php $strMarkup = file_get_contents('./markup/boardTable.html');echo htmlspecialchars($strMarkup);?>
+					</code>
+				</pre>
+
 			</div>
 
 
@@ -99,7 +109,7 @@
 
 		</section>
 
-	</div><!-- .contentWidth -->
+	</div><!-- .setWidth -->
 
 
 </div><!-- .contentWrap -->

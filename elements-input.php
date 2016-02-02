@@ -7,7 +7,7 @@
 
 <div id="contentWrap">
 
-	<div class="contentWidth subpage clearFix row">
+	<div class="setWidth subpage clearFix row">
 
 		<div class="lnbWrap col span_6">
 			<?include('include/lnb_elements.php');?>
@@ -469,10 +469,454 @@
 
 
 
+			<div class="pluginGuide">
+				<div class="unit">
+					<h3>HTML</h3>
+
+					<pre>
+						<code class="language-markup">
+							&lt;table class="signUpTable"&gt;
+							&lt;colgroup&gt;
+							&lt;col width="11%" /&gt;
+							&lt;col width="89%" /&gt;
+							&lt;/colgroup&gt;
+
+							&lt;tbody&gt;
+							&lt;tr&gt;
+							&lt;th&gt;
+							&lt;label for="userId"&gt;아이디&lt;/label&gt;
+							&lt;/th&gt;
+
+							&lt;td&gt;
+							&lt;table class="inputStructure"&gt;
+							&lt;colgroup&gt;
+							&lt;col width="68%"/&gt;
+							&lt;col width="2%"/&gt;
+							&lt;col width="30%"/&gt;
+							&lt;/colgroup&gt;
+							&lt;tbody&gt;
+							&lt;tr&gt;
+							&lt;td&gt;
+							&lt;input class="textInput" type="text" name="userId" label="아이디" id="userId"&gt;
+							&lt;/td&gt;
+							&lt;td&gt;&lt;/td&gt;
+							&lt;td&gt;
+							&lt;a href="#" class="button"&gt;
+							&lt;span&gt;중복확인&lt;/span&gt;
+							&lt;/a&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;/tbody&gt;
+							&lt;/table&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+							&lt;th&gt;
+							&lt;label for="userPw"&gt;비밀번호&lt;/label&gt;
+							&lt;/th&gt;
+
+							&lt;td&gt;
+							&lt;input class="textInput" type="password" name="password" label="비밀번호" id="userPw"&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+							&lt;th&gt;
+							&lt;label for="userPwConfirm"&gt;비밀번호 확인&lt;/label&gt;
+							&lt;/th&gt;
+
+							&lt;td&gt;
+							&lt;input class="textInput" type="password" name="password2" label="비밀번호" id="userPwConfirm"&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+							&lt;th&gt;
+							&lt;label for="userName"&gt;이름&lt;/label&gt;
+							&lt;/th&gt;
+
+							&lt;td&gt;
+							&lt;input class="textInput" type="text" name="userName" label="이름" id="userName"&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+
+							&lt;tr&gt;
+							&lt;th&gt;
+							&lt;label for="userEmail"&gt;이메일&lt;/label&gt;
+							&lt;/th&gt;
+
+							&lt;td&gt;
+							&lt;table class="inputStructure"&gt;
+							&lt;colgroup&gt;
+							&lt;col width="68%"/&gt;
+							&lt;col width="2%"/&gt;
+							&lt;col width="30%"/&gt;
+							&lt;/colgroup&gt;
+							&lt;tbody&gt;
+							&lt;tr&gt;
+							&lt;td&gt;
+							&lt;input class="textInput" type="text" name="email" label="이메일" id="userEmail"&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;a href="#" class="button"&gt;
+							&lt;span&gt;중복확인&lt;/span&gt;
+							&lt;/a&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;/tbody&gt;
+							&lt;/table&gt;
+
+							&lt;div class="extra"&gt;
+							&lt;span&gt;
+							&lt;input type="checkbox" name="mailling" id="newsletter"&gt; &lt;label for="newsletter"&gt;뉴스레터 수신&lt;/label&gt;
+							&lt;/span&gt;
+							&lt;p&gt;
+							&lt;em&gt;※&lt;/em&gt; 주문 관련 정보, 주요 공지사항은 수신동의 여부에 관계없이 발송됩니다.
+							&lt;/p&gt;
+							&lt;/div&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+
+							&lt;tr&gt;
+							&lt;th&gt;
+							&lt;label for="userEmail2"&gt;이메일 2&lt;/label&gt;
+							&lt;/th&gt;
+
+							&lt;td&gt;
+							&lt;table class="inputStructure"&gt;
+							&lt;colgroup&gt;
+							&lt;col width="30%"/&gt;
+							&lt;col width="5%"/&gt;
+							&lt;col width="33%"/&gt;
+							&lt;col width="2%"/&gt;
+							&lt;col width="30%"/&gt;
+							&lt;/colgroup&gt;
+							&lt;tbody&gt;
+							&lt;tr&gt;
+							&lt;td&gt;
+							&lt;input class="textInput" type="text" name="email" id="userEmail2"/&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							@
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;select name="emailSelect" id="emailSelect"&gt;
+							&lt;option value="naver"&gt;naver.com&lt;/option&gt;
+							&lt;option value="daum"&gt;daum.net&lt;/option&gt;
+							&lt;option value="google"&gt;gmail.com&lt;/option&gt;
+							&lt;/select&gt;
+							&lt;/td&gt;
+							&lt;td&gt;&lt;/td&gt;
+							&lt;td&gt;
+							&lt;a href="#" class="button"&gt;
+							&lt;span&gt;중복확인&lt;/span&gt;
+							&lt;/a&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;/tbody&gt;
+							&lt;/table&gt;
+
+							&lt;div class="extra"&gt;
+							&lt;span&gt;
+							&lt;input type="checkbox" name="mailling" id="newsletter2"&gt; &lt;label for="newsletter2"&gt;뉴스레터 수신&lt;/label&gt;
+							&lt;/span&gt;
+							&lt;p&gt;
+							&lt;em&gt;※&lt;/em&gt; 주문 관련 정보, 주요 공지사항은 수신동의 여부에 관계없이 발송됩니다.
+							&lt;/p&gt;
+							&lt;/div&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+							&lt;tr&gt;
+							&lt;th&gt;
+							&lt;label&gt;
+							&lt;label for="userPhoneNo"&gt;핸드폰&lt;/label&gt;
+							&lt;/label&gt;
+							&lt;/th&gt;
+
+							&lt;td&gt;
+							&lt;table class="inputStructure"&gt;
+							&lt;colgroup&gt;
+							&lt;col width="30%"&gt;
+							&lt;col width="5%"&gt;
+							&lt;col width="30%"&gt;
+							&lt;col width="5%"&gt;
+							&lt;col width="30%"&gt;
+							&lt;/colgroup&gt;
+
+							&lt;tbody&gt;
+							&lt;tr&gt;
+							&lt;td&gt;
+							&lt;input class="textInput" type="tel" name="mobileNum1" maxlength="4" label="핸드폰" id="userPhoneNo"&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							-
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;input class="textInput" type="tel" name="mobileNum2" maxlength="4" label="핸드폰"&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							-
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;input class="textInput" type="tel" name="mobileNum3" maxlength="4" label="핸드폰"&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;/tbody&gt;
+							&lt;/table&gt;
+
+							&lt;div class="extra"&gt;
+							&lt;span&gt;
+							&lt;input type="checkbox" name="sms" id="eventMailing"&gt; &lt;label for="eventMailing"&gt;정보/이벤트 SMS 수신&lt;/label&gt;
+							&lt;/span&gt;
+							&lt;p&gt;
+							&lt;em&gt;※&lt;/em&gt; 주문 관련 정보, 주요 공지사항은 수신동의 여부에 관계없이 발송됩니다.
+							&lt;/p&gt;
+							&lt;/div&gt;
+
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+
+							&lt;tr&gt;
+							&lt;th&gt;
+							&lt;label&gt;
+							&lt;label for="userPhoneNo2"&gt;핸드폰 2&lt;/label&gt;
+							&lt;/label&gt;
+							&lt;/th&gt;
+
+							&lt;td&gt;
+							&lt;table class="inputStructure"&gt;
+							&lt;colgroup&gt;
+							&lt;col width="30%"&gt;
+							&lt;col width="5%"&gt;
+							&lt;col width="30%"&gt;
+							&lt;col width="5%"&gt;
+							&lt;col width="30%"&gt;
+							&lt;/colgroup&gt;
+
+							&lt;tbody&gt;
+							&lt;tr&gt;
+							&lt;td&gt;
+							&lt;select name="phoneSelect"&gt;
+							&lt;option value="010"&gt;010&lt;/option&gt;
+							&lt;option value="016"&gt;016&lt;/option&gt;
+							&lt;option value="019"&gt;019&lt;/option&gt;
+							&lt;/select&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							-
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;input class="textInput" type="tel" name="mobileNum2" maxlength="4" label="핸드폰" id="userPhoneNo2"&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							-
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;input class="textInput" type="tel" name="mobileNum3" maxlength="4" label="핸드폰"&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;/tbody&gt;
+							&lt;/table&gt;
+
+							&lt;div class="extra"&gt;
+							&lt;span&gt;
+							&lt;input type="checkbox" name="sms" id="eventMailing2"&gt; &lt;label for="eventMailing2"&gt;정보/이벤트 SMS 수신&lt;/label&gt;
+							&lt;/span&gt;
+							&lt;p&gt;
+							&lt;em&gt;※&lt;/em&gt; 주문 관련 정보, 주요 공지사항은 수신동의 여부에 관계없이 발송됩니다.
+							&lt;/p&gt;
+							&lt;/div&gt;
+
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+							&lt;tr class="address"&gt;
+							&lt;th&gt;
+							&lt;label for="userAddress"&gt;주소&lt;/label&gt;
+							&lt;/th&gt;
+							&lt;td&gt;
+							&lt;table class="inputStructure"&gt;
+							&lt;colgroup&gt;
+							&lt;col width="30%"&gt;
+							&lt;col width="5%"&gt;
+							&lt;col width="30%"&gt;
+							&lt;col width="2%"&gt;
+							&lt;col width="30%"&gt;
+							&lt;/colgroup&gt;
+
+							&lt;tbody&gt;
+							&lt;tr&gt;
+							&lt;td&gt;
+							&lt;input class="textInput" type="text" name="addressZip" label="우편번호" readonly&gt;
+							&lt;/td&gt;
+
+							&lt;td&gt;-&lt;/td&gt;
+
+							&lt;td&gt;
+							&lt;input class="textInput" type="text" name="addressZip2" label="우편번호" readonly&gt;
+							&lt;/td&gt;
+
+							&lt;td&gt;&lt;/td&gt;
+
+							&lt;td&gt;
+							&lt;a class="button" href="#"&gt;
+							&lt;span&gt;우편번호&lt;/span&gt;
+							&lt;/a&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+							&lt;td colspan="5"&gt;
+							&lt;input class="textInput" type="text" name="address" readonly /&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+							&lt;td colspan="5"&gt;
+							&lt;input class="textInput" type="text" id="userAddress"/&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+							&lt;/tbody&gt;
+							&lt;/table&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+
+							&lt;tr&gt;
+							&lt;th&gt;성별&lt;/th&gt;
+							&lt;td&gt;
+							&lt;input type="radio" id="genderM" name="gender" value="m" /&gt; &lt;label for="genderM"&gt;남자&lt;/label&gt;
+							&lt;input type="radio" id="genderF" name="gender" value="f" /&gt; &lt;label for="genderF"&gt;여자&lt;/label&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+
+							&lt;tr&gt;
+							&lt;th&gt;
+							&lt;label for="birthY"&gt;생년월일&lt;/label&gt;
+							&lt;/th&gt;
+							&lt;td&gt;
+							&lt;table class="inputStructure"&gt;
+							&lt;colgroup&gt;
+							&lt;col width="32%"&gt;
+							&lt;col width="2%"&gt;
+							&lt;col width="32%"&gt;
+							&lt;col width="2%"&gt;
+							&lt;col width="32%"&gt;
+							&lt;/colgroup&gt;
+							&lt;tbody&gt;
+							&lt;tr&gt;
+							&lt;td&gt;
+							&lt;input type="text" maxlength="4" placeholder="생년" class="textInput" id="birthY" name="birthY" /&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;select name="birthM" id="birthM"&gt;
+							&lt;option value&gt;월&lt;/option&gt;
+							&lt;option value="1"&gt;1&lt;/option&gt;
+							&lt;option value="2"&gt;2&lt;/option&gt;
+							&lt;option value="3"&gt;3&lt;/option&gt;
+							&lt;option value="3"&gt;4&lt;/option&gt;
+							&lt;option value="3"&gt;5&lt;/option&gt;
+							&lt;option value="3"&gt;6&lt;/option&gt;
+							&lt;option value="3"&gt;7&lt;/option&gt;
+							&lt;option value="3"&gt;8&lt;/option&gt;
+							&lt;option value="3"&gt;9&lt;/option&gt;
+							&lt;option value="3"&gt;10&lt;/option&gt;
+							&lt;option value="3"&gt;11&lt;/option&gt;
+							&lt;option value="3"&gt;12&lt;/option&gt;
+							&lt;/select&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;/td&gt;
+							&lt;td&gt;
+							&lt;select name="birthD" id="birthD"&gt;
+							&lt;option value&gt;일&lt;/option&gt;
+							&lt;option value="1"&gt;1&lt;/option&gt;
+							&lt;option value="2"&gt;2&lt;/option&gt;
+							&lt;option value="3"&gt;3&lt;/option&gt;
+							&lt;option value="3"&gt;4&lt;/option&gt;
+							&lt;option value="3"&gt;5&lt;/option&gt;
+							&lt;option value="3"&gt;6&lt;/option&gt;
+							&lt;option value="3"&gt;7&lt;/option&gt;
+							&lt;option value="3"&gt;8&lt;/option&gt;
+							&lt;option value="3"&gt;9&lt;/option&gt;
+							&lt;option value="3"&gt;10&lt;/option&gt;
+							&lt;option value="3"&gt;11&lt;/option&gt;
+							&lt;option value="3"&gt;12&lt;/option&gt;
+							&lt;option value="3"&gt;13&lt;/option&gt;
+							&lt;option value="3"&gt;14&lt;/option&gt;
+							&lt;option value="3"&gt;15&lt;/option&gt;
+							&lt;option value="3"&gt;16&lt;/option&gt;
+							&lt;option value="3"&gt;17&lt;/option&gt;
+							&lt;option value="3"&gt;18&lt;/option&gt;
+							&lt;option value="3"&gt;19&lt;/option&gt;
+							&lt;option value="3"&gt;20&lt;/option&gt;
+							&lt;option value="3"&gt;21&lt;/option&gt;
+							&lt;option value="3"&gt;22&lt;/option&gt;
+							&lt;option value="3"&gt;23&lt;/option&gt;
+							&lt;option value="3"&gt;24&lt;/option&gt;
+							&lt;option value="3"&gt;25&lt;/option&gt;
+							&lt;option value="3"&gt;26&lt;/option&gt;
+							&lt;option value="3"&gt;27&lt;/option&gt;
+							&lt;option value="3"&gt;28&lt;/option&gt;
+							&lt;option value="3"&gt;29&lt;/option&gt;
+							&lt;option value="3"&gt;30&lt;/option&gt;
+							&lt;/select&gt;
+							&lt;/td&gt;
+
+							&lt;/tr&gt;
+							&lt;/tbody&gt;
+							&lt;/table&gt;
+							&lt;/td&gt;
+
+							&lt;/tr&gt;
+
+
+
+							&lt;tr&gt;
+							&lt;td class="agreementCheck" colspan="2"&gt;
+							&lt;p&gt;
+							&lt;input type="checkbox" name="private"&gt;
+							&lt;a href="#"&gt;이용약관&lt;/a&gt;과 &lt;a href="#"&gt;개인정보 취급방침&lt;/a&gt;을 읽고 이에 동의합니다.
+							&lt;/p&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;tr&gt;
+							&lt;td colspan="2"&gt;
+							&lt;button type="submit" class="button"&gt;
+							&lt;span&gt;가입하기&lt;/span&gt;
+							&lt;/button&gt;
+							&lt;/td&gt;
+							&lt;/tr&gt;
+
+							&lt;/tbody&gt;
+
+							&lt;/table&gt;
+						</code>
+					</pre>
+				</div>
+			</div>
+
 
 		</section>
 
-	</div><!-- .contentWidth -->
+	</div><!-- .setWidth -->
 
 
 </div><!-- .contentWrap -->
