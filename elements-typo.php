@@ -223,7 +223,8 @@ $(document).ready(function () {
 
 	attatchEvent.init();
 });
-                                 
+
+
 
     //메인 메뉴가 토글일 경우, menuCloseBtn 은 빈 배열로 하고, menuControllerOpen 함수 추가해서 사용한다.
     //필요에 따라 controller 함수 추가해서 사용한다.
@@ -366,10 +367,10 @@ $(document).ready(function () {
 
             var thisObj = e.srcElement,
                 el = thisObj.dataset.toggle,
-                obj = document.querySelectorAll('div.' + el);
+                obj = thisObj.parentNode.querySelector('div.' + el);
 
-            obj.toggle();
-            thisObj.toggleClass('active');
+            obj.classList.toggle('active');
+            thisObj.classList.toggle('active');
         },
 
         //버튼 클릭 시 엘리먼트 보여준다.
