@@ -496,6 +496,18 @@ var attatchEventTab = {
 
     }
 }
+
+
+//플레이스 홀더 ie8
+$('.placeHolder').on('keydown', function(){
+    $(this).css('backgroundPosition', '-100%');
+})
+//폼테그에 값이 없을 때, 백그라운드 이미지 다시 보여준다
+$('.placeHolder').on('focusout', function(){
+    if(!$(this).val()) {
+        $(this).css('backgroundPosition', '10px center');
+    }
+})
 							 </code>
 						  </pre>
 
