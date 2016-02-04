@@ -367,10 +367,10 @@ $(document).ready(function () {
 
             var thisObj = e.srcElement,
                 el = thisObj.dataset.toggle,
-                obj = thisObj.parentNode.querySelector('div.' + el);
+                obj = document.querySelectorAll('div.' + el);
 
-            obj.classList.toggle('active');
-            thisObj.classList.toggle('active');
+            obj.toggle();
+            thisObj.toggleClass('active');
         },
 
         //버튼 클릭 시 엘리먼트 보여준다.

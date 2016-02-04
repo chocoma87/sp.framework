@@ -160,32 +160,32 @@
 
 				<!-- pc 메인 메뉴 시작 -->
 				<nav class="gnb col span_17">
-					<ul>
+					<ul class="depth1">
 						<li><a href="#">Main</a>
-							<ul>
+							<ul class="depth2">
 								<li><a href="main-type1.php">Type1</a></li>
 							</ul>
 						</li>
 						<li><a href="#">Pages</a>
-							<ul>
+							<ul class="depth2">
 								<li><a href="pages-history.php">연혁</a></li>
 								<li><a href="pages-greeting.php">인사말</a></li>
 							</ul>
 						</li>
 						<li><a href="#">Board</a>
-							<ul>
+							<ul class="depth2">
 								<li><a href="board-list.php">List</a></li>
 								<li><a href="board-table.php">table</a></li>
 								<li><a href="board-market.php">market</a></li>
 							</ul>
 						</li>
 						<li><a href="#">Shop</a>
-							<ul>
+							<ul class="depth2">
 								<li><a href="shop-type1.php">Type1</a></li>
 							</ul>
 						</li>
 						<li><a href="#">Elements</a>
-							<ul>
+							<ul class="depth2">
 								<li><a href="elements-typo.php">Typography</a></li>
 								<li><a href="elements-accordion.php">Accordion</a></li>
 								<li><a href="elements-button.php">Button</a></li>
@@ -197,7 +197,7 @@
 							</ul>
 						</li>
 						<li class="last"><a href="#">Update Log</a>
-							<ul>
+							<ul class="depth2">
 								<li><a href="#">History</a></li>
 							</ul>
 						</li>
