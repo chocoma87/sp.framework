@@ -206,6 +206,58 @@ body {
 						 </div>
 
 
+                     <div class="unit">
+
+                             <h3>custom.js (PC)</h3>
+						 <pre>
+							 <code class="language-javascript">
+
+
+var toggleShowBtn = $('a[data-show]'),
+    toggleCloseBtn = $('a[data-hide]');
+
+//엘레먼트 show
+toggleShowBtn.on('click', function(){
+    showEl(event, $(this));
+})
+
+//엘레먼트 close
+toggleCloseBtn.on('click', function(){
+    hideEl(event, $(this));
+})
+
+
+//버튼 클릭 시 엘리먼트 보여준다.
+var showEl = function (e, current) {
+
+    var obj = current.data('show'),
+        objEl = $('div.' + obj);
+
+    objEl.show();
+
+    if(objEl.hasClass('full')){
+        $('.modal').show();
+    }
+
+};
+
+//버튼 클릭 시 엘리먼트 숨긴다.
+var hideEl = function (e, current) {
+    e.preventDefault();
+
+    var obj = current.data('hide'),
+        objEl = $('div.' + obj);
+
+    objEl.hide();
+
+    if(objEl.hasClass('full')){
+        $('.modal').hide();
+    }
+}
+
+                             </code>
+                         </pre>
+                     </div>
 
 						 <div class="unit">
 
