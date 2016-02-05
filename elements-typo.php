@@ -206,6 +206,58 @@ body {
 						 </div>
 
 
+                     <div class="unit">
+
+                             <h3>custom.js (PC)</h3>
+						 <pre>
+							 <code class="language-javascript">
+
+
+var toggleShowBtn = $('a[data-show]'),
+    toggleCloseBtn = $('a[data-hide]');
+
+//엘레먼트 show
+toggleShowBtn.on('click', function(){
+    showEl(event, $(this));
+})
+
+//엘레먼트 close
+toggleCloseBtn.on('click', function(){
+    hideEl(event, $(this));
+})
+
+
+//버튼 클릭 시 엘리먼트 보여준다.
+var showEl = function (e, current) {
+
+    var obj = current.data('show'),
+        objEl = $('div.' + obj);
+
+    objEl.show();
+
+    if(objEl.hasClass('full')){
+        $('.modal').show();
+    }
+
+};
+
+//버튼 클릭 시 엘리먼트 숨긴다.
+var hideEl = function (e, current) {
+    e.preventDefault();
+
+    var obj = current.data('hide'),
+        objEl = $('div.' + obj);
+
+    objEl.hide();
+
+    if(objEl.hasClass('full')){
+        $('.modal').hide();
+    }
+}
+
+                             </code>
+                         </pre>
+                     </div>
 
 						 <div class="unit">
 
@@ -223,7 +275,8 @@ $(document).ready(function () {
 
 	attatchEvent.init();
 });
-                                 
+
+
 
     //메인 메뉴가 토글일 경우, menuCloseBtn 은 빈 배열로 하고, menuControllerOpen 함수 추가해서 사용한다.
     //필요에 따라 controller 함수 추가해서 사용한다.
@@ -495,6 +548,18 @@ var attatchEventTab = {
 
     }
 }
+
+
+//플레이스 홀더 ie8
+$('.placeHolder').on('keydown', function(){
+    $(this).css('backgroundPosition', '-100%');
+})
+//폼테그에 값이 없을 때, 백그라운드 이미지 다시 보여준다
+$('.placeHolder').on('focusout', function(){
+    if(!$(this).val()) {
+        $(this).css('backgroundPosition', '10px center');
+    }
+})
 							 </code>
 						  </pre>
 
