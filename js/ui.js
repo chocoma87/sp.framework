@@ -305,3 +305,42 @@
         })
     }
 })(jQuery);
+
+
+
+
+
+
+
+
+/**
+ * Hover Menu plugin
+ */
+(function($){
+
+    $.fn.hovermenu = function(){
+
+        return this.each(function(){
+            $(this).find('> li').hover(
+                function(){
+                    $(this).addClass('active');
+                },
+                function(){
+                    $(this).removeClass('active');
+                }
+            )
+
+            $(this).find('> li > a').on('focusin', function() {
+                $(this).closest('li').addClass('active');
+                console.log('in');
+            })
+
+            $(this).find('ul > li:last-child a').on('focusout', function() {
+                $(this).closest('li').parents('li').removeClass('active');
+                console.log();
+            })
+        })
+
+    };
+
+})(jQuery);

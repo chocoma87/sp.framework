@@ -130,6 +130,9 @@ header nav.gnb li ul {
 header nav.gnb li li a {
     color: #002144;
 }
+header nav.gnb > ul > li.active ul {
+    display: block;
+}
 header nav.gnb a {
     display: block;
     padding: 10px;
