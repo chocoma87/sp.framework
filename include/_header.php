@@ -15,10 +15,10 @@
 	<meta name="viewport" 		content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="format-detection" content="telephone=no">
-	
+
 	<script src="//use.typekit.net/veu4ezd.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
-	
+
 	<!-- CSS -->
 	<link rel="stylesheet" 		type="text/css" 	href="css/reset.css">
 	<link rel="stylesheet" 		type="text/css" 	href="css/fontface.css">
@@ -33,19 +33,21 @@
 
 	<!-- fontawesome -->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	
+
 	<!--[if lt IE 9]>
 		<script src="js/html5.js"></script>
 		<script src="js/respond.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/ie.css" />
 	<![endif]-->
 
-	
+
 	<!-- JS -->
 	<script type="text/javascript" 	src="js/jquery.js"></script>
 	<script type="text/javascript" 	src="js/jquery.selectric.min.js"></script>
 	<script type="text/javascript" 	src="js/icheck.min.js"></script>
-	<script	type="text/javascript" 	src="js/ui.js"></script>
+	<script	type="text/javascript" 	src="js/tab.js"></script>
+	<script	type="text/javascript" 	src="js/treemenu.js"></script>
+	<script	type="text/javascript" 	src="js/accordion.js"></script>
 	<script	type="text/javascript" 	src="js/custom.js"></script>
 	<script	type="text/javascript" 	src="js/prism.js"></script>
 
@@ -53,9 +55,9 @@
 	<!-- Favicon & iOS icon -->
 	<link rel="shortcut icon" 		href="images/favicon.ico">
 	<link rel="apple-touch-icon" 	href="images/apple-touch-icon.png">
-	
+
 	<!-- GoogleCode -->
-	
+
 </head>
 
 
@@ -86,7 +88,7 @@
 			<ul class="mobileMainmenu">
 				<li><a href="#">Main</a>
 					<ul>
-						<li><a href="main-type1.php">Type1</a></li>
+						<li><a href="main_type01">Type1</a></li>
 					</ul>
 				</li>
 				<li><a href="#">Pages</a>
@@ -163,7 +165,7 @@
 					<ul class="depth1">
 						<li><a href="#">Main</a>
 							<ul class="depth2">
-								<li><a href="main-type1.php">Type1</a></li>
+								<li><a href="templatePC/sdmall">Type1</a></li>
 							</ul>
 						</li>
 						<li><a href="#">Pages</a>
@@ -181,7 +183,7 @@
 						</li>
 						<li><a href="#">Shop</a>
 							<ul class="depth2">
-								<li><a href="shop-type1.php">Type1</a></li>
+								<li><a href="templatePC/sdmall">Type1</a></li>
 							</ul>
 						</li>
 						<li><a href="#">Elements</a>
@@ -207,4 +209,3 @@
 
 			</div><!-- .setWidth -->
 		</header>
-
