@@ -183,7 +183,7 @@
 						</li>
 						<li><a href="#">Shop</a>
 							<ul class="depth2">
-								<li><a href="templatePC/sdmall">Type1</a></li>
+								<li><a href="templatePC/sdmall">SDmall</a></li>
 							</ul>
 						</li>
 						<li><a href="#">Elements</a>

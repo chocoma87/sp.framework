@@ -1,0 +1,15 @@
+
+
+
+body,
+input,
+select {
+    font-family:'돋움',dotum,sans-serif;
+    letter-spacing: -0.05em;
+}
+
+select {
+    background: none;
+    background-color: white;
+    padding-right: 5px;
+}

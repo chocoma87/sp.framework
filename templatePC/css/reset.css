@@ -1,0 +1,97 @@
+/*
+RESET - ADAPTED FROM MEYER RESET
+URL - http://meyerweb.com/eric/tools/css/reset/
+LICENSE - PUBLIC DOMAIN
+*/
+
+
+
+/* RESET
+----------------------------------------------------------------------------------------------------*/
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, caption, canvas, center, cite, code,
+dd, del, details, dfn, dialog, div, dl, dt, em, embed, fieldset, figcaption, figure, form, footer, header, h1, h2, h3, h4, h5, h6, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, summary, tt, table, tbody, textarea, tfoot, thead, time, tr, th, td, u, ul, var, video {
+	font-size: 100%;
+	font-weight: inherit;
+	font-style: inherit;
+	vertical-align: baseline;
+	white-space: normal;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+	display: block;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+
+
+/*----------------------------------------------------------------------------------------------------*/
+/* SPAAAADE Style */
+/*----------------------------------------------------------------------------------------------------*/
+
+/* 웹접근성 세팅 */
+a:focus,
+select:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+	outline: #ccc dashed 1px;
+}
+
+a:active,
+select:active,
+input[type="radio"]:active,
+input[type="checkbox"]:active,
+input[type="text"]:active,
+input[type="date"]:active,
+input[type="password"]:active,
+textarea:active {
+	outline: 0;
+}
+
+
+
+/* 기본 스타일 */
+body {
+	padding: 0;
+	margin: 0;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+b {
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+i {
+	vertical-align: middle;
+}
+
+img {
+	vertical-align: middle;
+}
