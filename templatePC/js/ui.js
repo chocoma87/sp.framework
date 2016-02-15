@@ -69,4 +69,32 @@ $(document).on('ready', function(){
         }
     })
 
+
+
+/*
+
+    /!* Hover Menu *!/
+    var gnb = $('#gnb .gnb-list')
+    gnb.find('> li').hover(
+        function(){
+            $(this).addClass('active');
+            console.log('in');
+        },
+        function(){
+            $(this).removeClass('active');
+            console.log('out');
+        }
+    )
+
+    gnb.find('> li > a').on('focusin', function() {
+        $(this).closest('li').addClass('active');
+    })
+
+    gnb.find('ul > li:last-child a').on('focusout', function() {
+        $(this).closest('li').parents('li').removeClass('active');
+    })
+
+*/
+
+
 })

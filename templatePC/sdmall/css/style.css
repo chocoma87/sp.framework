@@ -657,6 +657,15 @@
 
 
 
+/* 플레이스 홀더 */
+#loginId {
+    background: url('../images/text_login_01.png') no-repeat 10px center;
+}
+#loginPw {
+    background: url('../images/text_login_02.png') no-repeat 10px center;
+}
+
+
 
 
 /* 메인페이지 */
