@@ -5,7 +5,6 @@
 .wrap {
     min-width: 1280px;
     overflow: hidden;
-    margin-right: 35px;
 }
 .contentWrap {
     min-height: 600px;

@@ -6,55 +6,54 @@
 
 <div id="main">
 
-	<div class="mainSliderWrap">
+
 
 		<div class="mainSlider">
 			<ul class="slides-container">
 				<li>
 					<img src="images/main_banner.png" />
-					<div class="slideContent">
+					<div class="slide-text">
 						<img src="images/main_banner_text.png" alt="" />
 					</div>
 				</li>
 				<li>
 					<img src="images/main_banner.png" />
-					<div class="slideContent">
+					<div class="slide-text">
 						<img src="images/main_banner_text.png" alt="" />
 					</div>
 				</li>
 				<li>
 					<img src="images/main_banner.png" />
-					<div class="slideContent">
+					<div class="slide-text">
 						<img src="images/main_banner_text.png" alt="" />
 					</div>
 				</li>
 				<li>
 					<img src="images/main_banner.png" />
-					<div class="slideContent">
+					<div class="slide-text">
 						<img src="images/main_banner_text.png" alt="" />
 					</div>
 				</li>
 				<li>
 					<img src="images/main_banner.png" />
-					<div class="slideContent">
+					<div class="slide-text">
 						<img src="images/main_banner_text.png" alt="" />
 					</div>
 				</li>
 				<li>
 					<img src="images/main_banner.png" />
-					<div class="slideContent">
+					<div class="slide-text">
 						<img src="images/main_banner_text.png" alt="" />
 					</div>
 				</li>
 				<li>
 					<img src="images/main_banner.png" />
-					<div class="slideContent">
+					<div class="slide-text">
 						<img src="images/main_banner_text.png" alt="" />
 					</div>
 				</li>
 			</ul>
 
-		</div>
 
 	</div>
 
@@ -70,7 +69,7 @@
 			slide_speed: 1500,
 			pagination: true,
 			hashchange: false,
-			inherit_height_from: '.mainSliderWrap'
+			inherit_height_from: '.mainSlider'
 		});
 	});
 </script>
