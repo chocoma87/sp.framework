@@ -39,6 +39,9 @@ input[type="radio"] {
 .right {
     float: right;
 }
+.relative {
+    position: relative;
+}
 
 .clearFix:after {
     content: '';
@@ -99,6 +102,18 @@ input[type="radio"] {
 }
 
 
+
+/* 텍스트 스타일 */
+.alignCenter {
+    text-align: center;
+}
+.alignRight {
+    text-align: right;
+}
+
+
+
+
 /*인풋 스타일 */
 .inputText {
     width: 100%;
@@ -122,7 +137,7 @@ select {
     -webkit-appearance: none;
     border: 1px solid #d5d9dd;
     background: white;
-    border-radius: 0;
+    border-radius: 2px;
     height:34px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
