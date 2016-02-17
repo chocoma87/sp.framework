@@ -97,4 +97,73 @@ $(document).on('ready', function(){
 */
 
 
+
+
+    /* 스크롤 에니메이션 */
+	/*	var scrollAni = {
+
+			init : function(obj, testfunc) {
+
+				//동작에 필요한 dom 요소 생성한다
+				var objs = this.makeObjects(obj);
+
+				this.scroll(objs);
+
+				this.customfunc = testfunc;
+			},
+
+			//이벤트 적용시킬 엘리먼트 받아온다
+			makeObjects : function(obj){
+
+				var els = {
+					objTop : obj.offset().top,
+					windowHeight : $(window).innerHeight(),
+					wrapper: this,
+					target : obj
+				}
+
+				return els;
+			},
+
+			customfunc : {},
+
+			scroll : function(objs){
+
+				var arrive = 'no';
+
+				$(window).on('scroll', function(){
+					var currentScroll =  $(window).scrollTop(),
+						scrollTop = objs.windowHeight + currentScroll,
+						wrapper = objs.wrapper;
+
+
+					if (scrollTop > objs.objTop && arrive !== 'yes'){
+
+						arrive = 'yes';
+
+						//실행시킬 에니메이션.
+						wrapper.customfunc(objs.target);
+
+					} else if (scrollTop < objs.objTop && arrive !== 'no') {
+
+						arrive = 'no';
+
+					}
+				})
+			}
+		}
+
+
+
+		var test = function(el){
+			console.log('customFunc');
+			console.log(this);
+			console.log(el);
+
+		};
+
+
+		scrollAni.init($('.mainGlobalNetworks h3'), test);*/
+
+
 })
