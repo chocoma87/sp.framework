@@ -94,6 +94,8 @@ input[type="radio"] {
     box-sizing: border-box;
     border: 1px solid #000000;
     text-align: center;
+    -webkit-appearance: none;
+    cursor: pointer;
 }
 .button.small {
     height: 34px;
