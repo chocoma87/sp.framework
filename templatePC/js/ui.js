@@ -16,12 +16,20 @@ $(document).on('ready', function(){
         toggleCloseBtn = $('a[data-hide]');
 
     //엘레먼트 show
-    toggleShowBtn.on('click', function(){
+    toggleShowBtn.on('click', function(event){
         showEl(event, $(this));
     })
 
+    //엘레먼트 close
+    toggleCloseBtn.on('click', function(event){
+        hideEl(event, $(this));
+    })
+
+
+
     //버튼 클릭 시 엘리먼트 보여준다.
-    var showEl = function (e, current) {
+    var showEl = function (event, current) {
+        event.preventDefault();
 
         var obj = current.data('show'),
             objEl = $('div.' + obj);
@@ -34,15 +42,9 @@ $(document).on('ready', function(){
 
     };
 
-
-    //엘레먼트 close
-    toggleCloseBtn.on('click', function(){
-        hideEl(event, $(this));
-    })
-
     //버튼 클릭 시 엘리먼트 숨긴다.
-    var hideEl = function (e, current) {
-        e.preventDefault();
+    var hideEl = function (event, current) {
+        event.preventDefault();
 
         var obj = current.data('hide'),
             objEl = $('div.' + obj);
@@ -53,6 +55,7 @@ $(document).on('ready', function(){
             $('.modal').hide();
         }
     }
+
 
 
 
@@ -100,70 +103,73 @@ $(document).on('ready', function(){
 
 
     /* 스크롤 에니메이션 */
-	/*	var scrollAni = {
+    var scrollAni = {
 
-			init : function(obj, testfunc) {
+        init : function(selectedEl, newFunc) {
 
-				//동작에 필요한 dom 요소 생성한다
-				var objs = this.makeObjects(obj);
+            //동작에 필요한 dom 요소 생성한다
+            var objs = this.makeObjects(selectedEl);
 
-				this.scroll(objs);
+            this.customfunc = newFunc;
+            this.scroll(objs);
+        },
 
-				this.customfunc = testfunc;
-			},
+        //이벤트 적용시킬 엘리먼트 받아온다
+        makeObjects : function(selectedEl){
 
-			//이벤트 적용시킬 엘리먼트 받아온다
-			makeObjects : function(obj){
+            var els = {
+                objTop : selectedEl.offset().top,
+                windowHeight : $(window).innerHeight(),
+                wrapper: this,
+                target : selectedEl
+            }
 
-				var els = {
-					objTop : obj.offset().top,
-					windowHeight : $(window).innerHeight(),
-					wrapper: this,
-					target : obj
-				}
+            return els;
+        },
 
-				return els;
-			},
+        customfunc : {},
 
-			customfunc : {},
+        scroll : function(objs){
 
-			scroll : function(objs){
+            var arrive = 'no';
+            var wrapper = objs.wrapper;
 
-				var arrive = 'no';
+            if (objs.windowHeight > objs.objTop){
 
-				$(window).on('scroll', function(){
-					var currentScroll =  $(window).scrollTop(),
-						scrollTop = objs.windowHeight + currentScroll,
-						wrapper = objs.wrapper;
+                wrapper.customfunc.apply(objs.target);
 
-
-					if (scrollTop > objs.objTop && arrive !== 'yes'){
-
-						arrive = 'yes';
-
-						//실행시킬 에니메이션.
-						wrapper.customfunc(objs.target);
-
-					} else if (scrollTop < objs.objTop && arrive !== 'no') {
-
-						arrive = 'no';
-
-					}
-				})
-			}
-		}
+                return
+            }
 
 
+            $(window).on('scroll', function(){
+                var currentScroll =  $(window).scrollTop(),
+                    scrollTop = objs.windowHeight + currentScroll,
+                    wrapper = objs.wrapper;
 
-		var test = function(el){
-			console.log('customFunc');
-			console.log(this);
-			console.log(el);
+                if (scrollTop > objs.objTop && arrive !== 'yes'){
 
-		};
+                    arrive = 'yes';
+
+                    //실행시킬 에니메이션
+                    wrapper.customfunc.apply(objs.target);
+
+                } else if (scrollTop < objs.objTop && arrive !== 'no') {
+                    arrive = 'no';
+                }
+            })
+        }
+    }
 
 
-		scrollAni.init($('.mainGlobalNetworks h3'), test);*/
+
+    //document ready 안에 넣는다
+    var test = function(){
+        console.log(this);
+    };
+
+
+    scrollAni.init($('.imgWrap img:eq(2)'), test);
 
 
 })

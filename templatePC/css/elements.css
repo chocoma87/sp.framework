@@ -11,6 +11,7 @@ input, select, button, textarea {
 	font-family: 'noto-sans', sans-serif;
 	font-size: 1em;
     vertical-align: middle;
+    vertical-align: middle;
 }
 
 textarea {
