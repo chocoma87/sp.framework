@@ -172,4 +172,155 @@ $(document).on('ready', function(){
     scrollAni.init($('.imgWrap img:eq(2)'), test);
 
 
-})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//반응형 웹
+
+    //https://www.jonathanfielding.com/managing-responsive-design-breakpointstates-in-javascript
+    var stateManager = (function () {
+        var state = null;
+
+        var setState = function () {
+            if ($('body').width() < 980) {
+                if (state !== "mobile") {
+                    state = "mobile";
+                    displayMobile();
+                }
+            }
+            else {
+                if (state !== "desktop") {
+                    state = "desktop";
+
+                    displayDesktop();
+                }
+            }
+        };
+
+        var resizePage = function () {
+            setState();
+
+            if (state === "mobile") {
+                resizeMobile();
+            }
+            else {
+                resizeDesktop();
+            }
+        };
+
+        var displayMobile = function () {
+            //When mobile state is shown this fires
+
+            $('#header').addClass('mobile').removeAttr('style');
+            //모바일 사이즈에서 show 해줬던 엘레먼트 hide 한다
+            $('.mobileMenuWrap').hide();
+            $('.depth2').hide();
+            $('.mobileBtn').removeClass('on');
+
+            //윈도우 리사이즈 할때마다, a테그에 여러번 이벤트 핸들러 추가되는 것 방지
+            $('#gnb>ul>li>a').off();
+            $('#gnb').off();
+            $('.mobileBtn').off('click');
+            $('#lnb li.current a').off('click');
+
+            //gnb 토글
+            $('.mobileBtn').click(function(e){
+                e.preventDefault();
+
+                $(this).toggleClass('on');
+                $('.mobileMenuWrap').slideToggle(150);
+            });
+
+            //gnb 서브메뉴 토글
+            $('#gnb>ul>li>a').on('click', function(e){
+                e.preventDefault();
+
+                $(this).closest('li').siblings('li').find('> a').removeClass('on');
+
+                $(this).closest('li').siblings('li').find('.depth2').slideUp(150);
+                $(this).next('.depth2').slideToggle(150);
+            })
+
+            //lnb 토글
+            $('#lnb li.current a').click(function(e){
+                e.preventDefault();
+
+                $('#lnb').toggleClass('open');
+            });
+        };
+
+        var displayDesktop = function () {
+            //When desktop state is shown this fires
+
+            //윈도우 리사이즈 할때마다, dom 엘리먼트에 여러번 이벤트 핸들러 추가되는 것 방지
+            $('#gnb').find('>ul>li>a').off('mouseover focus');
+            $('#gnb').off('mouseleave')
+
+            $('#header').removeClass('mobile');
+            //모바일 사이즈에서 hide 해줬던 엘레먼트 show 한다
+            $('.mobileMenuWrap').show();
+            $('.depth2').show();
+
+            var $headerHeight = $("#header").outerHeight();
+            var $headerDepth2Height = $("#gnb > ul li:first-child .depth2").outerHeight();
+
+
+            $('#gnb').find('>ul>li>a')
+                .mouseover(function(){
+                    $('#header').addClass('hover').animate({height: $headerHeight + $headerDepth2Height}, 150);
+                })
+                .focus(function(){
+                    $(this).mouseover();
+                })
+                .end()//선택자가 #gnb로 되돌아 간다
+                .mouseleave(function(){
+                    $('#header').removeClass('hover').animate({height: $headerHeight}, 150);
+                })
+                .find('ul > li:last-child li:last-child a')
+                .focusout(function(){
+                    $('#header').removeClass('hover').animate({height: $headerHeight}, 150);
+                });
+        };
+
+        var resizeMobile = function () {
+            //When mobile state is resized this fires
+        };
+
+        var resizeDesktop = function () {
+            //When desktop state is resized this fires
+        };
+
+        return {
+            init: function () {
+                setState();
+                $(window).on('resize', resizePage);
+            },
+            getState: function () {
+                return state;
+            }
+        };
+
+    } ());
+
+    (function ($) {
+        $(document).ready(function () {
+            //모바일, 피씨구분 함수 실행
+            stateManager.init();
+        });
+    })(jQuery);
