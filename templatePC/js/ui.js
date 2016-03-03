@@ -102,74 +102,82 @@ $(document).on('ready', function(){
 
 
 
-    /* 스크롤 에니메이션 */
-    var scrollAni = {
 
-        init : function(selectedEl, newFunc) {
+    /* 스크롤 에니메이션 */
+    var scrollAni = function(selectedEl, newFunc){
+
+        var self = {
+            init : function() {
+
+                //동작에 필요한 dom 요소 생성한다
+                var objs = this.makeObjects(selectedEl);
+
+                this.customfunc = newFunc;
+
+                this.scroll(objs);
+            },
 
             //동작에 필요한 dom 요소 생성한다
-            var objs = this.makeObjects(selectedEl);
+            makeObjects : function(){
 
-            this.customfunc = newFunc;
-            this.scroll(objs);
-        },
+                var els = {
+                    objTop : selectedEl.offset().top,
+                    windowHeight : $(window).innerHeight(),
+                    wrapper: this,
+                    target : selectedEl
+                }
 
-        //이벤트 적용시킬 엘리먼트 받아온다
-        makeObjects : function(selectedEl){
+                return els;
+            },
 
-            var els = {
-                objTop : selectedEl.offset().top,
-                windowHeight : $(window).innerHeight(),
-                wrapper: this,
-                target : selectedEl
-            }
+            customfunc : {},
 
-            return els;
-        },
+            scroll : function(objs){
 
-        customfunc : {},
+                var arrive = 'no';
+                var wrapper = objs.wrapper;
 
-        scroll : function(objs){
+                //스크롤 내리지 않아도 되는 경우
+                if (objs.windowHeight > objs.objTop){
 
-            var arrive = 'no';
-            var wrapper = objs.wrapper;
-
-            if (objs.windowHeight > objs.objTop){
-
-                wrapper.customfunc.apply(objs.target);
-
-                return
-            }
-
-
-            $(window).on('scroll', function(){
-                var currentScroll =  $(window).scrollTop(),
-                    scrollTop = objs.windowHeight + currentScroll,
-                    wrapper = objs.wrapper;
-
-                if (scrollTop > objs.objTop && arrive !== 'yes'){
-
-                    arrive = 'yes';
-
-                    //실행시킬 에니메이션
                     wrapper.customfunc.apply(objs.target);
 
-                } else if (scrollTop < objs.objTop && arrive !== 'no') {
-                    arrive = 'no';
+                    return
                 }
-            })
+
+                $(window).on('scroll', function(){
+                    var currentScroll =  $(window).scrollTop(),
+                        scrollTop = objs.windowHeight + currentScroll,
+                        wrapper = objs.wrapper;
+
+                    if (scrollTop > objs.objTop && arrive !== 'yes'){
+
+                        arrive = 'yes';
+
+                        //실행시킬 에니메이션
+                        wrapper.customfunc.apply(objs.target);
+
+                    } else if (scrollTop < objs.objTop && arrive !== 'no') {
+                        arrive = 'no';
+                    }
+                })
+            }
         }
+
+        return self;
+
     }
 
 
 
-    //document ready 안에 넣는다
-    var test = function(){
-        console.log(this);
-    };
+    /* 새로운 스크롤 오브젝트 생성한 다음, init 실행시킨다
+    /* 한 페이지에 여러 에니메이션 생성 가능
+        var ani1 = new scrollAni($('.innovationRow:eq(0) .product'), innovationAni)
+        var ani2 = new scrollAni($('.innovationRow:eq(1) .product'), innovationAni2);
 
-
-    scrollAni.init($('.imgWrap img:eq(2)'), test);
+        ani1.init();
+        ani2.init();
+    */
 
 
 });
