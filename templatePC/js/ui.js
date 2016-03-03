@@ -122,6 +122,7 @@ $(document).on('ready', function(){
 
                 var els = {
                     objTop : selectedEl.offset().top,
+                    objBottom: selectedEl.offset().top + selectedEl.outerHeight(),
                     windowHeight : $(window).innerHeight(),
                     wrapper: this,
                     target : selectedEl
@@ -150,14 +151,15 @@ $(document).on('ready', function(){
                         scrollTop = objs.windowHeight + currentScroll,
                         wrapper = objs.wrapper;
 
-                    if (scrollTop > objs.objTop && arrive !== 'yes'){
+                    //오브젝트가 화면 중간에 왔을 때 실행한다
+                    if (scrollTop > objs.objTop + 200 && arrive !== 'yes'){
 
                         arrive = 'yes';
 
                         //실행시킬 에니메이션
                         wrapper.customfunc.apply(objs.target);
 
-                    } else if (scrollTop < objs.objTop && arrive !== 'no') {
+                    } else if (scrollTop < objs.objBottom - 200 && arrive !== 'no') {
                         arrive = 'no';
                     }
                 })
