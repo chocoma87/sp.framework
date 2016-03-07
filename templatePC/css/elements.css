@@ -154,6 +154,29 @@ select::-ms-expand {
     display: none;
 }
 
+
+/* 커스텀 체크박스 스타일 ie9+ */
+#checkbox {
+    opacity: 0;
+}
+label[for="checkbox"]:before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    margin-left: -20px;
+    margin-top: -2px;
+    background: url('../images/icon_check_rec.png') no-repeat top center;
+    vertical-align: middle;
+}
+#checkbox:checked + label:before {
+    background-position: bottom center;
+}
+/* 커스텀 체크박스 스타일 끝 */
+
+
+
 .checkBoxList:after {
     content: '';
     display: block;
@@ -166,6 +189,7 @@ select::-ms-expand {
 .checkBoxList li:first-child {
     margin-left: 0;
 }
+
 
 
 .itemCount {
