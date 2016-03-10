@@ -17,24 +17,26 @@
 
         })(),
 
-        placeHolder: function(){
+        placeHolder: (function(){
+
+            var plaecHolder = $('.placeHolder');
 
             //플레이스 홀더 ie8
-            if($('.placeHolder').val()){
-                $('.placeHolder').css('backgroundPosition', '-100%');
+            if(plaecHolder.val()){
+                plaecHolder.css('backgroundPosition', '-100%');
             } else {
-                $('.placeHolder').on('keydown', function(){
+                plaecHolder.on('keydown', function(){
                     $(this).css('backgroundPosition', '-100%');
                 })
             }
             //폼테그에 값이 없을 때, 백그라운드 이미지 다시 보여준다
-            $('.placeHolder').on('focusout', function(){
+            plaecHolder.on('focusout', function(){
                 if(!$(this).val()) {
                     $(this).css('backgroundPosition', '10px center');
                 }
             })
 
-        },
+        })(),
 
         gnbHover : (function(){
             var gnb = $('.gnb-list')
@@ -58,19 +60,13 @@
         })(),
 
         elShow : (function(){
-            var toggleShowBtn = $('a[data-show]'),
-                toggleCloseBtn = $('a[data-hide]');
+            var toggleShowBtn = $('a[data-show]')
 
             //엘레먼트 show
             toggleShowBtn.on('click', function(event){
-                showEl(event, $(this));
-            })
-
-            //버튼 클릭 시 엘리먼트 보여준다.
-            var showEl = function (event, current) {
                 event.preventDefault();
 
-                var obj = current.data('show'),
+                var obj = $(this).data('show'),
                     objEl = $('li.' + obj);
 
                 $('.sideBar-quickMenuPopup').hide();
@@ -80,23 +76,18 @@
                 if(objEl.hasClass('full')){
                     $('.modal').show();
                 }
-            };
+            })
+
         })(),
 
         elHide : (function(){
-            var toggleShowBtn = $('a[data-show]'),
-                toggleCloseBtn = $('a[data-hide]');
+            var toggleCloseBtn = $('a[data-hide]');
 
             //엘레먼트 close
             toggleCloseBtn.on('click', function(event){
-                hideEl(event, $(this));
-            })
-
-            //버튼 클릭 시 엘리먼트 숨긴다.
-            var hideEl = function (event, current) {
                 event.preventDefault();
 
-                var obj = current.data('hide'),
+                var obj = $(this).data('hide'),
                     objEl = $('li.' + obj);
 
                 objEl.hide();
@@ -104,7 +95,7 @@
                 if(objEl.hasClass('full')){
                     $('.modal').hide();
                 }
-            }
+            })
         })()
     }
 
