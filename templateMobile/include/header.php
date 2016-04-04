@@ -10,6 +10,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+		<!-- 아이폰 번호 링크 -->
 		<meta name="format-detection" content="telephone=no">
 
 		<title>그루터기 유학원</title>
