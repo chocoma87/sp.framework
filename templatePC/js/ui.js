@@ -103,6 +103,25 @@
 
 
 
+//입사지원 팝업창
+$('.loadDialog').click(function(e) {
+    e.preventDefault();
+
+    var dialogID = $(this).attr('href');
+
+    $(dialogID).fadeIn(300);
+    $('#background').fadeIn(300);
+    $(dialogID).find('input').eq(0).focus();
+
+    var dialogPosition = $(dialogID).height();
+    $(dialogID).css('margin-top', ( - dialogPosition / 2 ));
+});
+
+$('#background, .dialog .closeBtn').click(function(e) {
+    e.preventDefault();
+    $('#background, .dialog').fadeOut(300);
+});
+
 
 
 
