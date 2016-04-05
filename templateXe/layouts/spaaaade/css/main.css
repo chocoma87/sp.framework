@@ -1,0 +1,139 @@
+
+
+#mainContent {
+    position: relative;
+}
+
+.mainTop {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    width: 960px;
+    padding: 0 25px;
+    margin-left: -480px;
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.mainTop-title {
+    margin-bottom: 10px;
+    font-size: 36px;
+    line-height: 1.4em;
+}
+.mainTop a {
+    margin-top: 30px;
+}
+
+.boardList-unit.col {
+    position: relative;
+    height: 250px;
+    margin-top: -125px;
+    padding: 20px 25px;
+    color: #fff;
+    margin-left: 0;
+    width: 33%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.boardList-unit.col:first-child {
+    width: 34%;
+}
+.boardList-unit.item01 {
+    background: #25b2e5;
+}
+.boardList-unit:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+}
+.boardList-unit.item01:after {
+    background: url('../images/icon_main_02.png') no-repeat right top ;
+}
+.boardList-unit.item02:after {
+    background: url('../images/icon_main_03.png') no-repeat right top ;
+}
+.boardList-unit.item03:after {
+    background: url('../images/icon_main_04.png') no-repeat right top ;
+}
+.boardList-unit.item02 {
+    background: #0081cd;
+}
+.boardList-unit.item03 {
+    background: #2b52a2;
+}
+
+.boardList-title {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.boardList-text {
+    margin-bottom: 20px;
+}
+.boardList-title:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    border-bottom: 2px solid #fff;
+}
+
+.event-title {
+    margin: 15px 0 20px 0;
+}
+.event-unit {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.event-more {
+    padding-right: 20px;
+    background: url('../images/arrow_black.png') no-repeat right center;
+}
+.boardList-more {
+    padding-right: 20px;
+    background: url('../images/arrow_white.png') no-repeat right center;
+}
+
+.contact {
+    position: relative;
+    height: 303px;
+}
+.contactList {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #e0e0e0;
+}
+.contactList li {
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+.contactList li:before {
+    content: '';
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+.contactList li.item01:before {
+    background: url('../images/icon_tile_01.png') no-repeat center;
+}
+.contactList li.item02:before {
+    background: url('../images/icon_tile_02.png') no-repeat center;
+}
+.contactList li.item03:before {
+    background: url('../images/icon_tile_03.png') no-repeat center;
+}
+.contactList .num {
+    float: right;
+    margin-top: 10px;
+}

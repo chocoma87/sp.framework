@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+	
+	<title xml:lang="ko">Rayence Theme</title>
+	
+	<description xml:lang="ko">Rayence 전용 테마</description>
+	
+	<version>1.0</version>
+	
+	<date>2016-02-10</date>
+	
+	<author email_address="contact@spaaaade.com" link="https://www.spaaaade.com/">
+		<name xml:lang="ko">SPAAAADE</name>
+	</author>
+	
+	<menus>
+		<menu name="GNB" maxdepth="2" default="true">
+			<title xml:lang="ko">메인 메뉴</title>
+		</menu>
+		<menu name="FNB" maxdepth="1">
+			<title xml:lang="ko">푸터 메뉴</title>
+		</menu>
+		
+		<menu name="link" maxdepth="1">
+			<title xml:lang="ko">관련 링크</title>
+		</menu>
+		
+		
+		<menu name="admin" maxdepth="2">
+			<title xml:lang="ko">관리자</title>
+		</menu>
+	</menus>
+	
+	<extra_vars>	 
+		<group>
+			<title xml:lang="ko">메인 슬라이드</title>
+			<var name="slide_img1" type="image">
+				<title xml:lang="ko">슬라이드 이미지 1</title>
+			</var>
+			<var name="slide_title1" type="text">
+				<title xml:lang="ko">슬라이드 타이틀 1</title>
+			</var>
+			<var name="slide_text1" type="textarea">
+				<title xml:lang="ko">슬라이드 설명 1</title>
+			</var>
+			<var name="slide_tc_1" type="select">
+				<title xml:lang="ko">슬라이드 폰트 색</title>
+				<options value="dark">
+					<title xml:lang="ko">어두운 배경</title>
+				</options>
+				<options value="light">
+					<title xml:lang="ko">밝은 배경</title>
+				</options>
+			</var>
+			
+			<var name="slide_img2" type="image">
+				<title xml:lang="ko">슬라이드 이미지 2</title>
+			</var>
+			<var name="slide_title2" type="text">
+				<title xml:lang="ko">슬라이드 타이틀 2</title>
+			</var>
+			<var name="slide_text2" type="textarea">
+				<title xml:lang="ko">슬라이드 설명 2</title>
+			</var>
+			<var name="slide_tc_2" type="select">
+				<title xml:lang="ko">슬라이드 폰트 색</title>
+				<options value="dark">
+					<title xml:lang="ko">어두운 배경</title>
+				</options>
+				<options value="light">
+					<title xml:lang="ko">밝은 배경</title>
+				</options>
+			</var>
+			
+			<var name="slide_img3" type="image">
+				<title xml:lang="ko">슬라이드 이미지 3</title>
+			</var>
+			<var name="slide_title3" type="text">
+				<title xml:lang="ko">슬라이드 타이틀 3</title>
+			</var>
+			<var name="slide_text3" type="textarea">
+				<title xml:lang="ko">슬라이드 설명 3</title>
+			</var>
+			<var name="slide_tc_3" type="select">
+				<title xml:lang="ko">슬라이드 폰트 색</title>
+				<options value="dark">
+					<title xml:lang="ko">어두운 배경</title>
+				</options>
+				<options value="light">
+					<title xml:lang="ko">밝은 배경</title>
+				</options>
+			</var>
+			
+			<var name="slide_img4" type="image">
+				<title xml:lang="ko">슬라이드 이미지 4</title>
+			</var>
+			<var name="slide_title4" type="text">
+				<title xml:lang="ko">슬라이드 타이틀 4</title>
+			</var>
+			<var name="slide_text4" type="textarea">
+				<title xml:lang="ko">슬라이드 설명 4</title>
+			</var>
+			<var name="slide_tc_4" type="select">
+				<title xml:lang="ko">슬라이드 폰트 색</title>
+				<options value="dark">
+					<title xml:lang="ko">어두운 배경</title>
+				</options>
+				<options value="light">
+					<title xml:lang="ko">밝은 배경</title>
+				</options>
+			</var>
+			
+			<var name="slide_img5" type="image">
+				<title xml:lang="ko">슬라이드 이미지 5</title>
+			</var>
+			<var name="slide_title5" type="text">
+				<title xml:lang="ko">슬라이드 타이틀 5</title>
+			</var>
+			<var name="slide_text5" type="textarea">
+				<title xml:lang="ko">슬라이드 설명 5</title>
+			</var>
+			<var name="slide_tc_5" type="select">
+				<title xml:lang="ko">슬라이드 폰트 색</title>
+				<options value="dark">
+					<title xml:lang="ko">어두운 배경</title>
+				</options>
+				<options value="light">
+					<title xml:lang="ko">밝은 배경</title>
+				</options>
+			</var>
+			
+		</group>
+	</extra_vars>
+</layout>

@@ -1,0 +1,60 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+<lang>
+	<item name="cmd_xedition_search_close">
+		<value xml:lang="ko"><![CDATA[검색창 닫기]]></value>
+	</item>
+	<item name="ray_link">
+		<value xml:lang="ko"><![CDATA[관계사 바로가기]]></value>
+		<value xml:lang="en"><![CDATA[Affiliates]]></value>
+	</item>
+	<item name="rayence">
+		<value xml:lang="ko"><![CDATA[레이언스]]></value>
+		<value xml:lang="en"><![CDATA[Rayence]]></value>
+	</item>
+	<item name="ray_address">
+		<value xml:lang="ko"><![CDATA[경기도 화성시 삼성1로1길 14 (우18449)]]></value>
+		<value xml:lang="en"><![CDATA[경기도 화성시 삼성1로1길 14 (우18449)]]></value>
+	</item>
+	<item name="ray_phone">
+		<value xml:lang="ko"><![CDATA[대표전화 : 031-8015-6245]]></value>
+		<value xml:lang="en"><![CDATA[대표전화 : 031-8015-6245]]></value>
+	</item>
+	<item name="ray_skip">
+		<value xml:lang="ko"><![CDATA[본문 바로가기]]></value>
+		<value xml:lang="en"><![CDATA[Skip to Contents]]></value>
+	</item>
+	<item name="ray_usa">
+		<value xml:lang="ko"><![CDATA[레이언스 미국법인]]></value>
+		<value xml:lang="en"><![CDATA[Rayence USA]]></value>
+	</item>
+	<item name="ray_language">
+		<value xml:lang="ko"><![CDATA[English]]></value>
+		<value xml:lang="en"><![CDATA[Korean]]></value>
+	</item>
+	<item name="ray_vatech">
+		<value xml:lang="ko"><![CDATA[바텍 네트웍스]]></value>
+		<value xml:lang="en"><![CDATA[VATECH Networks]]></value>
+	</item>
+	<item name="ray_vatech_url">
+		<value xml:lang="ko"><![CDATA[http://www.vatech.co.kr/index]]></value>
+		<value xml:lang="en"><![CDATA[http://www.vatech.co.kr/indexE]]></value>
+	</item>
+	<item name="ray_menu_open">
+		<value xml:lang="ko"><![CDATA[메뉴열기]]></value>
+		<value xml:lang="en"><![CDATA[MENU]]></value>
+	</item>
+	<item name="ray_menu_close">
+		<value xml:lang="ko"><![CDATA[메뉴닫기]]></value>
+		<value xml:lang="en"><![CDATA[CLOSE]]></value>
+	</item>
+	<item name="ray_call">
+		<value xml:lang="ko"><![CDATA[대표전화 : 031-8015-6245]]></value>
+		<value xml:lang="en"><![CDATA[PHONE : +82 (0)31-8015-6245]]></value>
+	</item>
+	<item name="ray_address">
+		<value xml:lang="ko"><![CDATA[경기도 화성시 삼성1로1길 14 (우18449)]]></value>
+		<value xml:lang="en"><![CDATA[14, Samsung 1-ro 1-gil, Hwaseong-si, Gyeonggi-do, Korea (18449)]]></value>
+	</item>
+</lang>
+
+

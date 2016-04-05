@@ -1,0 +1,40 @@
+
+
+
+<div class="contentWrap clearFix" id="{$mid}">
+
+    <div class="setWidth">
+
+        <div class="contentHeader reset clearFix">
+            <h2>{$module_info->browser_title}</h2>
+
+            <!-- BREADCRUNB -->
+            <div class="breadcrumb" >
+
+                <block cond="$_selected_menu['list']">
+                    <block loop="$GNB->list=>$key, $val" cond="$val['selected']">{@$depth1 = $val}</block>
+                </block>
+
+                <block cond="!$_selected_menu['list']">
+                    <block loop="$FNB->list=>$key, $val" cond="$val['selected']">{@$depth1 = $val}</block>
+                </block>
+
+                <block loop="$depth1['list']=>$key, $val" cond="$depth1 && $val['selected']">{@$depth2 = $val}</block>
+                <block loop="$depth2['list']=>$key, $val" cond="$depth2 && $val['selected']">{@$depth3 = $val}</block>
+
+                <a class="home" href="{getUrl('')}">{$lang->rayence}</a>
+                <block cond="$depth1"><a href="{$depth1['href']}">{$depth1['text']}</a></block>
+                <block cond="$depth2"><a href="{$depth2['href']}">{$depth2['text']}</a></block>
+
+            </div>
+        </div>
+
+
+        <block>
+            {$content}
+        </block>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,136 @@
+
+
+
+<!--// META -->
+{Context::addHtmlHeader('<meta name="viewport" content="width=device-width, user-scalable=yes">')}
+{@ Context::addMetaTag('format-detection',  'telephone=no');}
+
+ 
+<!--// CSS -->
+<load target="./css/preset.css" />
+<load target="./css/layout.css" />
+<load target="./css/ui.css" />
+<load target="./css/style.css" />
+<load target="./css/main.css" cond="$mid == index"/>
+<load target="../../common/xeicon/xeicon.min.css" />
+<load target="./css/ie.css" targetie="ie 8" />
+<load target="https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic,700italic" />
+
+
+<!--// JS -->
+<load target="./js/layout.js" />
+
+
+
+<div class="wrap">
+
+	<!-- HEADER -->
+	<div id="header" class="reset">
+
+		<div class="header-logIn">
+			<div class="setWidth">
+				<ul class="right clearFix header-loginMenu">
+					<li class="item03"><a href="#" target="_blank">KOR</a></li>
+					<li class="item02"><a href="#" target="_blank">Sign in</a></li>
+					<li class="item01"><a href="#">Sign up</a></li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="setWidth clearFix">
+			<h1 class="header-logo">
+				<a href="{getUrl('')}">ksp</a>
+			</h1>
+
+			<!-- GNB -->
+			<div id="gnb">
+				<ul class="clearFix">
+					<li loop="$GNB->list => $key1, $val1" class="current"|cond="$val1['selected']">
+						<a href="{$val1['href']}">{$val1['link']}</a>
+						<block cond="$val1['selected']">{@ $_selected_menu = $val1}</block>
+
+						<ul cond="$val1['list']" class="gnb-depth2">
+							<li loop="$val1['list'] => $key2, $val2" class="current"|cond="$val2['selected']">
+								<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window'] == 'Y'">{$val2['link']}</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+	<!-- MAIN PAGE CONTENT -->
+	<include target="./main.html" cond="$mid == index"/>
+
+
+	<!-- SUB PAGE CONTENT -->
+	<include target="./sub.html" cond="$mid != index"/>
+
+
+
+
+	<!-- FOOTER -->
+	<div id="footer" class="reset">
+
+
+		<div class="familySite" cond="$mid == index">
+			<div class="setWidth familySiteInner">
+				<ul class="familySite-list">
+					<li loop="$link->list => $key1, $val1">
+						<a href="{$val1['href']}" target="_blank">{$val1['link']}</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div class="footer-bottom">
+			<div class="setWidth clearFix">
+
+				<block cond="$mid != index">
+					<div class="row footer-menus">
+						<ul class="footer-mainMenu">
+							<li loop="$FNB->list => $key1, $val1">
+								<a href="{$val1['href']}" target="_blank"|cond="$val1['open_window'] == 'Y'" class="{$val1['link']}">{$val1['link']}</a>
+
+								<ul cond="$val1['list']" class="footer-depth2">
+									<li loop="$val1['list'] => $key2, $val2">
+										<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window'] == 'Y'">{$val2['link']}</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<ul class="footer-contact">
+							<li class="item01">+82-2-3472-4203</li>
+							<li class="item02">+82-2-3472-4203-02</li>
+							<li class="item03"><a href="mailto:contact@kspder.or.kr">contact@kspder.or.kr</a></li>
+						</ul>
+					</div>
+				</block>
+
+				<div class="footer-info clearFix">
+					<img src="images/logo_white.png" alt="ksp" class="footer-logo"/>
+
+					<div class="footer-copyright">Copyright<i class="xi-copyright"></i>Korean Society for Psoriasis
+						<br/>Reproduction or
+						republication strictly prohibited without prior written permission.</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+
+
+</div>

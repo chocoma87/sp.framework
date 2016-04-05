@@ -1,0 +1,224 @@
+
+a {
+    color: #2b52a2;
+}
+
+.unit70 {
+    margin-bottom: 70px;
+}
+.unit60 {
+    margin-bottom: 60px;
+}
+.unit50 {
+    margin-bottom: 50px;
+}
+.unit40 {
+    margin-bottom: 40px;
+}
+.unit30 {
+    margin-bottom: 30px;
+}
+.unit20 {
+    margin-bottom: 20px;
+}
+.unit10 {
+    margin-bottom: 10px;
+}
+.unit0 {
+    margin-bottom: 0;
+}
+
+
+
+/* heading style */
+
+.heading24 {
+    font-size: 24px;
+    font-weight: normal;
+    color: #111;
+}
+.heading22 {
+    font-size: 22px;
+    font-weight: normal;
+    color: #111;
+}
+.heading20 {
+    font-size: 20px;
+    font-weight: normal;
+    color: #111;
+}
+.heading18 {
+    font-size: 18px;
+    font-weight: normal;
+    color: #111;
+}
+
+.titleLine {
+    position: relative;
+    padding-bottom: 10px;
+    color: #111;
+}
+.titleLine:after {
+    content: '';
+    display: block;
+    width: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 2px solid #27428f;
+}
+
+
+/* Button */
+
+.buttonWrapper {
+    clear: both;
+    overflow: hidden;
+}
+.button {
+    display: inline-block;
+    text-decoration: none;
+    -webkit-appearance: none;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.button i {
+    vertical-align: -1px;
+}
+
+.button.small {
+    line-height: 29px;
+    padding: 0 15px;
+    height: 32px;
+}
+
+.button.medium {
+    line-height: 35px;
+    padding: 0 25px;
+    height: 38px;
+    font-size: 16px;
+}
+
+.button.large {
+    line-height: 49px;
+    padding: 0 40px;
+    height: 52px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.button.full {
+    width: 100%;
+}
+
+.button.white {
+    border: 1px solid #ddd;
+    color: #333;
+    background: #fff;
+}
+.button.white:hover,
+.button.white:focus {
+    border-color: #ccc;
+}
+
+.button.gray {
+    border: 1px solid #666;
+    color: #fff;
+    background: #777;
+}
+
+
+
+/* text style */
+.textWhite {
+    color: #fff;
+}
+.textGray {
+    color: #999999;
+}
+.textBlue {
+    color: #2b52a2;
+}
+.textSmall {
+    font-size: 12px;
+}
+
+.divider {
+    margin: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+.alignLeft {
+    text-align: left !important;
+}
+
+.alignCenter {
+    text-align: center !important;
+}
+
+.alignRight {
+    text-align: right !important;
+}
+
+
+
+
+/* link style */
+.linkDot {
+    display: inline-block;
+    border-bottom: 1px dotted #fff;
+}
+.linkDot.blue {
+    border-bottom-color: #2b52a2;
+}
+
+
+
+/* module */
+.pageTop {
+    height: 280px;
+    margin-bottom: 30px;
+    color: #fff;
+    display: table;
+    width: 100%;
+}
+.pageTop-title {
+    display: table-cell;
+    padding: 0 70px;
+    vertical-align: middle;
+    line-height: 1.5em;
+    font-size: 30px;
+}
+.pageTop-text {
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+.picket {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 7px;
+    background: #2b52a2;
+    color: #ffffff;
+}
+.picket:after {
+    content: '';
+    display: block;
+    width: 9px;
+    height: 7px;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    background: url('../images/triangle_blue.png') no-repeat center;
+}
+
+.titleUnderline {
+    padding-bottom: 5px;
+    border-bottom: 1px solid #808080;
+    color: #111;
+}
+
+

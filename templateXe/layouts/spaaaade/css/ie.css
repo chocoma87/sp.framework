@@ -1,0 +1,35 @@
+
+
+
+
+
+body,
+input,
+select {
+    font-family:'돋움',dotum,sans-serif;
+    letter-spacing: -0.03em;
+}
+
+select {
+    background: none;
+    background-color: white;
+    padding-right: 5px;
+}
+
+.mainShortcut a i {
+    width: 32px;
+    height: 32px;
+}
+.mainShortcut a.item4 i {
+    width: 50px;
+    height: 52px;
+}
+
+.list-type-1 li b.fit {
+    width: 65px;
+}
+
+#gnb > ul .depth2 a {
+    padding-right: 0;
+    padding-left: 10px;
+}
