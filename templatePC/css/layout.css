@@ -24,6 +24,8 @@ textarea {
     resize: none;
     word-break: break-all;
     white-space: pre-line;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 input[type="checkbox"],
