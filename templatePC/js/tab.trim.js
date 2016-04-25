@@ -3,6 +3,8 @@
 
 /* tab plugin */
 /* tabContents 안의 내용은 div로 싼다. */
+/* el.sptab() */
+
 (function ($) {
 
     $.fn.sptab = function (option) {
