@@ -124,6 +124,29 @@ $('#background, .dialog .closeBtn').click(function(e) {
 
 
 
+// 백그라운드 이미지 preloader
+// 백그라운드 이미지에서는 안되는것 같음......
+// img 엘리먼트가 제대로 생성이 안 되는 것 같음. 테스트 필요
+var preload = function() {
+
+    var url = '/layouts/rebom/images/realstory';
+
+    var images = [url + '/realstory_bg_case1.jpg', url + '/realstory_bg_case2.jpg', url + '/realstory_bg_case3.jpg', url + '/realstory_bg_case4.jpg', url + '/realstory_bg_case5.jpg', url + '/realstory_bg_person_01.png', url + '/realstory_bg_person_02.png', url + '/realstory_bg_person_03.png', url + '/realstory_bg_person_04.png', url + '/realstory_bg_person_05.png'];
+
+    var imageEls = [];
+
+    for (var i = 0; i < images.length; i++) {
+        var image = new Image();
+
+        image.src = images[i];
+
+        imageEls.push(image);
+    }
+
+    return imageEls;
+
+}
+
 
 
 
