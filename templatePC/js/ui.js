@@ -149,6 +149,17 @@ var preload = function() {
 
 
 
+function Car() {
+    this.name = 'shinwoo'
+   this.name = 'moon'
+}
+
+var test = new Car();
+
+console.log(test.name);
+
+
+
 
 
 

@@ -91,7 +91,7 @@ var uiMobile = {
         gnb.classList.add('open');
 
         //에니메이션 callback
-        gnb.addEventListener('webkitAnimationEnd',function(event){
+        gnb.addEventListener('transitionEvent',function(event){
             event.srcElement.classList.add('active');
             body.classList.add('sidemenu');
             target.classList.add('active');

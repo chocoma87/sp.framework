@@ -33,3 +33,33 @@ input[type="radio"] {
 
 
 
+
+
+.gnb {
+    position: fixed;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 50px);
+    background: #272d38;
+    overflow: scroll;
+    -webkit-transition: all 1.3s;
+    -moz-transition: all 1.3s;
+    -ms-transition: all 1.3s;
+    -o-transition: all 1.3s;
+    transition: all 1.3s;
+}
+.gnb.open {
+    -webkit-transform: translateX(250px);
+    -moz-transform: translateX(250px);
+    -ms-transform: translateX(250px);
+    -o-transform: translateX(250px);
+    transform: translateX(250px);
+}
+.gnb.close {
+    -webkit-transform: translateX(0px);
+    -moz-transform: translateX(0px);
+    -ms-transform: translateX(0px);
+    -o-transform: translateX(0px);
+    transform: translateX(0px);
+}
