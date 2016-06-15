@@ -1,15 +1,6 @@
 
 
 
-
-
-
-$(document).ready(function () {
-    uiMobile.init();
-});
-
-
-
 //메인 메뉴가 토글일 경우, menuCloseBtn 은 빈 배열로 하고, menuControllerOpen 함수 추가해서 사용한다.
 //필요에 따라 controller 함수 추가해서 사용한다.
 
@@ -81,9 +72,9 @@ var uiMobile = {
 
 
         //메인메뉴 함수 실행하는 조건문
-        /* var gnbOpen = option.menuControllerOpen(target, event, option);
+        /* var gnbOpen = this.menuControllerOpen(target, event, option);
          if( gnbOpen === true){
-         return
+            return
          }*/
 
         //gnb 에니메이션
@@ -91,17 +82,9 @@ var uiMobile = {
         gnb.classList.add('open');
 
         //에니메이션 callback
-        gnb.addEventListener('transitionEvent',function(event){
-            event.srcElement.classList.add('active');
+        gnb.addEventListener('webkitTransitionEnd', function(event){
             body.classList.add('sidemenu');
             target.classList.add('active');
-
-            //에니메이션 끝난 상태로 유지
-            gnb.style.webkitTransform = 'translateX(250px)';
-            gnb.style.MozTransform = 'translateX(250px)';
-            gnb.style.msTransform = 'translateX(250px)';
-            gnb.style.webkitTransform = 'translateX(250px)';
-
         },false);
     },
 
@@ -119,16 +102,9 @@ var uiMobile = {
         gnb.classList.add('close');
 
         //에니메이션 callback
-        gnb.addEventListener('webkitAnimationEnd',function(event){
+        gnb.addEventListener('webkitTransitionEnd',function(event){
             target.classList.remove('active');
             body.classList.remove('sidemenu');
-
-            //에니메이션 끝난 상태로 유지
-            gnb.style.webkitTransform = 'translateX(0px)';
-            gnb.style.MozTransform = 'translateX(0px)';
-            gnb.style.msTransform = 'translateX(0px)';
-            gnb.style.webkitTransform = 'translateX(0px)';
-
         },false);
     },
 
@@ -196,5 +172,175 @@ var hasClass = function (elem, className) {
     return elem.className && RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
 }
 
+uiMobile.init();
 
+
+
+
+
+
+
+
+
+
+/***************************************/
+/* 메뉴 여러개 일때 */
+/* 버튼/엘레먼트 dom 을 인자로 받는다 */
+/***************************************/
+
+var multipleMenu = {
+    init: function( obj, openBtn, closeBtn ){
+        var self = this,
+            option = {
+                obj: obj,
+                wrap: '.wrap',
+                modalFull: '.modalFull',
+                modal: '.modal',
+                body: 'body',
+                menuOpenBtn: openBtn,
+                menuCloseBtn: closeBtn
+            };
+
+
+        // 메인메뉴 열기
+        if(option.menuOpenBtn){
+            //addeventlistner ie8 에서 지원하지 않는다
+            option.menuOpenBtn.addEventListener('click', function(event){
+                self.menuOpen(event, option);
+            });
+        }
+
+        //메인메뉴 닫기
+        if(option.menuCloseBtn){
+            option.menuCloseBtn.addEventListener('click', function(event){
+                self.menuClose(event, option);
+            });
+        }
+
+    },
+
+    //메인 메뉴 연다.
+    menuOpen: function (event, option) {
+        event.preventDefault();
+
+        var obj = option.obj,
+            body = document.querySelectorAll(option.body)[0],
+            modal = document.querySelectorAll(option.modal)[0],
+
+        //this 가 attatchEvent 를 가르키는 경우를 대비해서 event.srcElement 을 사용한다.
+        //ex)controller 에서 함수를 실행할 때.
+            target = event.srcElement;
+
+        obj.style.opacity = 1;
+
+        //메인메뉴 함수 실행하는 조건문
+        var gnbOpen = this.menuControllerOpen(target, event, option);
+        if( gnbOpen === true){
+            return;
+        }
+
+        //obj 에니메이션
+        obj.classList.remove('close');
+        obj.classList.add('open');
+
+        modal.classList.add('open');
+
+        target.classList.add('active');
+        body.classList.add('sidemenu');
+
+    },
+
+    //메인 메뉴 닫는다.
+    menuClose: function (event, option) {
+
+        event.preventDefault();
+
+        var obj = option.obj,
+            body = document.querySelectorAll(option.body)[0],
+            modal = document.querySelectorAll(option.modal)[0];
+
+        //obj 에니메이션
+        obj.classList.remove('open');
+        obj.classList.add('close');
+
+        modal.classList.remove('open');
+
+        option.menuOpenBtn.classList.remove('active');
+        body.classList.remove('sidemenu');
+
+        // 안드로이드 예전버전 맞추기 위해서, 확대할 경우, 보이지 말아야 할 메뉴가 보인다
+        var opacity = function(event){
+            obj.style.opacity = 0;
+        };
+
+        obj.addEventListener('webkitTransitionEnd', opacity, false);
+
+        // 이벤트 리스너가 계속 추가되지 않게 remove 해준다
+        obj.removeEventListener('webkitTransitionEnd', opacity, false);
+
+    },
+
+    // 메뉴 오픈하는 조건, 토글 일 경우에도 사용한다
+    menuControllerOpen: function(menuBtn, event, option){
+
+        if(hasClass(menuBtn, 'active')){
+            this.menuClose(event, option);
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+
+var gnb = document.getElementById('gnb');
+var gnbBtn = document.querySelectorAll('.gnbBtn')[0];
+
+
+var quiMenu = document.querySelectorAll('.quickMenu')[0];
+var quiMenuBtn = document.querySelectorAll('.quickBtn')[0];
+var quiMenuCloseBtn = document.querySelectorAll('.quickMenu .close')[0];
+
+// 닫는 버튼은 안 넣어줘도 된다
+//multipleMenu.init( gnb, gnbBtn);
+//multipleMenu.init( quiMenu, quiMenuBtn, quiMenuCloseBtn);
+
+
+$('.modal').on('click', function(){
+
+    $(gnb).removeClass('open');
+    $(quiMenu).removeClass('open');
+
+    $(this).removeClass('open');
+
+    $('body').removeClass('sidemenu');
+
+    $('.quickBtn, .gnbBtn').removeClass('active');
+});
+
+
+// 두개가 같이 보이면 안됨
+$('.gnbBtn').on('click', function(){
+
+    var isGnbClose = $('.gnbBtn').hasClass('active');
+    var isQuickOpen = $('.quickBtn').hasClass('active');
+
+    if(isQuickOpen){
+        quiMenu.classList.remove('open');
+        quiMenuBtn.classList.remove('active');
+    }
+
+});
+
+$('.quickBtn').on('click', function(){
+
+    var isGnbClose = $('.gnbBtn').hasClass('active');
+    var isQuickOpen = $('.quickBtn').hasClass('active');
+
+    if(isGnbClose){
+        gnb.classList.remove('open');
+        gnbBtn.classList.remove('active');
+    }
+
+});
 
