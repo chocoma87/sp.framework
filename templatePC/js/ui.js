@@ -149,17 +149,16 @@ var preload = function() {
 
 
 
-function Car() {
-    this.name = 'shinwoo'
-   this.name = 'moon'
-}
+// 위로가기 버튼
+gotoTop: (function(){
+    var btn = $('#gotoTop');
 
-var test = new Car();
+    btn.on('click', function(e){
+        e.preventDefault();
+        $('html, body').stop().animate({'scrollTop': 0}, 300, 'swing');
+    })
 
-console.log(test.name);
-
-
-
+})()
 
 
 
