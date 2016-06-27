@@ -2,7 +2,14 @@
 
 
 /* 기본 세팅 */
+.reset * {
+    margin: 0;
+    padding: 0;
+}
+
+
 body {
+    margin: 0;
     font-size: 14px;
     line-height: 1.6;
     font-family: 'noto-sans', sans-serif;
@@ -32,6 +39,7 @@ input[type="checkbox"],
 input[type="radio"] {
     margin-top: -1px;
 }
+
 
 
 

@@ -87,6 +87,8 @@
     text-align: center;
     -webkit-appearance: none;
     cursor: pointer;
+    text-decoration: none;
+    color: #333;
 }
 .button.small {
     height: 34px;
@@ -102,6 +104,17 @@
 }
 .alignRight {
     text-align: right;
+}
+.alignLeft {
+    text-align: left;
+}
+
+.textSmall {
+    font-size: 0.8em;
+}
+
+.textWhite {
+    color: #fff;
 }
 
 
@@ -179,6 +192,7 @@ label[for="checkbox"]:before {
 
 
 
+/* 쇼핑몰 아이템 수량 조절 카운터 스타일 */
 .itemCount {
     width: 110px;
 }
@@ -229,3 +243,4 @@ label[for="checkbox"]:before {
 .itemCount.small .itemCount-increase.minus {
     border-right: 0 none;
 }
+/* 쇼핑몰 아이템 수량 조절 카운터 스타일 끝 */
