@@ -150,7 +150,7 @@ var preload = function() {
 
 
 // 위로가기 버튼
-gotoTop: (function(){
+var gotoTop = (function(){
     var btn = $('#gotoTop');
 
     btn.on('click', function(e){
@@ -158,7 +158,48 @@ gotoTop: (function(){
         $('html, body').stop().animate({'scrollTop': 0}, 300, 'swing');
     })
 
-})()
+})();
+
+
+
+
+
+// ios slider 네비게이션 포함한 스크립트
+
+//슬라이드 플러그인 init 직후 실행
+var slideChange = function(args){
+
+    //현재 슬라이드의 네비게이션에 클래스 추가한다
+    $('#slideNav ul li').removeClass('selected');
+    $('#slideNav ul li:eq(' + (args.currentSlideNumber - 1) + ')').addClass('selected');
+}
+
+var slideLoad = function(args){
+
+    //첫번째 네비게이션에 selected 클래스 추가한다
+    slideChange(args);
+
+    //페이지 위로 가는 현상 방지한다
+    $('#slideNav ul li a').on('click', function(e){
+        e.preventDefault();
+    })
+
+    //페이지 위로 가는 현상 방지한다
+    $('.slider-btn').on('click', function(e){
+        e.preventDefault();
+    })
+}
+
+$('.iosslider').iosSlider({
+    autoSlide: true,
+    infiniteSlider: true,
+    navSlideSelector: '#slideNav ul li',
+    onSliderLoaded: slideLoad,
+    onSlideChange: slideChange,
+    navPrevSelector: '.slider-btn.prev',
+    navNextSelector: '.slider-btn.next'
+});
+
 
 
 
