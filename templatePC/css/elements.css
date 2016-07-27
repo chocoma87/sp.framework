@@ -99,13 +99,13 @@
 
 
 /* 텍스트 스타일 */
-.alignCenter {
+.textCenter {
     text-align: center;
 }
-.alignRight {
+.textRight {
     text-align: right;
 }
-.alignLeft {
+.textLeft {
     text-align: left;
 }
 
