@@ -1,8 +1,10 @@
 
 
-
+/***************************************/
+// 메뉴 + 토글 버튼
 //메인 메뉴가 토글일 경우, menuCloseBtn 은 빈 배열로 하고, menuControllerOpen 함수 추가해서 사용한다.
 //필요에 따라 controller 함수 추가해서 사용한다.
+/***************************************/
 
 var uiMobile = {
 
@@ -188,6 +190,10 @@ uiMobile.init();
 /* 버튼/엘레먼트 dom 을 인자로 받는다 */
 /***************************************/
 
+var hasClass = function (elem, className) {
+    return elem.className && RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+
 var multipleMenu = {
     init: function( obj, openBtn, closeBtn ){
         var self = this,
@@ -343,4 +349,110 @@ $('.quickBtn').on('click', function(){
     }
 
 });
+
+
+
+
+
+
+
+
+/***************************************/
+// 메뉴 함수만 단순화
+/***************************************/
+
+var hasClass = function (elem, className) {
+    return elem.className && RegExp(' ' + className + ' ').test(' ' + elem.className + ' ');
+}
+
+
+var mobileGnb = (function () {
+
+    var init = (function(){
+        var container = this,
+            option = {
+                gnb: '.gnb',
+                wrap: '.wrap',
+                modalFull: '.modalFull',
+                body: 'body'
+            },
+            menuOpenBtn = document.querySelectorAll('a[data-menu="open"]'),
+            menuCloseBtn = document.querySelectorAll('a[data-menu="close"]');
+
+
+        //메인메뉴 열기
+        for(i = 0; i < menuOpenBtn.length; i++){
+            //addeventlistner ie8 에서 지원하지 않는다
+            menuOpenBtn[i].addEventListener('click', function(){
+                menuOpen(event, option);
+            });
+        }
+
+        //메인메뉴 닫기
+        for(i = 0; i < menuCloseBtn.length; i++){
+            //addeventlistner ie8 에서 지원하지 않는다
+            menuCloseBtn[i].addEventListener('click', function(){
+                menuClose(event, option);
+            });
+        }
+
+    })();
+
+
+    //메인 메뉴 연다.
+    var menuOpen = function (event, option) {
+        event.preventDefault();
+
+        var gnb = document.querySelectorAll(option.gnb)[0],
+            body = document.querySelectorAll(option.body)[0];
+
+        //메인메뉴 함수 실행하는 조건문
+        /* var gnbOpen = menuControllerOpen(this, event, option);
+         if( gnbOpen === true){
+         return
+         }*/
+
+        //gnb 에니메이션
+        gnb.classList.remove('close');
+        gnb.classList.add('open');
+
+        //에니메이션 callback
+        gnb.addEventListener('webkitTransitionEnd', function(event){
+            body.classList.add('sidemenu');
+            this.classList.add('active');
+        },false);
+    };
+
+
+    //메인 메뉴 닫는다.
+    var menuClose = function (event, option) {
+
+        event.preventDefault();
+
+        var gnb = document.querySelectorAll(option.gnb)[0],
+            body = document.querySelectorAll(option.body)[0];
+
+        //gnb 에니메이션
+        gnb.classList.remove('open');
+        gnb.classList.add('close');
+
+        //에니메이션 callback
+        gnb.addEventListener('webkitTransitionEnd',function(event){
+            this.classList.remove('active');
+            body.classList.remove('sidemenu');
+        },false);
+    };
+
+
+    var menuControllerOpen = function(menuBtn, event, option){
+
+        if(hasClass(menuBtn, 'active')){
+            menuClose(event, option);
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+})();
 
